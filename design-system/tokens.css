@@ -1,0 +1,27 @@
+/* Design System · Desparasitação Descomplicada — TOKENS */
+:root{
+  /* Marca */
+  --orange-300:#fbb9a1; --orange-400:#f49575; --orange-500:#ee8056; --orange-600:#e0600a; --orange-700:#c4520a;
+  --coral-600:#e96e48; --coral-700:#d9532c;
+  --lime-200:#e6f7b8;               /* destaque sobre fundo laranja */
+  --slate-800:#de5a33;              /* rodapé (laranja escuro) */
+  --deep:#00454d; --deep-2:#00343b; --mint:#00dcc0;
+  /* Neutros */
+  --ink:#111; --muted:#2b2b2b; --line:#d6e6e3; --soft:#f1f8f7; --cream:#fdeee3; --white:#fff;
+  /* Semânticos */
+  --accent:var(--orange-600);       /* destaque em fundo claro */
+  --accent-hover:var(--orange-700);
+  --on-accent:#fff;
+  --text:var(--ink); --text-soft:var(--muted);
+  /* Gradientes */
+  --grad-hero:radial-gradient(700px 520px at 8% 8%,#fbb9a1 0,rgba(251,185,161,0) 65%),radial-gradient(800px 600px at 100% 100%,#e66b45 0,rgba(230,107,69,0) 60%),linear-gradient(135deg,#f49575,#ee8056 45%,#e96e48);
+  --grad-strip:linear-gradient(90deg,#e8673f,#de5a33 50%,#d9532c);
+  /* Tipografia */
+  --font:"Outfit",system-ui,Arial,sans-serif;
+  --fs-display:clamp(32px,5.4vw,60px); --fs-h2:clamp(28px,4vw,42px); --fs-h3:19px; --fs-lead:20px; --fs-body:18px; --fs-small:14px; --fs-eyebrow:12px;
+  /* Espaço, raio, sombra */
+  --sp-1:6px; --sp-2:10px; --sp-3:16px; --sp-4:24px; --sp-5:34px; --sp-6:52px; --sp-7:72px;
+  --r-sm:12px; --r-md:18px; --r-lg:22px; --r-pill:999px;
+  --sh-card:0 10px 30px rgba(0,0,0,.07); --sh-cta:0 10px 28px rgba(224,96,10,.32);
+  --wrap:1120px;
+}

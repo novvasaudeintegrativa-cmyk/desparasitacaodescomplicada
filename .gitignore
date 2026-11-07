@@ -1,0 +1,12 @@
+# segredos
+.env
+.env.*
+
+# intermediarios de geracao de imagem
+landing/img/luis-ipad-raw-*
+landing/img/recepcao-gemini-*
+landing/_t.html
+
+# sistema
+Thumbs.db
+.DS_Store

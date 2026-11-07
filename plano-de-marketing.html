@@ -1,0 +1,249 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Plano de Marketing e Ação — Desparasitação Descomplicada</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"><style>
+/* Mesmo sistema visual do painel da Clínica Corpo Terra (Outfit, teal/menta). */
+:root {
+  --ink: #00262c; --muted: #4c6b6e; --line: #d6e6e3; --bg: #f1f8f7; --card: #fff;
+  --brand: #00716f; --brand-h: #005f5d; --deep: #00454d; --mint: #00dcc0; --soft: #dff6f2; --cream: #fdeee3;
+  --warn: #fff1d6; --warn-ink: #7a5200; --bad: #fde7e3; --bad-ink: #9a3324; --gray: #e8eeed;
+  --amber: #e0a43a; --font: "Outfit", system-ui, Arial, sans-serif; --side: 248px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #e4f2f0; --muted: #93b4b1; --line: #1f4a4f; --bg: #04262b; --card: #08363c;
+    --brand: #19b5ae; --brand-h: #2cc9c1; --soft: #0d4a4f; --cream: #3a3026;
+    --warn: #4a3b17; --warn-ink: #f2cf86; --bad: #4a2420; --bad-ink: #f5b3a8; --gray: #1c4448;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.5 var(--font); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, p, dl, dd, ul, ol { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
+svg.ic { width: 1.25em; height: 1.25em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.mu { color: var(--muted); } .sm { font-size: 14px; } .row { display: flex; align-items: center; gap: 12px; } .sp { margin-left: auto; }
+
+.app { display: flex; min-height: 100vh; }
+.side { position: fixed; inset: 0 auto 0 0; width: var(--side); background: var(--deep); color: #cfe9e5; padding: 24px 14px; display: flex; flex-direction: column; gap: 4px; z-index: 20; }
+.brand { color: #fff; font-weight: 700; font-size: 20px; line-height: 1.1; padding: 2px 10px 20px; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand .mk { width: 40px; height: 40px; border-radius: 12px; background: var(--mint); color: var(--deep); display: grid; place-items: center; flex: none; }
+.brand .mk svg { width: 24px; height: 24px; }
+.brand small { display: block; font: 300 10px var(--font); letter-spacing: .12em; text-transform: uppercase; color: #9fd0cb; margin-top: 3px; }
+.nv { display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 10px; text-decoration: none; color: #cfe9e5; }
+.nv:hover { background: rgba(255, 255, 255, .08); color: #fff; }
+.nv.on { background: rgba(0, 220, 192, .16); color: #fff; font-weight: 600; }
+.nv svg { width: 22px; height: 22px; }
+.who { margin-top: auto; display: flex; align-items: center; gap: 10px; padding: 12px 10px 0; border-top: 1px solid rgba(255, 255, 255, .12); font-size: 14px; color: #fff; }
+.who small { display: block; color: #9fd0cb; }
+.av { width: 40px; height: 40px; border-radius: 50%; background: var(--mint); color: var(--deep); display: grid; place-items: center; font-weight: 700; font-size: 14px; flex: none; }
+.area { margin-left: var(--side); flex: 1; min-width: 0; padding: 28px 36px 64px; display: flex; flex-direction: column; gap: 22px; }
+.topo { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.topo h1 { font-size: 32px; font-weight: 600; letter-spacing: -.5px; line-height: 1.15; }
+.topo p { color: var(--muted); margin-top: 2px; }
+.acoes { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+section[id] { scroll-margin-top: 20px; }
+.bloco { display: flex; flex-direction: column; gap: 14px; }
+.bloco > header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.eyebrow { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--brand); font-weight: 600; }
+.bloco h2 { font-size: 22px; font-weight: 600; letter-spacing: -.2px; }
+
+.chip { padding: 8px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); font-size: 14px; font-weight: 500; cursor: pointer; }
+.chip[aria-pressed="true"], .chip:hover { background: var(--brand); border-color: var(--brand); color: #fff; }
+.pl { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 99px; background: var(--soft); color: var(--brand); white-space: nowrap; }
+.pl.w { background: var(--warn); color: var(--warn-ink); } .pl.r { background: var(--bad); color: var(--bad-ink); } .pl.g { background: var(--gray); color: var(--muted); }
+.cd { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+.cd h3 { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+.cd > .mu.sm { margin-bottom: 14px; }
+.grid2 { display: grid; gap: 18px; grid-template-columns: 1.4fr 1fr; align-items: start; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.stats.s4 { grid-template-columns: repeat(4, 1fr); }
+.stat { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px 20px; }
+.stat b { display: block; font-size: 30px; font-weight: 600; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 14px; color: var(--muted); }
+.stat em { display: block; font-style: normal; font-size: 12.5px; margin-top: 6px; font-weight: 600; color: var(--brand); }
+.stat em.neg { color: var(--bad-ink); }
+.stat.hl { background: var(--brand); border-color: var(--brand); color: #fff; } .stat.hl span, .stat.hl em { color: #cdeee9; }
+.meta { font-size: 13px; color: var(--muted); }
+
+.tbw { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 16px; }
+table.t { width: 100%; border-collapse: collapse; min-width: 640px; }
+.t th { text-align: left; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: 12px 16px; background: var(--bg); font-weight: 600; white-space: nowrap; }
+.t td { padding: 12px 16px; border-top: 1px solid var(--line); }
+.t td.n { font-weight: 600; }
+.t td.v, .t th.v { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* funil */
+.fn { display: flex; flex-direction: column; gap: 10px; }
+.fn .st { display: grid; grid-template-columns: 170px 1fr; gap: 14px; align-items: center; }
+.fn .lb b { display: block; font-weight: 600; font-size: 15px; line-height: 1.2; }
+.fn .lb small { color: var(--muted); font-size: 12.5px; }
+.fn .tr { background: var(--soft); border-radius: 10px; height: 38px; position: relative; overflow: hidden; }
+.fn .fl { height: 100%; border-radius: 10px; background: linear-gradient(90deg, var(--brand), #19b5ae); min-width: 74px; display: flex; align-items: center; padding: 0 12px; color: #fff; font-weight: 600; font-size: 14px; font-variant-numeric: tabular-nums; transition: width .5s; }
+.fn .fl.hi { background: linear-gradient(90deg, var(--deep), var(--brand)); }
+.fn .pc { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-size: 13px; font-weight: 600; color: var(--brand); }
+
+/* receita */
+.split { display: flex; height: 44px; border-radius: 12px; overflow: hidden; margin: 6px 0 16px; background: var(--gray); }
+.split i { display: block; height: 100%; transition: width .5s; }
+.c1 { background: var(--brand); } .c2 { background: var(--amber); } .c3 { background: var(--deep); }
+.lg { display: flex; flex-direction: column; gap: 12px; }
+.lg .it { display: grid; grid-template-columns: 14px 1fr auto; gap: 10px; align-items: center; }
+.lg .it .dot { width: 14px; height: 14px; border-radius: 4px; }
+.lg .it small { display: block; color: var(--muted); }
+.lg .it b { font-variant-numeric: tabular-nums; text-align: right; display: block; }
+
+/* tendência */
+.bars { display: flex; align-items: flex-end; gap: 4px; height: 190px; padding-top: 8px; }
+.bars div { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 6px; height: 100%; font-size: 11px; color: var(--muted); }
+.bars .pair { display: flex; align-items: flex-end; gap: 2px; width: 100%; flex: 1; justify-content: center; }
+.bars i { flex: 1; max-width: 22px; border-radius: 6px 6px 0 0; display: block; min-height: 3px; }
+.bars i.rv { background: var(--brand); } .bars i.sp { background: #b8dcd8; }
+.key { display: flex; gap: 16px; font-size: 13px; color: var(--muted); margin-top: 12px; }
+.key span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.key .k1::before { background: var(--brand); } .key .k2::before { background: #b8dcd8; }
+.aviso { padding: 12px 16px; border-radius: 12px; background: var(--cream); font-size: 13.5px; }
+.bar-mini { display: inline-block; width: 70px; height: 6px; border-radius: 3px; background: var(--gray); vertical-align: middle; margin-left: 8px; overflow: hidden; }
+.bar-mini i { display: block; height: 100%; background: var(--brand); }
+
+@media (max-width: 1100px) { .stats.s4 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 900px) {
+  .side { inset: auto 0 0 0; width: auto; flex-direction: row; justify-content: space-around; padding: 6px 4px calc(6px + env(safe-area-inset-bottom)); gap: 0; background: var(--card); border-top: 1px solid var(--line); color: var(--muted); }
+  .brand, .who { display: none; }
+  .nv { flex-direction: column; gap: 2px; font-size: 11px; padding: 6px 4px; color: var(--muted); border-radius: 10px; flex: 1; text-align: center; }
+  .nv.on { background: transparent; color: var(--brand); } .nv:hover { background: transparent; color: var(--brand); }
+  .area { margin-left: 0; padding: 20px 16px 96px; }
+  .topo h1 { font-size: 26px; }
+  .stats, .stats.s4 { grid-template-columns: 1fr 1fr; } .grid2 { grid-template-columns: 1fr; }
+  .fn .st { grid-template-columns: 1fr; gap: 4px; }
+  .stat b { font-size: 24px; }
+}
+@media print { .side, .acoes { display: none !important; } .area { margin: 0; padding: 0; } body { background: #fff; } .cd, .stat { break-inside: avoid; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+  
+.side{overflow-y:auto}.nv{font-size:14px;padding:9px 12px;align-items:flex-start}.nv .nn{flex:none;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;font-size:11px;font-weight:600}.nv.on .nn{background:var(--mint);color:var(--deep)}
+.area{max-width:1180px}
+.bloco{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;gap:14px}
+.bloco p{max-width:78ch}.bloco p.aviso{max-width:none}
+h3.sub{font-size:17px;font-weight:600;margin-top:8px;color:var(--deep)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) h3.sub{color:var(--mint)}}
+.t td{vertical-align:top;font-size:15px}.t{min-width:560px}
+ul.ck,ul.ls,ol.ol{display:flex;flex-direction:column;gap:8px}
+ul.ck label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;padding:10px 14px;border:1px solid var(--line);border-radius:12px}
+ul.ck label:hover{background:var(--soft)}
+ul.ck input{appearance:none;width:20px;height:20px;border-radius:6px;border:2px solid var(--brand);flex:none;margin-top:2px;cursor:pointer;display:grid;place-items:center}
+ul.ck input:checked{background:var(--brand)}ul.ck input:checked::after{content:"";width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+ul.ck input:checked+span{color:var(--muted);text-decoration:line-through}
+ul.ls{padding-left:20px;list-style:disc}ol.ol{padding-left:22px;list-style:decimal}
+pre.fluxo{background:var(--deep);color:#d7f5f0;border-radius:14px;padding:18px 20px;overflow-x:auto;font:400 14px/1.5 ui-monospace,Menlo,Consolas,monospace;margin:0}
+code{background:var(--soft);padding:1px 6px;border-radius:6px;font-size:.9em}
+@media(max-width:900px){.side{overflow-x:auto}.nv .nn{display:none}.nv span:last-child{white-space:nowrap}.bloco{padding:18px}}
+</style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 15-14 0 9-5 15-13 15"/><path d="M5 19c3-5 6-8 10-10"/></symbol></svg><div class="app"><aside class="side" aria-label="Seções"><a class="brand" href="#s0"><span class="mk"><svg class="ic"><use href="#i-leaf"/></svg></span><span>Desparasitação<small>Plano de ação</small></span></a><a class="nv on" href="#s0"><span class="nn">0</span><span>A lógica em uma frase</span></a><a class="nv" href="#s1"><span class="nn">1</span><span>Metas por etapa (hipóteses para o 1º ciclo de 30 dias)</span></a><a class="nv" href="#s2"><span class="nn">2</span><span>Visão do cronograma</span></a><a class="nv" href="#s3"><span class="nn">3</span><span>Fase 1 · Fundação e compliance (Semanas 1–2)</span></a><a class="nv" href="#s4"><span class="nn">4</span><span>Fase 2 · Montar o low ticket (Semanas 2–4)</span></a><a class="nv" href="#s5"><span class="nn">5</span><span>Fase 3 · Tráfego e validação (Semanas 4–7)</span></a><a class="nv" href="#s6"><span class="nn">6</span><span>Fase 4 · O Webinar (Semanas 5–8)</span></a><a class="nv" href="#s7"><span class="nn">7</span><span>Fase 5 · Qualificar e vender o Ressurgir (Semanas 8–10)</span></a><a class="nv" href="#s8"><span class="nn">8</span><span>Fase 6 · Otimizar e escalar (Mês 3 em diante)</span></a><a class="nv" href="#s9"><span class="nn">9</span><span>Checklist semana a semana</span></a><a class="nv" href="#s10"><span class="nn">10</span><span>Riscos e como reduzir</span></a><a class="nv" href="#s11"><span class="nn">11</span><span>Próximos passos imediatos (esta semana)</span></a><div class="who"><span class="av" id="pc">0%</span><span>Checklist<small id="pt">0 de 0 itens</small></span></div></aside><main class="area"><div class="topo"><div><h1>Plano de Marketing e Ação — Saúde Integrativa</h1><p>Desparasitação Descomplicada (low ticket) ➔ Kit DI Raízes (upsell) ➔ Webinar ➔ Ressurgir (high ticket)</p></div><div class="acoes"><button class="chip" type="button" onclick="window.print()">Imprimir / PDF</button></div></div><p>Documento operacional. Complementa a <a href="arquitetura_da_estrat_gia_de_marketing_e_funil_de_vendas.md">arquitetura do funil</a>, que define o <i>quê</i>. Este define o <i>o que fazer, em que ordem e como medir</i>.</p>
+<p class="aviso"><b>Premissas e números:</b> preços, taxas e metas abaixo são <b>hipóteses de partida</b> (marcadas como "meta"), não promessas. O primeiro ciclo serve para substituí-las por dados reais. Confirme também com o Lourival/equipe FHT o formato exato do webinar que eles recomendam e ajuste a Fase 4 a ele.</p>
+<section id="s0" class="bloco"><header><span class="eyebrow">Seção 0</span><h2>A lógica em uma frase</h2></header>
+<p>Quem compra o curso de R$ 97 já provou que tem o problema e que paga para resolvê-lo. O curso <b>financia o tráfego</b>, o kit <b>aumenta o ticket</b>, o webinar <b>transforma compradores em conversa de venda</b>, e a venda do Ressurgir (high ticket) é onde está o lucro.</p>
+<pre class="fluxo">Anúncio ➔ LP ➔ Checkout (curso + bump kit) ➔ Upsell ➔ Onboarding (anamnese)
+        ➔ Convite para a AULA/WEBINAR ➔ Aplicação ➔ Conversa de venda ➔ Ressurgir</pre>
+<p><b>Regra de ouro:</b> o high ticket <b>não se vende no anúncio nem no curso</b>. Vende-se no webinar + conversa individual, para quem já comprou e respondeu a anamnese.</p>
+</section>
+<section id="s1" class="bloco"><header><span class="eyebrow">Seção 1</span><h2>Metas por etapa (hipóteses para o 1º ciclo de 30 dias)</h2></header>
+<div class="tbw"><table class="t"><thead><tr><th>Etapa</th><th>Métrica</th><th>Meta inicial</th><th>Como medir</th></tr></thead><tbody><tr><td class="n">Anúncio ➔ LP</td><td>Taxa de conexão (cliques que carregam a LP)</td><td>≥ 75%</td><td>Meta Ads + pixel</td></tr><tr><td class="n">LP ➔ Compra</td><td>Conversão da página</td><td>1,5% a 3%</td><td>Kiwify + pixel</td></tr><tr><td class="n">Checkout</td><td>Take rate do order bump (kit)</td><td>25% a 35%</td><td>Kiwify</td></tr><tr><td class="n">Pós-compra</td><td>Take rate do upsell</td><td>8% a 12%</td><td>Kiwify</td></tr><tr><td class="n">Front-end</td><td>ROAS imediato (curso + kit ÷ ads)</td><td>≥ 1,0x</td><td>Dashboard</td></tr><tr><td class="n">Onboarding</td><td>Resposta à anamnese</td><td>≥ 50% dos compradores</td><td>Formulário</td></tr><tr><td class="n">Webinar</td><td>Inscritos que comparecem ao vivo</td><td>25% a 35%</td><td>Plataforma do webinar</td></tr><tr><td class="n">Webinar ➔ Aplicação</td><td>Presentes que se aplicam</td><td>8% a 15%</td><td>Formulário de aplicação</td></tr><tr><td class="n">Aplicação ➔ Venda</td><td>Conversão da conversa</td><td>20% a 30%</td><td>CRM</td></tr></tbody></table></div>
+<p>Se o ROAS imediato ficar abaixo de 1,0x depois de 2 semanas com volume suficiente (pelo menos 30 vendas), <b>pare e corrija a LP/criativo antes de investir mais.</b> Não escale prejuízo.</p>
+</section>
+<section id="s2" class="bloco"><header><span class="eyebrow">Seção 2</span><h2>Visão do cronograma</h2></header>
+<div class="tbw"><table class="t"><thead><tr><th>Fase</th><th>Quando</th><th>Entrega final</th></tr></thead><tbody><tr><td class="n">1. Fundação e compliance</td><td>Semanas 1–2</td><td>Marca, oferta, textos e regras de comunicação aprovados</td></tr><tr><td class="n">2. Montar o low ticket</td><td>Semanas 2–4</td><td>LP, checkout com bump e upsell, e-mails e área de membros no ar</td></tr><tr><td class="n">3. Tráfego e validação</td><td>Semanas 4–7</td><td>Primeiras vendas, ROAS medido, criativos vencedores</td></tr><tr><td class="n">4. Webinar (ponte para o high ticket)</td><td>Semanas 5–8</td><td>1º webinar realizado</td></tr><tr><td class="n">5. Venda do Ressurgir</td><td>Semanas 8–10</td><td>Primeiras vendas high ticket</td></tr><tr><td class="n">6. Otimizar e escalar</td><td>Mês 3 em diante</td><td>Rotina semanal, webinar perpétuo, mais canais</td></tr></tbody></table></div>
+</section>
+<section id="s3" class="bloco"><header><span class="eyebrow">Seção 3</span><h2>FASE 1 — Fundação e compliance (Semanas 1–2)</h2></header>
+<h3 class="sub">3.1 Compliance (faça primeiro, evita perder conta de anúncio)</h3>
+<p>Saúde é categoria sensível. Meta, Google e conselhos profissionais restringem promessas.</p>
+<ul class="ck"><li><label><input type="checkbox"><span>Definir quem é o <b>responsável técnico</b> (profissional de saúde com registro) e como aparece na comunicação.</span></label></li><li><label><input type="checkbox"><span>Lista de <b>expressões proibidas</b>: "cura", "elimina", "trata", antes/depois, promessas de resultado, diagnóstico por anúncio, qualquer alegação sobre doença específica.</span></label></li><li><label><input type="checkbox"><span>Lista de <b>linguagem segura</b>: "educação em saúde", "hábitos", "método didático", "apoio", "cuidado".</span></label></li><li><label><input type="checkbox"><span>Páginas obrigatórias: Termos de Uso, Política de Privacidade (LGPD, a anamnese coleta dado sensível de saúde), aviso legal ("conteúdo educativo, não substitui avaliação profissional").</span></label></li><li><label><input type="checkbox"><span>Consentimento explícito no formulário de onboarding para uso dos dados e contato por WhatsApp/e-mail.</span></label></li><li><label><input type="checkbox"><span>Revisar com o Lourival o que pode ser dito sobre o kit (produto físico: verificar enquadramento regulatório do que é vendido — suplemento, fitoterápico ou tintura — e o que o rótulo/anúncio pode afirmar).</span></label></li></ul>
+<h3 class="sub">3.2 Oferta</h3>
+<ul class="ck"><li><label><input type="checkbox"><span>Escrever a <b>promessa central</b> em uma frase, sem prometer resultado clínico. Ex.: "Aprenda, passo a passo e com segurança, o método de limpeza intestinal natural, sem depender de ninguém."</span></label></li><li><label><input type="checkbox"><span>Definir <b>preço</b> do curso, do kit e do Ressurgir (e se o Ressurgir terá parcelamento/entrada).</span></label></li><li><label><input type="checkbox"><span>Definir <b>garantia</b> do curso (7 dias é o mínimo legal na Kiwify; decidir se oferece mais).</span></label></li><li><label><input type="checkbox"><span>Escrever a <b>página da oferta do Ressurgir</b> (o que inclui, duração, para quem é e para quem <b>não</b> é).</span></label></li></ul>
+<h3 class="sub">3.3 Público e mensagem</h3>
+<ul class="ck"><li><label><input type="checkbox"><span>Gerar a persona profunda (já existe uma skill para isso) e escolher <b>3 ângulos</b> de mensagem para testar, por exemplo:</span></label></li></ul>
+<ol class="ol"><li>Medo/segurança: "como fazer sem se prejudicar".</li><li>Autonomia: "aprenda uma vez e use para a vida toda".</li><li>Sintomas do dia a dia: inchaço, cansaço, digestão (descrever sensação, nunca doença).</li></ol>
+<ul class="ck"><li><label><input type="checkbox"><span>Coletar 5 a 10 <b>frases reais</b> de pacientes (com autorização) para usar como linguagem de copy.</span></label></li></ul>
+<h3 class="sub">3.4 Infraestrutura (contas e acessos)</h3>
+<ul class="ck"><li><label><input type="checkbox"><span>Kiwify (produto, checkout, bump, upsell, afiliados desligado no início).</span></label></li><li><label><input type="checkbox"><span>Meta Business Manager, página, Instagram, domínio verificado e pixel.</span></label></li><li><label><input type="checkbox"><span>Domínio próprio para as páginas (não depender só de link Kiwify).</span></label></li><li><label><input type="checkbox"><span>Ferramenta de e-mail (ex.: MailerLite, ActiveCampaign) e WhatsApp Business (ideal: API/CRM para automação).</span></label></li><li><label><input type="checkbox"><span>Plataforma de webinar (ver Fase 4).</span></label></li><li><label><input type="checkbox"><span>CRM simples (planilha ou Notion no início) com as colunas: nome, origem, tags, data da compra, kit sim/não, respondeu anamnese, Tier A/B, status da aplicação.</span></label></li></ul>
+</section>
+<section id="s4" class="bloco"><header><span class="eyebrow">Seção 4</span><h2>FASE 2 — Montar o low ticket (Semanas 2–4)</h2></header>
+<h3 class="sub">4.1 Produto (curso)</h3>
+<ul class="ck"><li><label><input type="checkbox"><span>Curso <b>enxuto</b>: o mínimo que entrega a promessa. Sugestão: 5 a 8 aulas curtas + PDF com protocolo e lista de ingredientes + guia "como comprar em farmácia de manipulação".</span></label></li><li><label><input type="checkbox"><span>Mensagem de posicionamento já definida no documento-base: o curso entrega <b>100% do método</b>; o kit é conveniência, não requisito.</span></label></li><li><label><input type="checkbox"><span>Área de membros com a <b>anamnese como primeira tarefa</b> (é daqui que sai a qualificação para o high ticket).</span></label></li></ul>
+<h3 class="sub">4.2 Página de vendas (LP)</h3>
+<p>Estrutura recomendada, na ordem:</p>
+<ol class="ol"><li>Promessa + subtítulo + botão.</li><li>Identificação do problema (sinais do dia a dia).</li><li>O método (3 a 4 pilares) e o que a pessoa recebe.</li><li>Quem é o profissional (autoridade e credenciais).</li><li>Para quem é / para quem não é.</li><li>Depoimentos autorizados (se ainda não houver, não invente: use a história do profissional).</li><li>Garantia.</li><li>FAQ de objeções (segurança, contraindicações, "preciso do kit?").</li><li>Aviso legal + botão final.</li></ol>
+<h3 class="sub">4.3 Checkout, bump e upsell</h3>
+<ul class="ck"><li><label><input type="checkbox"><span><b>Order bump</b> (caixa no checkout): Kit DI Raízes, com frase de conveniência: "Receba os insumos prontos, dosados e padronizados."</span></label></li><li><label><input type="checkbox"><span><b>Upsell 1-click</b> na página de obrigado para quem <b>não</b> pegou o bump: mesma oferta, com variação (ex.: desconto por tempo limitado ou frete combinado).</span></label></li><li><label><input type="checkbox"><span>Logística do kit: estoque, embalagem, prazo, transportadora, regra de frete e política de troca. Defina <b>antes</b> de vender; um kit atrasado destrói a confiança antes do high ticket.</span></label></li><li><label><input type="checkbox"><span>Página de obrigado com: acesso ao curso, <b>primeiro passo (anamnese)</b> e, no futuro, convite para o webinar.</span></label></li></ul>
+<h3 class="sub">4.4 Sequências automáticas (e-mail + WhatsApp)</h3>
+<div class="tbw"><table class="t"><thead><tr><th>Sequência</th><th>Gatilho</th><th>Conteúdo</th></tr></thead><tbody><tr><td class="n">Boas-vindas</td><td>Compra aprovada</td><td>Acesso, como assistir, <b>link da anamnese</b></td></tr><tr><td class="n">Lembrete anamnese</td><td>24h e 72h sem resposta</td><td>Benefício de responder (protocolo mais adequado)</td></tr><tr><td class="n">Carrinho abandonado</td><td>Checkout iniciado sem compra</td><td>3 mensagens em 24h (dúvida comum, prova, última chance)</td></tr><tr><td class="n">Engajamento</td><td>Dias 3, 5, 7</td><td>Dicas das aulas, aumenta conclusão e confiança</td></tr><tr><td class="n">Convite ao webinar</td><td>Anamnese respondida</td><td>Ver Fase 4</td></tr></tbody></table></div>
+<h3 class="sub">4.5 Rastreamento (sem isso você anda às cegas)</h3>
+<ul class="ck"><li><label><input type="checkbox"><span>Pixel Meta + API de Conversões, Google Tag, eventos: ver LP, iniciar checkout, compra, bump, upsell.</span></label></li><li><label><input type="checkbox"><span>Padronizar <b>UTMs</b> em todo link de anúncio, e-mail e WhatsApp.</span></label></li><li><label><input type="checkbox"><span>Planilha/dashboard semanal (o <a href="dashboard.html">dashboard.html</a> já tem o layout, depois se conecta aos dados reais).</span></label></li></ul>
+</section>
+<section id="s5" class="bloco"><header><span class="eyebrow">Seção 5</span><h2>FASE 3 — Tráfego e validação (Semanas 4–7)</h2></header>
+<h3 class="sub">5.1 Estrutura de campanhas (Meta Ads)</h3>
+<ul class="ls"><li><b>Campanha de vendas (conversão: Compra)</b> com 1 conjunto aberto (Brasil, 28–60 anos, sem interesses) e 1 conjunto com interesses de saúde natural.</li><li><b>Remarketing:</b> visitantes da LP e quem iniciou checkout (7 dias).</li><li>Orçamento inicial sugerido: <b>R$ 50 a 100 por dia</b> por 7 a 10 dias antes de julgar. Ajuste ao seu caixa.</li><li>Subir <b>5 a 8 criativos</b> cobrindo os 3 ângulos (vídeo curto com o profissional, depoimento, carrossel educativo, imagem estática).</li><li>Todas as peças passam pela lista de linguagem do item 3.1 <b>antes</b> de subir.</li></ul>
+<h3 class="sub">5.2 Conteúdo orgânico (apoia o tráfego e reduz CAC)</h3>
+<ul class="ck"><li><label><input type="checkbox"><span>3 a 4 posts/reels por semana no Instagram, mostrando a dor do dia a dia, bastidores do método e perguntas frequentes.</span></label></li><li><label><input type="checkbox"><span>Stories diários curtos com a rotina e respostas a dúvidas.</span></label></li><li><label><input type="checkbox"><span>Todo conteúdo termina em um único destino (LP ou lista de espera do webinar).</span></label></li></ul>
+<h3 class="sub">5.3 Rotina semanal de otimização</h3>
+<div class="tbw"><table class="t"><thead><tr><th>Dia</th><th>Ação</th></tr></thead><tbody><tr><td class="n">Seg</td><td>Abrir dashboard: ROAS, CPA, conversão da LP, take rate do bump</td></tr><tr><td class="n">Ter</td><td>Pausar criativos sem resultado, duplicar os vencedores</td></tr><tr><td class="n">Qua</td><td>Testar 1 variável (título da LP <b>ou</b> criativo <b>ou</b> preço do bump), nunca várias juntas</td></tr><tr><td class="n">Qui</td><td>Ler mensagens/dúvidas dos alunos e ajustar FAQ e copy</td></tr><tr><td class="n">Sex</td><td>Decidir orçamento da semana seguinte</td></tr></tbody></table></div>
+<h3 class="sub">5.4 Critérios de decisão</h3>
+<ul class="ls"><li><b>Escalar</b> (aumentar 20% a cada 2–3 dias): ROAS imediato ≥ 1,0x estável por 5+ dias.</li><li><b>Segurar</b>: ROAS entre 0,7x e 1,0x com tendência de melhora.</li><li><b>Parar e corrigir</b>: ROAS &lt; 0,7x após 30 vendas. Revisar, na ordem: criativo ➔ promessa da LP ➔ preço ➔ checkout.</li></ul>
+</section>
+<section id="s6" class="bloco"><header><span class="eyebrow">Seção 6</span><h2>FASE 4 — O Webinar (Semanas 5–8)</h2></header>
+<p>Este é o motor da venda do high ticket. Os compradores do curso são convidados para uma <b>aula ao vivo</b> que ensina algo valioso e, no final, apresenta o Ressurgir como próximo passo.</p>
+<p class="aviso">Alinhar com o Lourival o roteiro exato recomendado pela equipe FHT (Erico Rocha). Abaixo está uma estrutura clássica de webinar de venda; adapte à orientação deles.</p>
+<h3 class="sub">6.1 Escolha do formato do 1º webinar</h3>
+<div class="tbw"><table class="t"><thead><tr><th>Opção</th><th>Quando usar</th></tr></thead><tbody><tr><td class="n"><b>A. Webinar para compradores do curso</b> (recomendado para começar)</td><td>Você já tem alunos qualificados; público quente, conversão maior, risco menor</td></tr><tr><td class="n"><b>B. Webinar para tráfego frio</b></td><td>Só depois que A funcionar; custo maior, exige mais volume</td></tr></tbody></table></div>
+<p><b>Comece pela A.</b> Você precisa de pelo menos 100 a 200 alunos que responderam a anamnese para o primeiro evento ter público.</p>
+<h3 class="sub">6.2 Preparação (2 a 3 semanas antes)</h3>
+<ul class="ck"><li><label><input type="checkbox"><span><b>Tema único e específico</b>, com promessa clara, por exemplo: "Os 3 erros que fazem a limpeza intestinal não funcionar (e o que fazer depois da desparasitação)". Evitar prometer cura.</span></label></li><li><label><input type="checkbox"><span><b>Plataforma</b>: ver comparativo no item 6.7.</span></label></li><li><label><input type="checkbox"><span><b>Página de inscrição</b> simples: tema, data/hora, quem apresenta, botão (2 campos: nome e WhatsApp).</span></label></li><li><label><input type="checkbox"><span><b>Data e horário</b>: dia útil à noite (ex.: terça ou quarta, 20h) costuma funcionar. Teste com sua base.</span></label></li><li><label><input type="checkbox"><span><b>Formulário de aplicação</b> (detalhado no item 7.1).</span></label></li><li><label><input type="checkbox"><span><b>Página da oferta Ressurgir</b> pronta e testada (item 3.2).</span></label></li><li><label><input type="checkbox"><span><b>Equipe do dia</b>: apresentador, quem responde o chat, quem cuida da parte técnica, quem atende no WhatsApp pós-evento.</span></label></li></ul>
+<h3 class="sub">6.3 Convite e aquecimento (7 dias antes)</h3>
+<div class="tbw"><table class="t"><thead><tr><th>Quando</th><th>Canal</th><th>Mensagem</th></tr></thead><tbody><tr><td class="n">D-7</td><td>E-mail + WhatsApp</td><td>Convite: tema, data, benefício, link</td></tr><tr><td class="n">D-5</td><td>Instagram (stories/post)</td><td>Conteúdo de aquecimento sobre o tema</td></tr><tr><td class="n">D-3</td><td>E-mail + WhatsApp</td><td>Lembrete + prova (pergunta que os alunos mais fazem)</td></tr><tr><td class="n">D-1</td><td>WhatsApp</td><td>"Amanhã às 20h", pedir para confirmar presença</td></tr><tr><td class="n">Dia (3h antes)</td><td>WhatsApp</td><td>Lembrete com link</td></tr><tr><td class="n">Dia (15 min antes)</td><td>WhatsApp + e-mail</td><td>"Estamos entrando"</td></tr></tbody></table></div>
+<h3 class="sub">6.4 Roteiro do webinar (duração total sugerida: 75 a 90 min)</h3>
+<div class="tbw"><table class="t"><thead><tr><th>Bloco</th><th>Tempo</th><th>Conteúdo</th></tr></thead><tbody><tr><td class="n">1. Abertura e gancho</td><td>5 min</td><td>Quem é você, o que vão aprender, por que ficar até o fim</td></tr><tr><td class="n">2. História/credencial</td><td>8 min</td><td>Por que você faz isso, o que viu na clínica (verdadeiro, sem exagero)</td></tr><tr><td class="n">3. Conteúdo valioso (3 pilares)</td><td>30 min</td><td>Ensine de verdade. Cada pilar termina com uma ação prática. É o que cria confiança</td></tr><tr><td class="n">4. Ponte</td><td>5 min</td><td>"Muita gente aplica isso e ainda sente que falta algo. É aí que um acompanhamento individual muda o jogo"</td></tr><tr><td class="n">5. Apresentação do Ressurgir</td><td>15 min</td><td>O que é, como funciona, o que está incluso, para quem é e para quem não é</td></tr><tr><td class="n">6. Quebra de objeções</td><td>8 min</td><td>Tempo, dinheiro, "já tentei outras coisas", segurança</td></tr><tr><td class="n">7. Chamada para ação</td><td>5 min</td><td><b>Aplicar-se</b> no link; explicar o próximo passo (conversa individual)</td></tr><tr><td class="n">8. Perguntas e respostas</td><td>15 min</td><td>Responder ao vivo; é aqui que muita venda acontece</td></tr></tbody></table></div>
+<p><b>Pontos de atenção:</b></p>
+<ul class="ls"><li>A parte de ensino precisa ser <b>boa</b>. Se for só propaganda, a presença e a conversão despencam.</li><li>Mostre o Ressurgir como <b>continuidade natural</b>, nunca como solução milagrosa.</li><li>Reforce o aviso legal (conteúdo educativo, avaliação individual é feita na conversa).</li><li>Escassez só se for real (vagas limitadas por turma, data de fechamento).</li></ul>
+<h3 class="sub">6.5 Modelo de venda: aplicação + conversa individual</h3>
+<p>Para high ticket em saúde, <b>não coloque botão de compra direto</b> no webinar. Faça assim:</p>
+<ol class="ol"><li>Presentes clicam em <b>"Quero aplicar para o Ressurgir"</b>.</li><li>Preenchem formulário (item 7.1).</li><li>Quem for <b>qualificado</b> recebe um link para <b>agendar conversa</b> com você ou com a pessoa de vendas.</li><li>A conversa avalia o caso, apresenta o programa e fecha (ou não).</li></ol>
+<p>Isso aumenta a conversão, protege a ética (você avalia se é para a pessoa) e reduz reembolso.</p>
+<h3 class="sub">6.6 Depois do webinar (a venda real acontece aqui)</h3>
+<div class="tbw"><table class="t"><thead><tr><th>Quando</th><th>Ação</th></tr></thead><tbody><tr><td class="n">Logo após</td><td>WhatsApp para quem aplicou: "Recebi sua aplicação, vamos agendar"</td></tr><tr><td class="n">+1h</td><td>E-mail para todos os presentes: replay + link de aplicação</td></tr><tr><td class="n">D+1</td><td>Mensagem para quem se inscreveu e <b>não compareceu</b>: replay válido por 48h</td></tr><tr><td class="n">D+2</td><td>Prova social (resultado de aluno, com autorização) + link de aplicação</td></tr><tr><td class="n">D+3</td><td>Resposta às 3 dúvidas mais comuns do chat</td></tr><tr><td class="n">D+4</td><td>Aviso final: aplicações encerram hoje (data real)</td></tr><tr><td class="n">D+5</td><td>Encerrar e retirar o replay</td></tr></tbody></table></div>
+<p>Quem <b>não aplicou</b> volta para o fluxo de conteúdo e entra no próximo webinar.</p>
+<h3 class="sub">6.7 Plataforma de webinar</h3>
+<div class="tbw"><table class="t"><thead><tr><th>Critério</th><th>O que olhar</th></tr></thead><tbody><tr><td class="n">Facilidade</td><td>Link único, sem instalar nada para o aluno</td></tr><tr><td class="n">Confiabilidade</td><td>Suporta a audiência prevista sem cair</td></tr><tr><td class="n">Chat/CTA</td><td>Botão de oferta ao vivo e moderação do chat</td></tr><tr><td class="n">Replay</td><td>Gravação e página de replay</td></tr><tr><td class="n">Integração</td><td>Webhook/Zapier com CRM e WhatsApp</td></tr><tr><td class="n">Custo</td><td>Compatível com o caixa do início</td></tr></tbody></table></div>
+<p>Escolha com a equipe do Lourival; use a mesma que eles recomendam para ter suporte.</p>
+<h3 class="sub">6.8 Pós-evento: o que medir</h3>
+<ul class="ls"><li>Inscritos ➔ presentes (taxa de comparecimento)</li><li>Tempo médio de permanência e pico de audiência</li><li>Presentes ➔ aplicações</li><li>Aplicações ➔ conversas realizadas ➔ vendas</li><li>Principais dúvidas do chat (alimentam os próximos criativos e a FAQ)</li></ul>
+</section>
+<section id="s7" class="bloco"><header><span class="eyebrow">Seção 7</span><h2>FASE 5 — Qualificar e vender o Ressurgir (Semanas 8–10)</h2></header>
+<h3 class="sub">7.1 Formulário de aplicação</h3>
+<p>Perguntas sugeridas:</p>
+<ol class="ol"><li>Nome, WhatsApp, e-mail.</li><li>Há quanto tempo convive com o problema principal?</li><li>O que já tentou antes?</li><li>O que mais gostaria de mudar nos próximos 90 dias?</li><li>Está disposto a seguir um acompanhamento (consultas, ajustes)?</li><li>Faixa de investimento que considera viável para cuidar da sua saúde (opções de múltipla escolha).</li><li>Consentimento LGPD para tratamento dos dados.</li></ol>
+<p><b>Critérios de qualificação (Tier A/B/C):</b></p>
+<ul class="ls"><li><b>Tier A:</b> problema claro, já tentou outras coisas, disposto a seguir, investimento compatível ➔ agendar conversa.</li><li><b>Tier B:</b> interesse sem urgência ou sem fit financeiro hoje ➔ nutrir com conteúdo e próximo webinar.</li><li><b>Tier C:</b> quadro que exige encaminhamento médico/outra especialidade ➔ <b>orientar corretamente e não vender</b>. Isto protege o paciente e a clínica.</li></ul>
+<h3 class="sub">7.2 Roteiro da conversa de venda (30 a 45 min)</h3>
+<div class="tbw"><table class="t"><thead><tr><th>Etapa</th><th>Objetivo</th></tr></thead><tbody><tr><td class="n">1. Rapport</td><td>Criar conexão, explicar como será a conversa</td></tr><tr><td class="n">2. Diagnóstico</td><td>Ouvir o histórico, sintomas, o que já tentou, impacto na rotina</td></tr><tr><td class="n">3. Visão de futuro</td><td>"Como seria sua vida se isso estivesse resolvido?" (sem prometer resultado)</td></tr><tr><td class="n">4. Avaliação de adequação</td><td>Dizer honestamente se o Ressurgir faz sentido, ou se deve procurar outro caminho</td></tr><tr><td class="n">5. Apresentação</td><td>Como o programa funciona na prática, ligado ao que a pessoa contou</td></tr><tr><td class="n">6. Investimento</td><td>Preço, condições, o que está incluso</td></tr><tr><td class="n">7. Objeções</td><td>Tempo, dinheiro, medo, cônjuge: ouvir, validar, responder com fatos</td></tr><tr><td class="n">8. Fechamento</td><td>Link de pagamento, próximos passos, data de início</td></tr></tbody></table></div>
+<p><b>Objeções comuns e respostas-base:</b></p>
+<ul class="ls"><li><i>"Está caro"</i> ➔ comparar com o custo de seguir sem solução (consultas, exames, produtos soltos) e oferecer parcelamento.</li><li><i>"Preciso pensar"</i> ➔ perguntar o que exatamente precisa avaliar e marcar retorno em 24–48h.</li><li><i>"Já tentei de tudo"</i> ➔ validar e explicar o diferencial do acompanhamento individual.</li><li><i>"Não tenho tempo"</i> ➔ mostrar a rotina real do programa.</li></ul>
+<h3 class="sub">7.3 Pós-venda do Ressurgir</h3>
+<ul class="ck"><li><label><input type="checkbox"><span>Onboarding do cliente (boas-vindas, contrato, cronograma, grupo/canal).</span></label></li><li><label><input type="checkbox"><span>Primeiro contato em até 24h.</span></label></li><li><label><input type="checkbox"><span>Pedir depoimento e <b>autorização escrita</b> de uso após resultados reais.</span></label></li><li><label><input type="checkbox"><span>Indicação: bônus para quem indicar alguém (opcional).</span></label></li></ul>
+<h3 class="sub">7.4 Dica de caixa</h3>
+<p>Se o Ressurgir tiver ticket alto, defina <b>entrada + parcelas</b> ou cartão em até 12x. Eleva a conversão sem baixar o preço.</p>
+</section>
+<section id="s8" class="bloco"><header><span class="eyebrow">Seção 8</span><h2>FASE 6 — Otimizar e escalar (Mês 3 em diante)</h2></header>
+<ul class="ck"><li><label><input type="checkbox"><span><b>Webinar quinzenal/mensal</b> com a mesma estrutura, melhorando a cada edição.</span></label></li><li><label><input type="checkbox"><span><b>Webinar perpétuo (gravado)</b>, com horários recorrentes, após 2 ou 3 edições ao vivo bem-sucedidas.</span></label></li><li><label><input type="checkbox"><span><b>Remarketing</b> para quem assistiu ao webinar e não aplicou.</span></label></li><li><label><input type="checkbox"><span><b>Lookalike</b> de compradores do Ressurgir e dos alunos Tier A.</span></label></li><li><label><input type="checkbox"><span><b>Google Ads</b> (pesquisa) para intenção alta: "como desparasitar", "desparasitação natural".</span></label></li><li><label><input type="checkbox"><span><b>Afiliados/parcerias</b> com profissionais de saúde integrativa (somente depois que a operação estiver estável).</span></label></li><li><label><input type="checkbox"><span><b>Turmas do Ressurgir</b> com data de início para criar urgência real.</span></label></li><li><label><input type="checkbox"><span>Comparar o <b>LTV</b> (curso + kit + Ressurgir) com o CAC e definir o teto de investimento em anúncios.</span></label></li></ul>
+</section>
+<section id="s9" class="bloco"><header><span class="eyebrow">Seção 9</span><h2>Checklist semana a semana</h2></header>
+<div class="tbw"><table class="t"><thead><tr><th>Semana</th><th>Entregas</th></tr></thead><tbody><tr><td class="n">1</td><td>Compliance, oferta, preços, contas e acessos</td></tr><tr><td class="n">2</td><td>Persona, ângulos, texto da LP, gravação do curso (início)</td></tr><tr><td class="n">3</td><td>Curso e área de membros, anamnese, LP no ar, checkout + bump + upsell</td></tr><tr><td class="n">4</td><td>Sequências de e-mail/WhatsApp, rastreamento testado, criativos prontos</td></tr><tr><td class="n">5</td><td>Campanhas no ar, 1ª leitura de dados, página de inscrição do webinar</td></tr><tr><td class="n">6</td><td>Otimizações, roteiro do webinar, formulário de aplicação, página Ressurgir</td></tr><tr><td class="n">7</td><td>Convite ao webinar (D-7), aquecimento, ensaio técnico</td></tr><tr><td class="n">8</td><td><b>Webinar ao vivo</b>, follow-up (D+0 a D+5)</td></tr><tr><td class="n">9</td><td>Conversas de venda, ajustes de oferta</td></tr><tr><td class="n">10</td><td>Primeiras vendas Ressurgir, onboarding, revisão geral e plano do mês seguinte</td></tr></tbody></table></div>
+</section>
+<section id="s10" class="bloco"><header><span class="eyebrow">Seção 10</span><h2>Riscos e como reduzir</h2></header>
+<div class="tbw"><table class="t"><thead><tr><th>Risco</th><th>Mitigação</th></tr></thead><tbody><tr><td class="n">Conta de anúncios bloqueada por política de saúde</td><td>Linguagem segura, sem antes/depois, domínio verificado, conta reserva</td></tr><tr><td class="n">Poucos alunos para o webinar</td><td>Começar pelo webinar para compradores; subir tráfego antes; convidar também a base de pacientes</td></tr><tr><td class="n">ROAS abaixo de 1x</td><td>Corrigir LP/criativos antes de escalar; preço do bump como alavanca</td></tr><tr><td class="n">Atraso/erro no kit físico</td><td>Estoque e logística resolvidos antes de vender; comunicação ativa</td></tr><tr><td class="n">Conversas de venda sem conversão</td><td>Gravar (com consentimento), revisar roteiro, treinar objeções</td></tr><tr><td class="n">Promessas exageradas</td><td>Revisão jurídica/profissional antes de publicar qualquer peça</td></tr><tr><td class="n">Dados sensíveis da anamnese</td><td>LGPD: consentimento, acesso restrito, armazenamento seguro</td></tr></tbody></table></div>
+</section>
+<section id="s11" class="bloco"><header><span class="eyebrow">Seção 11</span><h2>Próximos passos imediatos (esta semana)</h2></header>
+<ol class="ol"><li>Confirmar com o Lourival: formato do webinar, plataforma recomendada e modelo de aplicação/venda.</li><li>Fechar <b>preços</b> e <b>promessa central</b>.</li><li>Definir as <b>regras de comunicação</b> (compliance) e o responsável técnico.</li><li>Abrir/validar as contas (Kiwify, Meta, e-mail, domínio).</li><li>Começar a gravar o curso enxuto.</li></ol>
+<p>Com estes cinco itens fechados, a Fase 2 pode começar sem retrabalho.</p>
+</section></main></div><script>(function(){var cks=[].slice.call(document.querySelectorAll('ul.ck input')),K='plano-dd-ck',st={};try{st=JSON.parse(localStorage.getItem(K)||'{}')}catch(e){}
+function up(){var n=cks.filter(function(c){return c.checked}).length;document.getElementById('pc').textContent=Math.round(n/cks.length*100)+'%';document.getElementById('pt').textContent=n+' de '+cks.length+' itens'}
+cks.forEach(function(c,i){c.checked=!!st[i];c.addEventListener('change',function(){st[i]=c.checked;try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}up()})});up();
+var links=[].slice.call(document.querySelectorAll('.nv'));var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-30% 0px -60% 0px'});document.querySelectorAll('section[id]').forEach(function(s){io.observe(s)})})();</script></body></html>

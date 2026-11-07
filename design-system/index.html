@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Design System | Desparasitação Descomplicada</title>
+<link rel="icon" type="image/png" href="../landing/favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+<style>
+.ds-sec{padding:56px 0;border-bottom:1px solid var(--line)}
+.ds-sec>.wrap>h2{font-size:30px;font-weight:600;margin:0 0 6px}
+.ds-sec>.wrap>p.d{color:var(--text-soft);margin:0 0 26px;font-size:16px}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.sw div{border-radius:var(--r-sm);overflow:hidden;border:1px solid var(--line);font-size:13px;background:#fff}
+.sw i{display:block;height:74px}.sw span{display:block;padding:8px 10px;line-height:1.3}.sw code{display:block;color:#555}
+.demo{border:1px dashed var(--line);border-radius:var(--r-md);padding:26px;background:#fafafa}
+.demo.dark{background:#2b3f50}
+.row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.type div{display:flex;gap:24px;align-items:baseline;border-bottom:1px solid var(--line);padding:12px 0}
+.type small{flex:0 0 150px;color:#555;font-size:13px}
+pre{background:#14212b;color:#d7e3ea;padding:16px;border-radius:12px;overflow:auto;font-size:13px;line-height:1.5;margin:14px 0 0}
+@media(max-width:900px){.grid3{grid-template-columns:1fr}.type div{flex-direction:column;gap:4px}}
+</style>
+</head>
+<body class="ds-body">
+
+<header class="nav"><div class="wrap">
+  <img src="../landing/logo.svg" alt="Desparasitação Descomplicada">
+  <span style="margin-left:auto;font-weight:600">Design System v1.0</span>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">Guia de marca e interface</span>
+  <h1 class="h-display">Um sistema simples para <b>comunicar com clareza</b></h1>
+  <p class="lead" style="color:#fff;margin:18px auto 0;text-align:center">Cores, tipografia e componentes usados na landing page. Use <code>tokens.css</code> e <code>components.css</code> em qualquer nova página.</p>
+</div></section>
+
+<section class="ds-sec"><div class="wrap">
+  <h2>1. Cores</h2><p class="d">Laranja é a cor de destaque em fundo claro. Texto normal sempre preto. Em fundo laranja, texto branco e destaque verde-limão.</p>
+  <div class="sw">
+    <div><i style="background:var(--orange-300)"></i><span>Laranja 300<code>#fbb9a1</code></span></div>
+    <div><i style="background:var(--orange-400)"></i><span>Laranja 400<code>#f49575</code></span></div>
+    <div><i style="background:var(--orange-500)"></i><span>Laranja 500<code>#ee8056</code></span></div>
+    <div><i style="background:var(--orange-600)"></i><span>Destaque (accent)<code>#e0600a</code></span></div>
+    <div><i style="background:var(--orange-700)"></i><span>Accent hover<code>#c4520a</code></span></div>
+    <div><i style="background:var(--coral-700)"></i><span>Coral 700<code>#d9532c</code></span></div>
+    <div><i style="background:var(--lime-200)"></i><span>Verde-limão<code>#e6f7b8</code></span></div>
+    <div><i style="background:var(--slate-800)"></i><span>Rodapé<code>#2b3f50</code></span></div>
+    <div><i style="background:var(--deep)"></i><span>Verde-petróleo<code>#00454d</code></span></div>
+    <div><i style="background:var(--ink)"></i><span>Texto<code>#111</code></span></div>
+    <div><i style="background:var(--cream)"></i><span>Creme<code>#fdeee3</code></span></div>
+    <div><i style="background:var(--soft)"></i><span>Suave<code>#f1f8f7</code></span></div>
+  </div>
+  <h3 style="margin:28px 0 12px">Gradientes</h3>
+  <div class="grid3">
+    <div class="demo" style="background:var(--grad-hero);height:110px;color:#fff;border:0">--grad-hero</div>
+    <div class="demo" style="background:var(--grad-strip);height:110px;color:#fff;border:0">--grad-strip</div>
+    <div class="demo" style="background:linear-gradient(160deg,var(--deep),#006b6b);height:110px;color:#fff;border:0">Seção escura</div>
+  </div>
+</div></section>
+
+<section class="ds-sec"><div class="wrap">
+  <h2>2. Tipografia</h2><p class="d">Família <b>Outfit</b>. Títulos leves (300) com a palavra-chave em negrito (700) na cor de destaque.</p>
+  <div class="type">
+    <div><small>Display 300 / 700</small><span class="h-display">Cuidado <b>organizado</b></span></div>
+    <div><small>H2</small><span class="h2">Título de seção com <b>destaque</b></span></div>
+    <div><small>H3 600</small><span style="font-size:19px;font-weight:600">Título de card</span></div>
+    <div><small>Lead 300 / 20px</small><span class="lead">Texto de apoio abaixo dos títulos.</span></div>
+    <div><small>Corpo 400 / 18px</small><span>Texto corrido em preto, com boa leitura.</span></div>
+    <div><small>Eyebrow 700 / 12px</small><span class="eyebrow" style="margin:0">Texto acima do título</span></div>
+  </div>
+</div></section>
+
+<section class="ds-sec"><div class="wrap">
+  <h2>3. Botões</h2><p class="d">Em fundo claro: laranja. Em fundo laranja: branco com texto coral.</p>
+  <div class="demo row"><a class="btn" href="#">Quero começar o método</a><a class="btn btn--outline" href="#">Ver o que está incluído</a><a class="btn btn--sm" href="#">Comprar</a></div>
+  <div class="demo row" style="background:var(--grad-hero);margin-top:14px;border:0"><a class="btn btn--white" href="#">Quero conhecer o método</a></div>
+<pre>&lt;a class="btn"&gt;Primário&lt;/a&gt;  &lt;a class="btn btn--outline"&gt;Secundário&lt;/a&gt;
+&lt;a class="btn btn--white"&gt;Sobre laranja&lt;/a&gt;  &lt;a class="btn btn--sm"&gt;Pequeno&lt;/a&gt;</pre>
+</div></section>
+
+<section class="ds-sec"><div class="wrap">
+  <h2>4. Logo</h2><p class="d">Versão branca sobre laranja ou azul-petróleo. Ícone isolado para favicon, marca d'água e rodapé.</p>
+  <div class="row">
+    <div class="demo" style="background:var(--grad-hero);border:0"><img src="../landing/logo.svg" alt="Logo" style="height:62px"></div>
+    <div class="demo" style="background:var(--grad-hero);border:0"><img src="../landing/icone.svg" alt="Ícone" style="height:62px"></div>
+    <img src="../landing/favicon.png" alt="Favicon" style="height:62px;border-radius:12px">
+  </div>
+</div></section>
+
+<section class="ds-sec"><div class="wrap">
+  <h2>5. Faixa de números e chips</h2><p class="d">Prova rápida logo abaixo do hero.</p>
+  <div class="strip" style="border-radius:var(--r-md)"><div class="wrap">
+    <div><b>30</b><span>dias de jornada organizada</span></div><div><b>9</b><span>materiais incluídos</span></div>
+    <div><b>20</b><span>anos de experiência clínica</span></div><div><b>0</b><span>promessa de cura</span></div></div></div>
+  <div class="chips" style="margin-top:22px"><span class="chip">Inchaço</span><span class="chip">Gases</span><span class="chip">Cansaço</span></div>
+</div></section>
+
+<section class="ds-sec"><div class="wrap">
+  <h2>6. Cards</h2><p class="d">Módulo (com imagem e lista de aulas), item de material (com ícone) e card simples.</p>
+  <div class="grid3">
+    <article class="card card--module"><img class="mimg" src="../landing/img/modulo-2.png" alt=""><div class="n">2</div><h3>Cansaço, intestino e parasitas</h3>
+      <ul class="lesson-list"><li><b>Aula 03</b> Os sinais que o corpo dá</li><li><b>Aula 04</b> Como a gente se infecta?</li></ul></article>
+    <div class="item"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></i><div><b>Protocolo de 30 dias</b><small>Passo a passo organizado.</small></div></div>
+    <div class="card"><h3>Será que é seguro para mim?</h3><p>Segurança vem primeiro: o treinamento explica quem precisa de avaliação antes.</p></div>
+  </div>
+<pre>&lt;article class="card card--module"&gt;&lt;img class="mimg"&gt;&lt;div class="n"&gt;1&lt;/div&gt;&lt;h3&gt;…&lt;/h3&gt;&lt;ul class="lesson-list"&gt;…&lt;/ul&gt;&lt;/article&gt;
+&lt;div class="item"&gt;&lt;i&gt;&lt;svg/&gt;&lt;/i&gt;&lt;div&gt;&lt;b&gt;Título&lt;/b&gt;&lt;small&gt;Descrição&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;</pre>
+</div></section>
+
+<section class="ds-sec"><div class="wrap">
+  <h2>7. Carrossel horizontal</h2><p class="d">Container <code>.hs</code>: rolagem horizontal com encaixe. A landing adiciona botões ‹ › por JavaScript.</p>
+  <div class="hs"><div class="card"><h3>Card 1</h3><p>Arraste para o lado.</p></div><div class="card"><h3>Card 2</h3><p>Encaixa no início do card.</p></div><div class="card"><h3>Card 3</h3><p>Funciona no celular e no computador.</p></div><div class="card"><h3>Card 4</h3><p>Sem rolagem horizontal da página.</p></div></div>
+</div></section>
+
+<section class="ds-sec"><div class="wrap">
+  <h2>8. Garantia e oferta</h2>
+  <div class="row" style="align-items:flex-start;gap:30px">
+    <div class="seal"><div><b style="font-size:40px;display:block">7</b>dias</div></div>
+    <div class="demo" style="background:var(--deep)"><div class="offer"><h3 style="margin:0">Desparasitação Descomplicada</h3><div class="price"><small>Investimento</small><br><b><span style="font-size:24px">R$</span>97</b></div><a class="btn" style="margin-top:16px" href="#">Quero começar</a></div></div>
+  </div>
+</div></section>
+
+<section class="ds-sec"><div class="wrap">
+  <h2>9. Animações</h2><p class="d">Seções entram com <code>.reveal</code> (fade + subida). Filhos com <code>data-i</code> aparecem em sequência (90 ms entre cada). Respeita <code>prefers-reduced-motion</code>.</p>
+</div></section>
+
+<footer class="footer"><div class="wrap">
+  <img src="../landing/icone.svg" alt="" style="height:46px;margin:0 auto 14px"><img src="../landing/logo-texto.svg" alt="Desparasitação Descomplicada" style="height:64px;margin:0 auto 26px">
+  <p style="max-width:720px;margin:0 auto">Conteúdo de caráter <b>educativo</b>. Não substitui diagnóstico, prescrição ou acompanhamento individual por profissional de saúde.</p>
+  <nav><a href="#">Termos de uso</a><a href="#">Política de privacidade</a><a href="#">Contato</a></nav>
+  <small style="color:#93a4b0">© 2026 Desparasitação Descomplicada. Todos os direitos reservados.</small>
+</div></footer>
+</body>
+</html>

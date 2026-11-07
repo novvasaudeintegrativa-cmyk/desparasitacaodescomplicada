@@ -1,0 +1,5 @@
+Backup das ilustracoes vetoriais (estilo flat coral/creme) geradas com o Gemini.
+Foram substituidas na landing pelas versoes em foto (img/*-foto.webp), mas ficam guardadas para uso futuro.
+card-1..9.webp  -> cards de "O que voce recebe"
+modulo-1..3.png -> cards dos 3 modulos do metodo
+Para voltar a usar uma ilustracao: copie o arquivo para landing/img/ e troque o src no index.html.
