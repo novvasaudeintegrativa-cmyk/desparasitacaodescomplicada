@@ -1,8 +1,11 @@
 # conteudo interno que nao faz parte do site publico
 *.md
-Imgs
-backup_imgs
 lancamento-semente
 marketing
-img/luis-ipad-original.png
-img/kiwify.png
+imgs/backup-vetores
+imgs/instagram
+imgs/luis-manoel/Luis Manoel.png
+imgs/luis-manoel/luis-ipad-original.png
+imgs/luis-manoel/luis.png
+imgs/pagamento/kiwify.png
+imgs/pagamento/kiwify-icone.svg

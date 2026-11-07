@@ -3,8 +3,8 @@
 .env.*
 
 # intermediarios de geracao de imagem
-img/luis-ipad-raw-*
-img/recepcao-gemini-*
+imgs/**/luis-ipad-raw-*
+imgs/**/recepcao-gemini-*
 _t.html
 
 # sistema
