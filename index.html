@@ -346,6 +346,10 @@ section.alt>.wrap>.eyebrow:first-child{}
 .olegend .lg-ok{justify-content:center;padding-right:30px}
 .olegend .lg-ko{justify-content:center;padding-left:60px}
 @media(max-width:1000px){.olegend{grid-template-columns:1fr;gap:10px}.olegend span{white-space:normal;padding:0!important}}
+/* 3 prints centralizados */
+.tprints{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:860px;margin:10px auto 0;padding:0}
+.tprints>.tprint{flex:initial}
+@media(max-width:700px){.tprints{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:12px;max-width:none}.tprints::-webkit-scrollbar{display:none}.tprints>.tprint{flex:0 0 72%;scroll-snap-align:center}}
 /* whatsapp flutuante */
 .wpp{position:fixed;right:22px;bottom:24px;z-index:70;width:62px;height:62px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 26px rgba(18,140,70,.45);text-decoration:none;transition:transform .2s,box-shadow .2s}
 .wpp:hover{transform:scale(1.08);box-shadow:0 14px 34px rgba(18,140,70,.6)}
@@ -635,12 +639,10 @@ html,body{overflow-x:clip}
 
   <h3 class="tsub">Conversas reais no WhatsApp</h3>
   <!-- prints: salve as imagens em imgs/depoimentos/print-1.jpg, print-2.jpg ... e oculte telefone e sobrenome antes -->
-  <div class="tprints hs" data-hs>
+  <div class="tprints">
     <div class="tprint"><img src="imgs/depoimentos/print-1.jpg" alt="Print de conversa de WhatsApp com depoimento" loading="lazy" onerror="this.parentNode.classList.add('vazio');this.remove()"><span class="tvazio">Print de conversa 1<small>imgs/depoimentos/print-1.jpg</small></span></div>
     <div class="tprint"><img src="imgs/depoimentos/print-2.jpg" alt="Print de conversa de WhatsApp com depoimento" loading="lazy" onerror="this.parentNode.classList.add('vazio');this.remove()"><span class="tvazio">Print de conversa 2<small>imgs/depoimentos/print-2.jpg</small></span></div>
     <div class="tprint"><img src="imgs/depoimentos/print-3.jpg" alt="Print de conversa de WhatsApp com depoimento" loading="lazy" onerror="this.parentNode.classList.add('vazio');this.remove()"><span class="tvazio">Print de conversa 3<small>imgs/depoimentos/print-3.jpg</small></span></div>
-    <div class="tprint"><img src="imgs/depoimentos/print-4.jpg" alt="Print de conversa de WhatsApp com depoimento" loading="lazy" onerror="this.parentNode.classList.add('vazio');this.remove()"><span class="tvazio">Print de conversa 4<small>imgs/depoimentos/print-4.jpg</small></span></div>
-    <div class="tprint"><img src="imgs/depoimentos/print-5.jpg" alt="Print de conversa de WhatsApp com depoimento" loading="lazy" onerror="this.parentNode.classList.add('vazio');this.remove()"><span class="tvazio">Print de conversa 5<small>imgs/depoimentos/print-5.jpg</small></span></div>
   </div>
   <p class="note">Relatos compartilhados com autorização. Dados pessoais foram ocultados. Resultados variam de pessoa para pessoa e não substituem avaliação profissional.</p>
 </div></section>
