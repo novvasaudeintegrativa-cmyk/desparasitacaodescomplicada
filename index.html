@@ -329,6 +329,14 @@ h2 b,h1 b{font-weight:700;color:var(--brand)}
 /* cabecalho do infografico centralizado */
 .orbit,.olegend{text-align:center}
 section.alt>.wrap>.eyebrow:first-child{}
+/* pagamento: abaixo do card */
+.paywith{border-top:0!important;margin:26px auto 0;padding-top:0!important;justify-content:center;color:var(--muted)!important;font-size:15px}
+.paywith img{height:34px;width:auto}
+/* garantia: sem caixa, escudo em cima e texto embaixo */
+#oferta .guarantee{display:flex;flex-direction:column;align-items:center;text-align:center;background:none;border:0;box-shadow:none;padding:10px 0 0;gap:6px;margin-top:44px}
+#oferta .guarantee>div:last-child{max-width:720px}
+#oferta .guarantee .shield3d{width:190px}
+#oferta .guarantee h3{font-size:26px!important;margin-bottom:8px!important}
 /* faq */
 details{background:#fff;border:1px solid rgba(224,96,10,.35);border-radius:16px;padding:0;margin-bottom:12px;overflow:hidden;transition:box-shadow .25s,transform .25s}
 details:hover{box-shadow:0 14px 34px rgba(224,96,10,.28);transform:translateY(-2px)}
@@ -654,8 +662,8 @@ html,body{overflow-x:clip}
     <a class="btn full" data-cta href="#oferta">Quero começar agora</a>
     <div class="sec"><span>Compra 100% segura</span><span>Acesso imediato</span><span class="g-t">Garantia incondicional</span></div>
     <p class="micro">Produtos físicos, como o Kit DI Raízes, são opcionais e vendidos à parte.</p>
-    <div class="paywith"><span>Pagamento seguro processado pela</span><img src="imgs/pagamento/kiwify-branca.png" alt="Kiwify" width="400" height="110"></div>
   </div>
+  <div class="paywith"><span>Pagamento seguro processado pela</span><img src="imgs/pagamento/kiwify.png" alt="Kiwify" width="400" height="110"></div>
   <div class="guarantee">
     <div class="shield3d" role="img" aria-label="Garantia de 7 dias"><svg viewBox="0 0 200 240" width="100%" aria-hidden="true">
       <defs>
