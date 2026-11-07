@@ -3,9 +3,9 @@
 .env.*
 
 # intermediarios de geracao de imagem
-landing/img/luis-ipad-raw-*
-landing/img/recepcao-gemini-*
-landing/_t.html
+img/luis-ipad-raw-*
+img/recepcao-gemini-*
+_t.html
 
 # sistema
 Thumbs.db

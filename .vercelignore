@@ -1,0 +1,11 @@
+# conteudo interno que nao faz parte do site publico
+*.md
+Imgs
+Instagram
+backup_imgs
+dashboard.html
+Dashboard-Lancamentosemente.html
+Lancamentosemente.html
+plano-de-marketing.html
+img/luis-ipad-original.png
+img/kiwify.png
