@@ -485,6 +485,9 @@ html,body{overflow-x:clip}
 .reveal{opacity:1!important;transform:none!important;transition:none!important}
 .reveal:not(.in) [data-i]{opacity:1!important}.reveal.in [data-i]{animation:none!important}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;translate:none;scale:none;transition:none}}
+/* duvidas: carrossel de ponta a ponta (largura total da tela) */
+.obj.hs{width:100vw;margin-left:calc(50% - 50vw);padding-left:max(18px,calc((100vw - 1120px)/2 + 20px));padding-right:max(18px,calc((100vw - 1120px)/2 + 20px));scroll-padding-left:max(18px,calc((100vw - 1120px)/2 + 20px));box-sizing:border-box}
+.obj.hs>*{flex:0 0 min(380px,82%)}
 /* ===== refinamento mobile ===== */
 html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 img,video,svg{max-width:100%}
@@ -1017,7 +1020,7 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
       var max = box.scrollWidth - box.clientWidth;
       if (box.scrollLeft >= max - 6) box.scrollTo({ left: 0, behavior: 'smooth' });
       else box.scrollBy({ left: step, behavior: 'smooth' });
-    }, 2000);
+    }, 3000);
   })();
   /* parallax da faixa */
   (function () {
