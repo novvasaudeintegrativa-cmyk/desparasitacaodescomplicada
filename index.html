@@ -894,7 +894,11 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
     ctrl.innerHTML = '<div class="hs-bar" aria-hidden="true"><i></i></div><button type="button" aria-label="Anterior">‹</button><button type="button" aria-label="Próximo">›</button>';
     box.insertAdjacentElement('afterend', ctrl);
     var b = ctrl.querySelectorAll('button'), thumb = ctrl.querySelector('.hs-bar i');
-    function step() { var c = box.children[1]; return c ? c.getBoundingClientRect().left - box.children[0].getBoundingClientRect().left : box.clientWidth; }
+    function step() {
+      var c = box.children[1]; var one = c ? c.getBoundingClientRect().left - box.children[0].getBoundingClientRect().left : box.clientWidth;
+      if (box.classList.contains('tvideos')) one *= Math.max(1, Math.floor(box.clientWidth / one + 0.05));  // videos: pula uma "pagina" (3 no desktop, 1 no celular)
+      return one;
+    }
     function upd() { b[0].disabled = box.scrollLeft < 4; b[1].disabled = box.scrollLeft + box.clientWidth >= box.scrollWidth - 4; var w = box.clientWidth / box.scrollWidth * 100; thumb.style.width = Math.min(w, 100) + '%'; thumb.style.left = (box.scrollLeft / box.scrollWidth * 100) + '%'; }
     b[0].onclick = function () { box.scrollBy({ left: -step(), behavior: 'smooth' }); };
     b[1].onclick = function () { box.scrollBy({ left: step(), behavior: 'smooth' }); };
