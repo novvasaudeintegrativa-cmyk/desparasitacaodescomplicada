@@ -347,6 +347,11 @@ section.alt>.wrap>.eyebrow:first-child{}
 .olegend .lg-ko{justify-content:center;padding-left:60px}
 @media(max-width:1000px){.olegend{grid-template-columns:1fr;gap:10px}.olegend span{white-space:normal;padding:0!important}}
 .tvideo video.tv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;border-radius:inherit}
+/* videos em carrossel horizontal */
+.tvideos{display:flex!important;grid-template-columns:none!important;gap:18px;max-width:none;margin-top:30px}
+.tvideos>.tvideo{flex:0 0 min(300px,76%);max-height:none;aspect-ratio:9/16;scroll-snap-align:start}
+.tvideos+.hs-ctrl::before{content:"Veja mais depoimentos";font-weight:600;font-size:15px;color:var(--brand);white-space:nowrap;margin-right:6px}
+@media(max-width:900px){.tvideos{max-width:none!important;margin-left:0!important;margin-right:0!important}}
 /* 3 prints centralizados */
 .tprints{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:860px;margin:10px auto 0;padding:0}
 .tprints>.tprint{flex:initial}
@@ -467,6 +472,90 @@ html,body{overflow-x:clip}
 @media(min-width:901px){.hs-ctrl.m-only{display:none}}
 @media(hover:none){.card:hover,.step:hover,.item:hover,.fit>div:hover,.cmp>div:hover,.journey:hover{transform:none}}
 @media(prefers-reduced-motion:reduce){.reveal{transition:none;opacity:1;transform:none}html{scroll-behavior:auto}}
+/* ===== refinamento mobile ===== */
+html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+img,video,svg{max-width:100%}
+@media(max-width:900px){
+  .sticky{background:linear-gradient(90deg,#e8673f,#d9532c)!important;box-shadow:0 -8px 24px rgba(120,40,10,.25)}
+  .sticky span small{color:#ffe6d8!important}
+  .sticky .btn{background:#fff!important;color:#d9532c!important;box-shadow:none!important;animation:none!important}
+}
+@media(max-width:700px){
+  section{padding:44px 0}
+  .wrap{padding-left:18px;padding-right:18px}
+  h2{font-size:clamp(26px,7.4vw,34px);line-height:1.15;margin-bottom:14px}
+  .lead{font-size:18px}
+  /* hero */
+  .hero{padding:30px 0 38px}
+  .hero h1{font-size:clamp(30px,9vw,40px)}
+  .hero::before{width:240px;height:240px;right:-70px;bottom:-60px}
+  .hero::after{width:180px;height:180px;left:-80px;top:-30px}
+  .vsl{border-radius:16px;margin-bottom:22px}
+  .vsl .pbtn{width:68px;height:68px;box-shadow:0 0 0 9px rgba(224,96,10,.2)}
+  .vsl .pbtn svg{width:28px;height:28px}
+  .vsl button.play{align-content:center;padding-bottom:30px}
+  .vsl .vlabel{font-size:14px;bottom:12px;line-height:1.3}
+  .trust{flex-direction:column;align-items:center;gap:8px;font-size:14.5px}
+  .scrollhint{margin-top:18px}
+  /* faixa */
+  .strip{padding:34px 0}
+  .strip b{font-size:46px}
+  .strip span{font-size:15px}
+  /* jornada */
+  .journey{padding:20px 16px;margin-top:28px}
+  .jcount b{font-size:50px}
+  .jhead{gap:8px;margin-bottom:12px}
+  .jtrack{display:grid!important;grid-template-columns:repeat(10,1fr);gap:11px 4px;justify-items:center;margin:8px 0 18px}
+  .jtrack i{width:14px;height:14px}
+  .jtrack i.cur{transform:scale(1.35)}
+  /* secao do luis */
+  .quem{padding:34px 0 40px}
+  .autor{gap:14px!important}
+  .arte{margin:0 auto 6px!important;max-width:330px}
+  .gcard{padding:8px 14px 8px 8px;gap:9px}
+  .gcard i{width:34px;height:34px;font-size:13px}
+  .gcard b{font-size:13.5px}.gcard small{font-size:11.5px}
+  .quem .caixa{padding:24px 20px;border-radius:22px}
+  .authgrid{gap:10px}
+  .aquote{font-size:16px;padding:14px 16px}
+  /* infografico em lista */
+  .orbit{padding-left:58px!important;gap:12px!important}
+  .orbit::before{left:28px!important}
+  .onode i{margin-left:-50px!important;width:42px!important;height:42px!important}
+  .onode span{font-size:15.5px!important;padding:10px 12px!important}
+  .olegend{font-size:14px;gap:8px 0}
+  /* depoimentos */
+  .tvideos+.hs-ctrl{justify-content:space-between}
+  .tvideos+.hs-ctrl::before{content:"Veja mais \2192";font-size:15px}
+  .tvideos+.hs-ctrl .hs-bar{display:none}
+  .tvideos>.tvideo{flex:0 0 74%}
+  .tsub{font-size:20px;margin-top:34px}
+  /* oferta */
+  .offer{padding:26px 18px!important;border-radius:22px}
+  .offer h3{font-size:20px}
+  .price b{font-size:84px!important}
+  .offer li{font-size:16px;padding:9px 0 9px 30px}
+  .paywith{flex-wrap:wrap;gap:6px 10px;font-size:14px}
+  .shield3d{width:150px!important}
+  #oferta .guarantee .shield3d{width:160px!important}
+  /* faq */
+  summary{font-size:16.5px;padding:16px 56px 16px 16px}
+  details p{padding:14px 16px 16px;font-size:16px}
+  /* rodape */
+  footer{padding:40px 0 110px}
+  .ftxt{height:54px}.ficon{height:40px}
+  .flegal{font-size:14px}
+  /* whatsapp acima da barra fixa */
+  .wpp{bottom:92px;right:14px}
+}
+@media(max-width:380px){
+  .wrap{padding-left:14px;padding-right:14px}
+  .btn{padding:17px 22px;font-size:16.5px}
+  .jtrack{grid-template-columns:repeat(10,1fr);gap:9px 2px}
+  .jtrack i{width:12px;height:12px}
+  .sticky span{font-size:13.5px}
+  .sticky .btn{padding:12px 16px;font-size:15px}
+}
 </style>
 </head>
 <body>
@@ -632,10 +721,13 @@ html,body{overflow-x:clip}
   <p class="lead">Só publicamos relatos reais, com autorização por escrito. Resultados variam de pessoa para pessoa.</p>
 
   <!-- 3 depoimentos em vídeo (arquivos em videos-site/depoimentos/). Para trocar, edite data-video e a capa imgs/depoimentos/video-N.jpg. Vale tambem link do YouTube (embed). -->
-  <div class="tvideos">
+  <div class="tvideos hs" data-hs>
     <figure class="tvideo" data-video="videos-site/depoimentos/depoimento-1.mp4" data-poster="imgs/depoimentos/video-1.jpg"><button type="button" class="tplay" aria-label="Assistir ao depoimento de Ana Claudia"><span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption><b>Ana Claudia</b><small>Depoimento em vídeo</small></figcaption></figure>
     <figure class="tvideo" data-video="videos-site/depoimentos/depoimento-2.mp4" data-poster="imgs/depoimentos/video-2.jpg"><button type="button" class="tplay" aria-label="Assistir ao depoimento de Alda"><span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption><b>Alda</b><small>Depoimento em vídeo</small></figcaption></figure>
     <figure class="tvideo" data-video="videos-site/depoimentos/depoimento-3.mp4" data-poster="imgs/depoimentos/video-3.jpg"><button type="button" class="tplay" aria-label="Assistir ao depoimento de Bartolina"><span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption><b>Bartolina</b><small>Depoimento em vídeo</small></figcaption></figure>
+    <figure class="tvideo" data-video="videos-site/depoimentos/depoimento-4.mp4" data-poster="imgs/depoimentos/video-4.jpg"><button type="button" class="tplay" aria-label="Assistir ao depoimento de Dalva"><span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption><b>Dalva</b><small>Depoimento em vídeo</small></figcaption></figure>
+    <figure class="tvideo" data-video="videos-site/depoimentos/depoimento-5.mp4" data-poster="imgs/depoimentos/video-5.jpg"><button type="button" class="tplay" aria-label="Assistir ao depoimento de Nilza"><span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption><b>Nilza</b><small>Depoimento em vídeo</small></figcaption></figure>
+    <figure class="tvideo" data-video="videos-site/depoimentos/depoimento-6.mp4" data-poster="imgs/depoimentos/video-6.jpg"><button type="button" class="tplay" aria-label="Assistir ao depoimento de Jandira"><span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption><b>Jandira</b><small>Depoimento em vídeo</small></figcaption></figure>
   </div>
 
   <h3 class="tsub">Conversas reais no WhatsApp</h3>
