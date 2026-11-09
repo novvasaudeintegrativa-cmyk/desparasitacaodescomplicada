@@ -499,11 +499,11 @@ html,body{overflow-x:clip}
 .ident h2{max-width:none;text-wrap:pretty}
 .ident .lead{max-width:none}
 .ident .note{max-width:none}
-.tvideos.auto{scroll-snap-type:none!important;scroll-behavior:auto!important}
+.tvideos.linked{scroll-snap-type:none!important;scroll-behavior:auto!important}
 /* prints de WhatsApp: carrossel (3 por vez; mais itens rolam sozinhos) */
 .tprints{display:flex!important;grid-template-columns:none!important;max-width:none!important;margin:10px 0 0!important;gap:22px}
 .tprints>.tprint{flex:0 0 calc((100% - 44px)/3)!important}
-.tprints.auto{scroll-snap-type:none!important;scroll-behavior:auto!important}
+.tprints.linked{scroll-snap-type:none!important;scroll-behavior:auto!important}
 @media(max-width:700px){.tprints>.tprint{flex:0 0 72%!important}}
 /* ===== refinamento mobile ===== */
 html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
@@ -1021,32 +1021,27 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
     });
   })();
 
-  /* rolagem horizontal continua (JS) ate o ultimo item: videos e prints de WhatsApp (desktop e mobile) */
-  function autoScroll(box) {
+  /* scroll horizontal ligado ao scroll da pagina: ao descer, o carrossel anda para o lado ate o ultimo item (desktop e mobile) */
+  function scrollLinked(box) {
     if (!box || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    box.classList.add('auto');
-    var SPEED = 42;                       // pixels por segundo
-    var pos = box.scrollLeft, last = 0, paused = false, done = false, resume = null;
-    function pause(ms) { paused = true; clearTimeout(resume); resume = setTimeout(function () { paused = false; pos = box.scrollLeft; done = pos >= box.scrollWidth - box.clientWidth - 4; }, ms || 6000); }
-    ['pointerdown', 'touchstart', 'wheel', 'keydown'].forEach(function (ev) { box.addEventListener(ev, function () { pause(8000); }, { passive: true }); });
-    var ctrl = box.nextElementSibling; if (ctrl && ctrl.classList.contains('hs-ctrl')) ctrl.addEventListener('click', function () { pause(8000); });
-    box.addEventListener('mouseenter', function () { paused = true; clearTimeout(resume); });
-    box.addEventListener('mouseleave', function () { pause(1500); });
-    function frame(t) {
-      var dt = last ? Math.min(0.05, (t - last) / 1000) : 0; last = t;
-      var r = box.getBoundingClientRect(), visible = r.top < window.innerHeight * 0.75 && r.bottom > window.innerHeight * 0.25;
-      var max = box.scrollWidth - box.clientWidth;
-      if (!paused && !done && visible && max > 0 && !box.querySelector('video')) {
-        pos += SPEED * dt;
-        if (pos >= max) { pos = max; done = true; }
-        box.scrollLeft = pos;
-      } else { pos = box.scrollLeft; }
-      requestAnimationFrame(frame);
+    var linked = true, wait = null, tick = false;
+    box.classList.add('linked');
+    function stop() { linked = false; box.classList.remove('linked'); clearTimeout(wait); wait = setTimeout(function () { linked = true; box.classList.add('linked'); upd(); }, 6000); }
+    ['pointerdown', 'touchstart'].forEach(function (ev) { box.addEventListener(ev, stop, { passive: true }); });
+    box.addEventListener('wheel', function (e) { if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) stop(); }, { passive: true });
+    var ctrl = box.nextElementSibling; if (ctrl && ctrl.classList.contains('hs-ctrl')) ctrl.addEventListener('click', stop);
+    function upd() {
+      tick = false; if (!linked || box.querySelector('video')) return;
+      var max = box.scrollWidth - box.clientWidth; if (max <= 0) return;
+      var r = box.getBoundingClientRect(), vh = window.innerHeight;
+      var p = (vh * 0.85 - r.top) / (vh * 0.3 + r.height);
+      p = Math.max(0, Math.min(1, p)); box.scrollLeft = p * max;
     }
-    requestAnimationFrame(frame);
+    function req() { if (!tick) { tick = true; requestAnimationFrame(upd); } }
+    addEventListener('scroll', req, { passive: true }); addEventListener('resize', req); upd();
   }
-  autoScroll(document.querySelector('.tvideos'));
-  autoScroll(document.querySelector('.tprints'));
+  scrollLinked(document.querySelector('.tvideos'));
+  scrollLinked(document.querySelector('.tprints'));
   /* parallax da faixa */
   (function () {
     var st = document.getElementById('quem'); if (!st || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
