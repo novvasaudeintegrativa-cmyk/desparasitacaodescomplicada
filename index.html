@@ -500,6 +500,11 @@ html,body{overflow-x:clip}
 .ident .lead{max-width:none}
 .ident .note{max-width:none}
 .tvideos.auto{scroll-snap-type:none!important;scroll-behavior:auto!important}
+/* prints de WhatsApp: carrossel (3 por vez; mais itens rolam sozinhos) */
+.tprints{display:flex!important;grid-template-columns:none!important;max-width:none!important;margin:10px 0 0!important;gap:22px}
+.tprints>.tprint{flex:0 0 calc((100% - 44px)/3)!important}
+.tprints.auto{scroll-snap-type:none!important;scroll-behavior:auto!important}
+@media(max-width:700px){.tprints>.tprint{flex:0 0 72%!important}}
 /* ===== refinamento mobile ===== */
 html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 img,video,svg{max-width:100%}
@@ -760,7 +765,7 @@ img,video,svg{max-width:100%}
 
   <h3 class="tsub">Conversas reais no WhatsApp</h3>
   <!-- prints: salve as imagens em imgs/depoimentos/print-1.jpg, print-2.jpg ... e oculte telefone e sobrenome antes -->
-  <div class="tprints">
+  <div class="tprints hs" data-hs>
     <div class="tprint"><img src="imgs/depoimentos/print-1.jpg" alt="Print de conversa de WhatsApp com depoimento" loading="lazy" onerror="this.parentNode.classList.add('vazio');this.remove()"><span class="tvazio">Print de conversa 1<small>imgs/depoimentos/print-1.jpg</small></span></div>
     <div class="tprint"><img src="imgs/depoimentos/print-2.jpg" alt="Print de conversa de WhatsApp com depoimento" loading="lazy" onerror="this.parentNode.classList.add('vazio');this.remove()"><span class="tvazio">Print de conversa 2<small>imgs/depoimentos/print-2.jpg</small></span></div>
     <div class="tprint"><img src="imgs/depoimentos/print-3.jpg" alt="Print de conversa de WhatsApp com depoimento" loading="lazy" onerror="this.parentNode.classList.add('vazio');this.remove()"><span class="tvazio">Print de conversa 3<small>imgs/depoimentos/print-3.jpg</small></span></div>
@@ -915,7 +920,7 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
       if (box.classList.contains('tvideos')) one *= Math.max(1, Math.floor(box.clientWidth / one + 0.05));  // videos: pula uma "pagina" (3 no desktop, 1 no celular)
       return one;
     }
-    function upd() { b[0].disabled = box.scrollLeft < 4; b[1].disabled = box.scrollLeft + box.clientWidth >= box.scrollWidth - 4; var w = box.clientWidth / box.scrollWidth * 100; thumb.style.width = Math.min(w, 100) + '%'; thumb.style.left = (box.scrollLeft / box.scrollWidth * 100) + '%'; }
+    function upd() { ctrl.style.display = box.scrollWidth <= box.clientWidth + 2 ? 'none' : ''; b[0].disabled = box.scrollLeft < 4; b[1].disabled = box.scrollLeft + box.clientWidth >= box.scrollWidth - 4; var w = box.clientWidth / box.scrollWidth * 100; thumb.style.width = Math.min(w, 100) + '%'; thumb.style.left = (box.scrollLeft / box.scrollWidth * 100) + '%'; }
     b[0].onclick = function () { box.scrollBy({ left: -step(), behavior: 'smooth' }); };
     b[1].onclick = function () { box.scrollBy({ left: step(), behavior: 'smooth' }); };
     
@@ -1016,22 +1021,22 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
     });
   })();
 
-  /* videos: rolagem horizontal continua (JS) ate chegar no ultimo video (desktop e mobile) */
-  (function () {
-    var box = document.querySelector('.tvideos'); if (!box || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  /* rolagem horizontal continua (JS) ate o ultimo item: videos e prints de WhatsApp (desktop e mobile) */
+  function autoScroll(box) {
+    if (!box || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     box.classList.add('auto');
     var SPEED = 42;                       // pixels por segundo
     var pos = box.scrollLeft, last = 0, paused = false, done = false, resume = null;
     function pause(ms) { paused = true; clearTimeout(resume); resume = setTimeout(function () { paused = false; pos = box.scrollLeft; done = pos >= box.scrollWidth - box.clientWidth - 4; }, ms || 6000); }
     ['pointerdown', 'touchstart', 'wheel', 'keydown'].forEach(function (ev) { box.addEventListener(ev, function () { pause(8000); }, { passive: true }); });
-    var ctrl = box.nextElementSibling; if (ctrl) ctrl.addEventListener('click', function () { pause(8000); });
+    var ctrl = box.nextElementSibling; if (ctrl && ctrl.classList.contains('hs-ctrl')) ctrl.addEventListener('click', function () { pause(8000); });
     box.addEventListener('mouseenter', function () { paused = true; clearTimeout(resume); });
     box.addEventListener('mouseleave', function () { pause(1500); });
     function frame(t) {
       var dt = last ? Math.min(0.05, (t - last) / 1000) : 0; last = t;
       var r = box.getBoundingClientRect(), visible = r.top < window.innerHeight * 0.75 && r.bottom > window.innerHeight * 0.25;
-      if (!paused && !done && visible && !box.querySelector('video')) {
-        var max = box.scrollWidth - box.clientWidth;
+      var max = box.scrollWidth - box.clientWidth;
+      if (!paused && !done && visible && max > 0 && !box.querySelector('video')) {
         pos += SPEED * dt;
         if (pos >= max) { pos = max; done = true; }
         box.scrollLeft = pos;
@@ -1039,7 +1044,9 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
       requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
-  })();
+  }
+  autoScroll(document.querySelector('.tvideos'));
+  autoScroll(document.querySelector('.tprints'));
   /* parallax da faixa */
   (function () {
     var st = document.getElementById('quem'); if (!st || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
