@@ -346,6 +346,7 @@ section.alt>.wrap>.eyebrow:first-child{}
 .olegend .lg-ok{justify-content:center;padding-right:30px}
 .olegend .lg-ko{justify-content:center;padding-left:60px}
 @media(max-width:1000px){.olegend{grid-template-columns:1fr;gap:10px}.olegend span{white-space:normal;padding:0!important}}
+.tvideo video.tv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;border-radius:inherit}
 /* 3 prints centralizados */
 .tprints{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:860px;margin:10px auto 0;padding:0}
 .tprints>.tprint{flex:initial}
@@ -630,11 +631,11 @@ html,body{overflow-x:clip}
   <h2>O que dizem as pessoas que <b>acompanharam a jornada</b></h2>
   <p class="lead">Só publicamos relatos reais, com autorização por escrito. Resultados variam de pessoa para pessoa.</p>
 
-  <!-- 3 vídeos: preencha data-video com o link de incorporação (ex.: https://www.youtube.com/embed/ID) e salve a capa em imgs/depoimentos/video-N.jpg (opcional) -->
+  <!-- 3 depoimentos em vídeo (arquivos em videos-site/depoimentos/). Para trocar, edite data-video e a capa imgs/depoimentos/video-N.jpg. Vale tambem link do YouTube (embed). -->
   <div class="tvideos">
-    <figure class="tvideo" data-video="" data-poster="imgs/depoimentos/video-1.jpg"><button type="button" class="tplay" aria-label="Assistir ao depoimento 1"><span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption><b>Depoimento em vídeo 1</b><small>[Nome], [Cidade/UF]</small></figcaption></figure>
-    <figure class="tvideo" data-video="" data-poster="imgs/depoimentos/video-2.jpg"><button type="button" class="tplay" aria-label="Assistir ao depoimento 2"><span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption><b>Depoimento em vídeo 2</b><small>[Nome], [Cidade/UF]</small></figcaption></figure>
-    <figure class="tvideo" data-video="" data-poster="imgs/depoimentos/video-3.jpg"><button type="button" class="tplay" aria-label="Assistir ao depoimento 3"><span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption><b>Depoimento em vídeo 3</b><small>[Nome], [Cidade/UF]</small></figcaption></figure>
+    <figure class="tvideo" data-video="videos-site/depoimentos/depoimento-1.mp4" data-poster="imgs/depoimentos/video-1.jpg"><button type="button" class="tplay" aria-label="Assistir ao depoimento de Ana Claudia"><span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption><b>Ana Claudia</b><small>Depoimento em vídeo</small></figcaption></figure>
+    <figure class="tvideo" data-video="videos-site/depoimentos/depoimento-2.mp4" data-poster="imgs/depoimentos/video-2.jpg"><button type="button" class="tplay" aria-label="Assistir ao depoimento de Alda"><span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption><b>Alda</b><small>Depoimento em vídeo</small></figcaption></figure>
+    <figure class="tvideo" data-video="videos-site/depoimentos/depoimento-3.mp4" data-poster="imgs/depoimentos/video-3.jpg"><button type="button" class="tplay" aria-label="Assistir ao depoimento de Bartolina"><span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption><b>Bartolina</b><small>Depoimento em vídeo</small></figcaption></figure>
   </div>
 
   <h3 class="tsub">Conversas reais no WhatsApp</h3>
@@ -808,7 +809,9 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
     var btn = v.querySelector('.tplay');
     btn.addEventListener('click', function () {
       if (!src) return;
-      var f = document.createElement('iframe'); f.src = src + (src.indexOf('?') > -1 ? '&' : '?') + 'autoplay=1&rel=0'; f.allow = 'autoplay; fullscreen; picture-in-picture'; f.allowFullscreen = true; f.title = 'Depoimento em video';
+      var f;
+      if (/\.mp4(\?|$)/i.test(src)) { f = document.createElement('video'); f.src = src; f.controls = true; f.autoplay = true; f.playsInline = true; f.setAttribute('playsinline', ''); f.preload = 'auto'; if (poster) f.poster = poster; f.className = 'tv'; }
+      else { f = document.createElement('iframe'); f.src = src + (src.indexOf('?') > -1 ? '&' : '?') + 'autoplay=1&rel=0'; f.allow = 'autoplay; fullscreen; picture-in-picture'; f.allowFullscreen = true; f.title = 'Depoimento em video'; }
       v.appendChild(f); btn.remove(); var c = v.querySelector('figcaption'); if (c) c.remove();
     });
   });

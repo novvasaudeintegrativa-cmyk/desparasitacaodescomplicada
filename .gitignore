@@ -10,3 +10,6 @@ _t.html
 # sistema
 Thumbs.db
 .DS_Store
+
+# videos originais (pesados); o site usa videos-site/
+Videos/
