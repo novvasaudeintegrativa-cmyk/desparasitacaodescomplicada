@@ -858,7 +858,7 @@ img,video,svg{max-width:100%}
 <footer><div class="wrap">
   <a class="flogo" href="#topo" aria-label="Desparasitação Descomplicada"><img class="ficon" src="imgs/marca/icone.svg" alt="" width="64" height="58"><img class="ftxt" src="imgs/marca/logo-texto.svg" alt="Desparasitação Descomplicada" width="300" height="95"></a>
   <p class="flegal">Conteúdo de caráter <b>educativo</b>. Não substitui diagnóstico, prescrição ou acompanhamento individual por profissional de saúde. Gestantes, lactantes, crianças e pessoas em uso de medicamentos devem consultar um profissional habilitado antes de iniciar qualquer protocolo. Resultados variam de pessoa para pessoa.</p>
-  <nav class="flinks" aria-label="Links legais"><a href="#">Termos de uso</a><a href="#">Política de privacidade</a><a href="#">Contato</a></nav>
+  <nav class="flinks" aria-label="Links legais"><a href="termos-de-uso.html">Termos de uso</a><a href="politica-de-privacidade.html">Política de privacidade</a><a href="https://wa.me/5511999999999" target="_blank" rel="noopener" data-wpp>Contato</a></nav>
   <div class="fbottom">© 2026 Desparasitação Descomplicada · Luís Manoel. Todos os direitos reservados. Este site não é afiliado ao Facebook, Instagram ou Google.</div>
 </div></footer>
 
@@ -879,6 +879,7 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
 
 (function () {
   var w = document.getElementById('wpp'); if (w && WHATSAPP) w.href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(WHATSAPP_MSG);
+  document.querySelectorAll('[data-wpp]').forEach(function (a) { if (WHATSAPP) a.href = 'https://wa.me/' + WHATSAPP; });
   var g = document.getElementById('gdias'); if (g) g.textContent = GARANTIA_DIAS;
   document.querySelectorAll('.g-t').forEach(function (e) { e.textContent = 'Garantia de ' + GARANTIA_DIAS + ' dias'; });
   var url = CHECKOUT;
