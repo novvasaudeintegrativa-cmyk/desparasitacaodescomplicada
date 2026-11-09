@@ -499,6 +499,7 @@ html,body{overflow-x:clip}
 .ident h2{max-width:none;text-wrap:pretty}
 .ident .lead{max-width:none}
 .ident .note{max-width:none}
+.tvideos.auto{scroll-snap-type:none!important;scroll-behavior:auto!important}
 /* ===== refinamento mobile ===== */
 html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 img,video,svg{max-width:100%}
@@ -1015,39 +1016,29 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
     });
   })();
 
-  /* videos: carrossel avanca sozinho (pausa ao interagir, passar o mouse ou tocar um video) */
+  /* videos: rolagem horizontal continua (JS) ate chegar no ultimo video (desktop e mobile) */
   (function () {
     var box = document.querySelector('.tvideos'); if (!box || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var paused = false, visible = false, resume = null;
-    function pause(ms) { paused = true; clearTimeout(resume); resume = setTimeout(function () { paused = false; }, ms || 7000); }
-    ['pointerdown', 'touchstart', 'wheel', 'keydown'].forEach(function (ev) { box.addEventListener(ev, function () { pause(9000); }, { passive: true }); });
-    var ctrl = box.nextElementSibling; if (ctrl) ctrl.addEventListener('click', function () { pause(9000); });
+    box.classList.add('auto');
+    var SPEED = 42;                       // pixels por segundo
+    var pos = box.scrollLeft, last = 0, paused = false, done = false, resume = null;
+    function pause(ms) { paused = true; clearTimeout(resume); resume = setTimeout(function () { paused = false; pos = box.scrollLeft; done = pos >= box.scrollWidth - box.clientWidth - 4; }, ms || 6000); }
+    ['pointerdown', 'touchstart', 'wheel', 'keydown'].forEach(function (ev) { box.addEventListener(ev, function () { pause(8000); }, { passive: true }); });
+    var ctrl = box.nextElementSibling; if (ctrl) ctrl.addEventListener('click', function () { pause(8000); });
     box.addEventListener('mouseenter', function () { paused = true; clearTimeout(resume); });
-    box.addEventListener('mouseleave', function () { pause(2500); });
-    new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: .35 }).observe(box);
-    setInterval(function () {
-      if (paused || !visible || box.querySelector('video')) return;
-      var c = box.children; if (c.length < 2) return;
-      var step = c[1].getBoundingClientRect().left - c[0].getBoundingClientRect().left;
-      var max = box.scrollWidth - box.clientWidth;
-      if (box.scrollLeft >= max - 6) box.scrollTo({ left: 0, behavior: 'smooth' });
-      else box.scrollBy({ left: step, behavior: 'smooth' });
-    }, 3000);
-  })();
-
-
-  /* chips: a cada 1 segundo um fica laranja (texto branco) e o anterior volta ao normal */
-  (function () {
-    var wrap = document.querySelector('.chips'); if (!wrap) return;
-    var chips = Array.prototype.slice.call(wrap.querySelectorAll('span')); if (!chips.length) return;
-    var i = -1, visible = false;
-    new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: .3 }).observe(wrap);
-    setInterval(function () {
-      if (!visible) return;
-      if (i >= 0) chips[i].classList.remove('hl');
-      i = (i + 1) % chips.length;
-      chips[i].classList.add('hl');
-    }, 1000);
+    box.addEventListener('mouseleave', function () { pause(1500); });
+    function frame(t) {
+      var dt = last ? Math.min(0.05, (t - last) / 1000) : 0; last = t;
+      var r = box.getBoundingClientRect(), visible = r.top < window.innerHeight * 0.75 && r.bottom > window.innerHeight * 0.25;
+      if (!paused && !done && visible && !box.querySelector('video')) {
+        var max = box.scrollWidth - box.clientWidth;
+        pos += SPEED * dt;
+        if (pos >= max) { pos = max; done = true; }
+        box.scrollLeft = pos;
+      } else { pos = box.scrollLeft; }
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
   })();
   /* parallax da faixa */
   (function () {
