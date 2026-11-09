@@ -47,6 +47,9 @@
 .offer{background:#fff;color:var(--ink);border-radius:var(--r-lg);padding:34px;max-width:520px}
 .price b{font-size:64px;font-weight:700;color:var(--accent);line-height:1}
 /* Rodapé */
-.footer{background:var(--slate-800);color:#c7d2da;padding:56px 0;text-align:center;font-size:15px}
-.footer b{color:var(--lime-200)}.footer nav{display:flex;gap:28px;justify-content:center;margin:26px 0}.footer nav a{color:#d6dee4;text-decoration:none}
+.footer{background:linear-gradient(90deg,#e8673f,#de5a33 50%,#d9532c);color:#fff;padding:56px 0 0;text-align:center;font-size:15px}
+.footer .wrap{display:flex;flex-direction:column;align-items:center}
+.footer b{color:var(--lime-200)}
+.footer nav{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:center;margin:26px 0 34px}.footer nav a{color:#fff;text-decoration:none}.footer nav a:hover{text-decoration:underline}
+.footer .fbottom{width:100%;border-top:1px solid rgba(255,255,255,.25);padding:22px 0;font-size:13.5px;color:#fff}
 @media(max-width:900px){.strip .wrap{grid-template-columns:1fr 1fr}.btn{width:100%}.nav .btn{display:none}}
