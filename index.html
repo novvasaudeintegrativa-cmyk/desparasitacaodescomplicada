@@ -428,7 +428,7 @@ footer .wrap{display:flex;flex-direction:column;align-items:center}
 .jhead p{margin:0;font-size:16px;color:var(--muted)}
 .jcount{display:flex;align-items:baseline;gap:10px}.jcount b{font-size:64px;line-height:1;font-weight:700;color:var(--brand);min-width:1.4ch;font-variant-numeric:tabular-nums}.jcount span{font-size:20px;font-weight:300}
 .jtrack{display:flex;flex-wrap:wrap;gap:9px 10px;justify-content:space-between;margin:6px 0 22px}
-.jtrack i{flex:0 0 auto;width:15px;height:15px;border-radius:50%;background:#fde3d6;transition:background .8s,transform .8s,box-shadow .8s;display:block}
+.jtrack i{flex:0 0 auto;width:15px;height:15px;border-radius:50%;background:#fde3d6;transition:background 1.2s,transform 1.2s,box-shadow 1.2s;display:block}
 .jtrack i.on{background:var(--brand)}
 .jtrack i.cur{transform:scale(1.55);box-shadow:0 0 0 4px rgba(224,96,10,.22)}
 .jmarks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:14px;font-weight:600;text-align:center;color:var(--ink)}
@@ -1039,7 +1039,7 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
         for (var k = 0; k < 30; k++) { dots[k].classList.toggle('on', k < d); dots[k].classList.toggle('cur', k === d - 1 && d < 30); }
       }
       function tick() {
-        if (n < 30) { setDay(n + 1); timer = setTimeout(tick, 700); }
+        if (n < 30) { setDay(n + 1); timer = setTimeout(tick, 2000); }
         else { timer = setTimeout(function () { setDay(0); timer = setTimeout(tick, 1200); }, 3500); }
       }
       if (reduce) { setDay(30); }
