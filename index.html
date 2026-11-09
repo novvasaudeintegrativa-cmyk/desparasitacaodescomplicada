@@ -488,6 +488,11 @@ html,body{overflow-x:clip}
 /* duvidas: carrossel de ponta a ponta (largura total da tela) */
 .obj.hs{width:100vw;margin-left:calc(50% - 50vw);padding-left:max(18px,calc((100vw - 1120px)/2 + 20px));padding-right:max(18px,calc((100vw - 1120px)/2 + 20px));scroll-padding-left:max(18px,calc((100vw - 1120px)/2 + 20px));box-sizing:border-box}
 .obj.hs>*{flex:0 0 min(380px,82%)}
+/* duvidas: destaque que passa de card em card */
+.obj>.card{transition:background .45s,color .45s,border-color .45s,box-shadow .45s,transform .25s}
+.obj>.card h3,.obj>.card p,.obj>.card b{transition:color .45s}
+.obj>.card.hl{background:linear-gradient(150deg,#f08a62,#e0603a 55%,#d9532c);border-color:transparent;box-shadow:0 16px 38px rgba(217,83,44,.38)}
+.obj>.card.hl h3,.obj>.card.hl p,.obj>.card.hl b{color:#fff}
 /* ===== refinamento mobile ===== */
 html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 img,video,svg{max-width:100%}
@@ -1021,6 +1026,22 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
       if (box.scrollLeft >= max - 6) box.scrollTo({ left: 0, behavior: 'smooth' });
       else box.scrollBy({ left: step, behavior: 'smooth' });
     }, 3000);
+  })();
+
+  /* duvidas: a cada 1 segundo um card fica laranja (texto branco) e o anterior volta ao normal */
+  (function () {
+    var box = document.querySelector('.obj'); if (!box) return;
+    var cards = Array.prototype.slice.call(box.querySelectorAll('.card')); if (!cards.length) return;
+    var i = -1, hover = false, visible = false;
+    box.addEventListener('mouseenter', function () { hover = true; });
+    box.addEventListener('mouseleave', function () { hover = false; });
+    new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: .2 }).observe(box);
+    setInterval(function () {
+      if (hover || !visible) return;
+      if (i >= 0) cards[i].classList.remove('hl');
+      i = (i + 1) % cards.length;
+      cards[i].classList.add('hl');
+    }, 1000);
   })();
   /* parallax da faixa */
   (function () {
