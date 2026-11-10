@@ -561,7 +561,7 @@ html,body{overflow-x:clip}
 .mosaic-wrap{text-align:center;margin-bottom:64px;padding-bottom:20px;overflow-x:clip}
 .mtitle{font-weight:300;font-size:clamp(26px,3.6vw,40px);line-height:1.15;letter-spacing:-.02em;margin:0 auto 36px;max-width:820px;text-wrap:balance}
 .mtitle b{font-weight:700;color:var(--brand)}
-.geo{--z:1;--tx:0%;--ty:0%;position:relative;width:min(900px,100%);margin:0 auto;aspect-ratio:39.18/39.02;isolation:isolate;overflow:hidden;border-radius:clamp(18px,3vw,34px);background:radial-gradient(circle at 50% 42%,#fff8f3,#ffeadd 72%);box-shadow:inset 0 0 0 1px rgba(224,96,10,.14),0 24px 60px rgba(224,96,10,.12)}
+.geo{--z:1;--tx:0%;--ty:0%;position:relative;width:min(900px,100%);margin:0 auto;aspect-ratio:39.18/39.02;isolation:isolate;overflow:visible;background:none;box-shadow:none}
 .gzoom{position:absolute;inset:0;transform-origin:0 0;transform:translate(var(--tx),var(--ty)) scale(var(--z));transition:transform 1.5s cubic-bezier(.65,0,.25,1)}
 .gmap{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 20px 40px rgba(224,96,10,.18))}
 .m-hi{-webkit-mask-image:linear-gradient(105deg,transparent 38%,#000 50%,transparent 62%);mask-image:linear-gradient(105deg,transparent 38%,#000 50%,transparent 62%);-webkit-mask-size:320% 100%;mask-size:320% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;animation:msweep 6s ease-in-out infinite}
@@ -599,6 +599,16 @@ html,body{overflow-x:clip}
 .gcap p{margin:8px 0 0;font-size:clamp(11px,1.9vw,17px);line-height:1.35;color:var(--ink);font-weight:500}
 .mnote{margin:30px auto 0;max-width:600px;font-size:13.5px;color:#555}
 @media(prefers-reduced-motion:reduce){.gc.on,.gballoon,.dot{opacity:1!important;transform:none!important}.ln,.garrow{stroke-dashoffset:0!important}.m-hi,.gpin i{animation:none}.gzoom{transition:none}}
+/* lupa sobre a regiao (o mapa inteiro nao amplia) */
+.gzoom{transform:none!important}
+.gpin{scale:1!important}
+.glens{position:absolute;z-index:5;width:44%;aspect-ratio:1;left:28%;top:28%;opacity:0;transform:scale(.55);transform-origin:50% 50%;pointer-events:none;transition:left 1.2s cubic-bezier(.65,0,.25,1),top 1.2s cubic-bezier(.65,0,.25,1),opacity .6s,transform .8s cubic-bezier(.3,1.4,.5,1)}
+.geo.has-lens .glens{opacity:1;transform:none}
+.glens-in{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 35% 30%,#fff8f3,#ffe4d4);box-shadow:0 0 0 6px #fff,0 0 0 9px #e0603a,0 22px 50px rgba(120,40,10,.45),inset 0 0 40px rgba(224,96,10,.18)}
+.glens-in::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 30% 24%,rgba(255,255,255,.55),rgba(255,255,255,0) 38%);pointer-events:none}
+.glens-map{position:absolute;transition:left 1.2s cubic-bezier(.65,0,.25,1),top 1.2s cubic-bezier(.65,0,.25,1),transform 1.2s cubic-bezier(.65,0,.25,1)}
+.glens-map img{display:block;width:100%;height:auto}
+.glens-h{position:absolute;right:-6%;bottom:-6%;width:20%;height:6%;background:linear-gradient(90deg,#e0603a,#b84a0c);border-radius:8px;transform-origin:0 50%;transform:rotate(45deg) translate(-4%,-50%);box-shadow:0 6px 14px rgba(120,40,10,.4)}
 /* circulo: ilustracoes nos nos, nome do metodo no centro */
 .rthumb{position:relative;display:block;width:108px;height:108px;flex:none;transition:transform .3s}
 .rthumb img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;box-shadow:0 0 0 4px #fff,0 10px 24px rgba(0,0,0,.14);background:#fff7ef;transition:box-shadow .3s}
@@ -915,6 +925,7 @@ img,video,svg{max-width:100%}
       <div class="gpin" style="left:45.64%;top:53.50%" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
       <div class="gballoon"><small>Cuiabá · Mato Grosso</small><b>Desparasitação<br>Descomplicada</b><span>daqui para todo o Brasil</span></div>
     </div>
+    <div class="glens" id="glens" aria-hidden="true"><div class="glens-in"><div class="glens-map" id="glensmap"><img src="imgs/mosaico/brasil-claro.svg" alt=""></div></div><i class="glens-h"></i></div>
     <figure class="gc" data-region="norte" data-k="0"><img src="imgs/regioes/ilus-norte.jpg" alt="Ilustração de pessoa típica da região Norte do Brasil" width="700" height="700" loading="lazy"><figcaption class="mlab">Norte</figcaption></figure>
     <figure class="gc" data-region="norte" data-k="1"><img src="imgs/regioes/ilus2-norte.jpg" alt="Ilustração de pessoa típica da região Norte do Brasil" width="700" height="700" loading="lazy"><figcaption class="mlab">Norte</figcaption></figure>
     <figure class="gc" data-region="nordeste" data-k="0"><img src="imgs/regioes/ilus-nordeste.jpg" alt="Ilustração de pessoa típica da região Nordeste do Brasil" width="700" height="700" loading="lazy"><figcaption class="mlab">Nordeste</figcaption></figure>
@@ -1251,7 +1262,7 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
     show(0, true); restart();
   })();
 
-  /* mapa do Brasil: zoom automatico em cada regiao (nome + frase), mouse/toque escolhe a regiao */
+  /* mapa do Brasil: lupa em cada regiao (nome + frase), mouse/toque escolhe a regiao */
   (function () {
     var geo = document.getElementById('geo'); if (!geo) return;
     var zoom = document.getElementById('gzoom'), regs = document.getElementById('gregions'), cap = geo.querySelector('.gcap');
@@ -1277,20 +1288,26 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
     xhr.send();
     function mark() { Array.prototype.forEach.call(regs.querySelectorAll('.rg'), function (g) { g.classList.toggle('on', g.getAttribute('data-region') === cur); }); }
     function layout(key) {
+      var lx = +geo.getAttribute('data-lx') || 50;
       cards.forEach(function (c) {
         var r = c.getAttribute('data-region'), k = +c.getAttribute('data-k'), on = false, x = 50, y = 50, w = 16;
         if (key === 'all') { if (k === 0) { on = true; var m = INFO[r].main; x = m[0]; y = m[1]; w = m[2]; } }
-        else if (r === key) { on = true; w = 24; x = k === 0 ? 14 : 86; y = 24; }
+        else if (r === key) { on = true; w = 22; x = lx < 50 ? 86 : 14; y = k === 0 ? 24 : 58; }
         c.style.setProperty('--cx', x + '%'); c.style.setProperty('--cy', y + '%'); c.style.setProperty('--cw', w + '%');
         c.classList.toggle('on', on);
       });
     }
     function camera(key) {
-      if (key === 'all') { geo.style.setProperty('--z', 1); geo.style.setProperty('--tx', '0%'); geo.style.setProperty('--ty', '0%'); return; }
-      var b = BB[key], w = b[2] - b[0], h = b[3] - b[1], cx = (b[0] + b[2]) / 2, cy = (b[1] + b[3]) / 2;
-      var z = Math.max(1.15, Math.min(2.4, 70 / w, 56 / h));
-      geo.style.setProperty('--z', z.toFixed(3));
-      geo.style.setProperty('--tx', (50 - cx * z).toFixed(2) + '%'); geo.style.setProperty('--ty', (44 - cy * z).toFixed(2) + '%');
+      var lens = document.getElementById('glens'), lm = document.getElementById('glensmap');
+      if (key === 'all') { geo.classList.remove('has-lens'); geo.setAttribute('data-lx', 50); return; }
+      var b = BB[key], w = b[2] - b[0], h = b[3] - b[1], cx = (b[0] + b[2]) / 2, cy = (b[1] + b[3]) / 2, L = 44;
+      var z = Math.max(1.35, Math.min(2.7, 0.9 * L / Math.max(w, h)));
+      var lx = Math.max(L / 2 + 2, Math.min(100 - L / 2 - 2, cx)), ly = Math.max(L / 2 + 2, Math.min(100 - L / 2 - 2, cy));
+      geo.setAttribute('data-lx', lx);
+      lens.style.left = (lx - L / 2) + '%'; lens.style.top = (ly - L / 2) + '%';
+      lm.style.width = (10000 / L) + '%'; lm.style.left = (50 - cx * 100 / L) + '%'; lm.style.top = (50 - cy * 100 / L) + '%';
+      lm.style.transformOrigin = cx + '% ' + cy + '%'; lm.style.transform = 'scale(' + z.toFixed(3) + ')';
+      geo.classList.add('has-lens');
     }
     function show(key) {
       if (key === cur) return; cur = key; geo.setAttribute('data-s', key);
