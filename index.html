@@ -507,14 +507,14 @@ html,body{overflow-x:clip}
 @media(max-width:700px){.tprints>.tprint{flex:0 0 72%!important}}
 /* hero: imagem do intestino flutuando na base, em largura total; video sempre centralizado */
 .hero-art{display:none}
-@media(min-width:1250px){
-  .hero-art{display:block;position:absolute;left:auto;right:calc(50% + 440px);bottom:14px;width:min(44vw,860px,calc((50vw - 440px) * 2.3));z-index:1;pointer-events:none;animation:heroFloat 6s ease-in-out infinite}
+@media(min-width:1200px){
+  .hero-art{display:block;position:absolute;left:0;right:auto;bottom:12px;--aw:min(560px,calc((50vw - 336px) / .93));width:var(--aw);z-index:1;pointer-events:none;animation:heroFloat 6s ease-in-out infinite}
   .hero-art img{display:block;width:100%;height:auto;
-    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14%,#000 97%,transparent 100%),linear-gradient(180deg,transparent 0,#000 16%,#000 84%,transparent 100%);
-    -webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 14%,#000 97%,transparent 100%),linear-gradient(180deg,transparent 0,#000 16%,#000 84%,transparent 100%);mask-composite:intersect;
+    -webkit-mask-image:linear-gradient(90deg,#000 0,#000 96%,transparent 100%),linear-gradient(180deg,transparent 0,#000 10%,#000 90%,transparent 100%);
+    -webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,#000 0,#000 96%,transparent 100%),linear-gradient(180deg,transparent 0,#000 10%,#000 90%,transparent 100%);mask-composite:intersect;
     filter:drop-shadow(0 24px 44px rgba(217,83,44,.22))}
-  .hc-label{position:absolute;left:66%;top:79%;background:#ff7a1f;color:#fff;font:600 clamp(13px,1.35vw,20px)/1.15 var(--font);padding:.5em .8em;border-radius:6px;box-shadow:0 10px 24px rgba(217,83,44,.4);animation:hcBob 4.2s ease-in-out infinite}
-  .hc-arrow{position:absolute;left:68%;top:54%;width:clamp(30px,3.8vw,56px);height:auto;overflow:visible;scale:-1 1;z-index:3;filter:drop-shadow(0 5px 10px rgba(120,40,10,.38));animation:hcBob 3.4s ease-in-out infinite}
+  .hc-label{position:absolute;left:62%;top:79%;background:#ff7a1f;color:#fff;font:600 calc(var(--aw) * .042)/1.15 var(--font);padding:.5em .8em;border-radius:6px;box-shadow:0 10px 24px rgba(217,83,44,.4);animation:hcBob 4.2s ease-in-out infinite}
+  .hc-arrow{position:absolute;left:73%;top:auto;bottom:calc(21% - 4px);width:calc(var(--aw) * .085);height:auto;overflow:visible;scale:-1 1;z-index:3;filter:drop-shadow(0 5px 10px rgba(120,40,10,.38));animation:hcBob 3.4s ease-in-out infinite}
   .hero>.wrap{position:relative;z-index:2}
 }
 @keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
