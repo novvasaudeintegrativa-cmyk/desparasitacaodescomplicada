@@ -525,6 +525,38 @@ html,body{overflow-x:clip}
 .hero h1{max-width:1120px;text-wrap:balance}
 .hero .lead{max-width:940px}
 .hero>.wrap{max-width:1240px}
+/* ===== o que voce recebe: circulo dinamico ===== */
+.rorbit{--R:262px;position:relative;width:min(1040px,100%);height:640px;margin:34px auto 0}
+.rring{position:absolute;left:50%;top:50%;width:calc(var(--R)*2);height:calc(var(--R)*2);transform:translate(-50%,-50%);border-radius:50%;border:3px dotted rgba(224,96,10,.6)}
+@media(prefers-reduced-motion:no-preference){.rring{animation:rspin 80s linear infinite}}
+@keyframes rspin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.rcenter{position:absolute;left:50%;top:50%;width:400px;height:400px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 30% 22%,#fff,#fdeee3);box-shadow:0 22px 54px rgba(224,96,10,.2),inset 0 0 0 6px #fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:26px 36px;gap:6px}
+.rimg{width:190px;height:190px;border-radius:50%;overflow:hidden;box-shadow:0 12px 28px rgba(224,96,10,.25),0 0 0 5px #fff;flex:none}
+.rimg img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .35s,transform .6s}
+.rimg img.sw{opacity:0;transform:scale(1.08)}
+.rcenter b{font-size:21px;line-height:1.15;color:var(--ink);margin-top:8px;transition:opacity .3s}
+.rcenter p{margin:0;font-size:15px;line-height:1.35;color:var(--muted);transition:opacity .3s;max-width:270px}
+.rcenter.sw b,.rcenter.sw p{opacity:0}
+.rnode{all:unset;box-sizing:border-box;cursor:pointer;position:absolute;left:calc(50% + var(--R)*sin(var(--a)));top:calc(50% - var(--R)*cos(var(--a)));transform:translate(-50%,-50%);display:flex;align-items:center;gap:12px;z-index:3}
+.rnode i{flex:none;width:58px;height:58px;border-radius:50%;background:#fff;color:var(--brand);display:grid;place-items:center;box-shadow:0 0 0 5px rgba(255,255,255,.9),0 10px 24px rgba(0,0,0,.12);transition:background .3s,color .3s,transform .3s,box-shadow .3s}
+.rnode span{position:absolute;width:210px;font-size:16px;font-weight:600;line-height:1.2;color:var(--ink);transition:color .3s}
+.rnode.r span{left:calc(100% + 14px);text-align:left}
+.rnode.l span{right:calc(100% + 14px);text-align:right}
+.rnode.top span{left:50%;bottom:calc(100% + 12px);transform:translateX(-50%);text-align:center;width:240px}
+.rnode:hover i,.rnode:focus-visible i{transform:scale(1.1);box-shadow:0 0 0 5px rgba(255,255,255,.9),0 14px 30px rgba(224,96,10,.4)}
+.rnode.on i{background:linear-gradient(135deg,#f08a62,#e0603a 60%,#d9532c);color:#fff;transform:scale(1.18);box-shadow:0 0 0 5px #fff,0 16px 34px rgba(217,83,44,.5)}
+.rnode.on span{color:var(--brand)}
+@media(max-width:1000px){
+  .rorbit{height:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:12px 8px;margin-top:22px}
+  .rring{display:none}
+  .rcenter{position:relative;left:auto;top:auto;transform:none;grid-column:1/-1;width:100%;height:auto;border-radius:26px;padding:22px 20px 24px;order:-1}
+  .rimg{width:100%;height:auto;aspect-ratio:16/9;border-radius:18px}
+  .rcenter b{font-size:20px}.rcenter p{max-width:none;font-size:15.5px}
+  .rnode{position:relative;left:auto;top:auto;transform:none;justify-content:center}
+  .rnode i{width:54px;height:54px}
+  .rnode span{display:none}
+  .rnode.on i{transform:scale(1.1)}
+}
 /* ===== refinamento mobile ===== */
 html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 img,video,svg{max-width:100%}
@@ -711,17 +743,24 @@ img,video,svg{max-width:100%}
   <span class="eyebrow">O que você recebe</span>
   <h2>Tudo reunido <b>em um só lugar</b></h2>
   <p class="lead">Você acessa no seu ritmo, sem programação complicada e sem precisar comprar vários cursos.</p>
-  <div class="items hs-m" data-hs>
-    <div class="item"><img class="iimg" src="imgs/cards/card-1-foto.webp" alt="" loading="lazy" width="800" height="446"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></i><div><b>Treinamento online</b><small>Aulas curtas que explicam cada etapa, em linguagem simples.</small></div></div>
-    <div class="item"><img class="iimg" src="imgs/cards/card-2-foto.webp" alt="" loading="lazy" width="800" height="446"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></i><div><b>Protocolo educativo de 30 dias</b><small>Passo a passo organizado, da preparação aos cuidados posteriores.</small></div></div>
-    <div class="item"><img class="iimg" src="imgs/cards/card-3-foto.webp" alt="" loading="lazy" width="800" height="446"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></i><div><b>Guia alimentar</b><small>Orientações sobre os alimentos e hábitos abordados.</small></div></div>
-    <div class="item"><img class="iimg" src="imgs/cards/card-4-foto.webp" alt="" loading="lazy" width="800" height="446"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></i><div><b>Lista de compras</b><small>O que levar na compra, sem ficar adivinhando.</small></div></div>
-    <div class="item"><img class="iimg" src="imgs/cards/card-5-foto.webp" alt="" loading="lazy" width="800" height="446"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></i><div><b>Guia de higiene e prevenção</b><small>Água, alimentos, mãos e ambiente.</small></div></div>
-    <div class="item"><img class="iimg" src="imgs/cards/card-6-foto.webp" alt="" loading="lazy" width="800" height="446"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></i><div><b>Guia de utilização</b><small>Como usar os materiais e se organizar.</small></div></div>
-    <div class="item"><img class="iimg" src="imgs/cards/card-7-foto.webp" alt="" loading="lazy" width="800" height="446"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></i><div><b>Dúvidas frequentes</b><small>Respostas às perguntas mais comuns.</small></div></div>
-    <div class="item"><img class="iimg" src="imgs/cards/card-8-foto.webp" alt="" loading="lazy" width="800" height="446"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></i><div><b>Cuidados posteriores</b><small>Como manter os hábitos depois da jornada.</small></div></div>
-    <div class="item"><img class="iimg" src="imgs/cards/card-9-foto.webp" alt="" loading="lazy" width="800" height="446"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></i><div><b>Grupo de acompanhamento</b><small>Para tirar dúvidas relacionadas ao treinamento.</small></div></div>
+  <div class="rorbit" id="rorbit">
+    <div class="rring" aria-hidden="true"></div>
+    <div class="rcenter" aria-live="polite">
+      <div class="rimg"><img id="rimg" src="imgs/cards/vetor-1.webp" alt="" width="800" height="446"></div>
+      <b id="rtit">Treinamento online</b>
+      <p id="rdes">Aulas curtas que explicam cada etapa, em linguagem simples.</p>
+    </div>
+    <button type="button" class="rnode top" style="--a:0deg" data-i="0" data-img="imgs/cards/vetor-1.webp" data-t="Treinamento online" data-d="Aulas curtas que explicam cada etapa, em linguagem simples." aria-label="Treinamento online"><i><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></i><span>Treinamento online</span></button>
+    <button type="button" class="rnode r" style="--a:40deg" data-i="1" data-img="imgs/cards/vetor-2.webp" data-t="Protocolo educativo de 30 dias" data-d="Passo a passo organizado, da preparação aos cuidados posteriores." aria-label="Protocolo educativo de 30 dias"><i><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></i><span>Protocolo educativo de 30 dias</span></button>
+    <button type="button" class="rnode r" style="--a:80deg" data-i="2" data-img="imgs/cards/vetor-3.webp" data-t="Guia alimentar" data-d="Orientações sobre os alimentos e hábitos abordados." aria-label="Guia alimentar"><i><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></i><span>Guia alimentar</span></button>
+    <button type="button" class="rnode r" style="--a:120deg" data-i="3" data-img="imgs/cards/vetor-4.webp" data-t="Lista de compras" data-d="O que levar na compra, sem ficar adivinhando." aria-label="Lista de compras"><i><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></i><span>Lista de compras</span></button>
+    <button type="button" class="rnode r" style="--a:160deg" data-i="4" data-img="imgs/cards/vetor-5.webp" data-t="Guia de higiene e prevenção" data-d="Água, alimentos, mãos e ambiente." aria-label="Guia de higiene e prevenção"><i><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></i><span>Guia de higiene e prevenção</span></button>
+    <button type="button" class="rnode l" style="--a:200deg" data-i="5" data-img="imgs/cards/vetor-6.webp" data-t="Guia de utilização" data-d="Como usar os materiais e se organizar." aria-label="Guia de utilização"><i><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></i><span>Guia de utilização</span></button>
+    <button type="button" class="rnode l" style="--a:240deg" data-i="6" data-img="imgs/cards/vetor-7.webp" data-t="Dúvidas frequentes" data-d="Respostas às perguntas mais comuns." aria-label="Dúvidas frequentes"><i><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></i><span>Dúvidas frequentes</span></button>
+    <button type="button" class="rnode l" style="--a:280deg" data-i="7" data-img="imgs/cards/vetor-8.webp" data-t="Cuidados posteriores" data-d="Como manter os hábitos depois da jornada." aria-label="Cuidados posteriores"><i><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></i><span>Cuidados posteriores</span></button>
+    <button type="button" class="rnode l" style="--a:320deg" data-i="8" data-img="imgs/cards/vetor-9.webp" data-t="Grupo de acompanhamento" data-d="Para tirar dúvidas relacionadas ao treinamento." aria-label="Grupo de acompanhamento"><i><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></i><span>Grupo de acompanhamento</span></button>
   </div>
+</div>
 </div></section>
 
 <!-- 6. AUTOR -->
@@ -1004,7 +1043,7 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
       ['section .eyebrow,section h2,section>.wrap>.lead,section .wrap>.lead', ''],
       ['.chips .chip,.note,.olegend span', ''],
       ['.cmp .no', 'from-l'], ['.cmp .yes', 'from-r'],
-      ['.steps>.step,.items>.item,.obj>.card,.tvideos>.tvideo,.tprints>.tprint', ''],
+      ['.steps>.step,.obj>.card,.tvideos>.tvideo,.tprints>.tprint', ''], ['.rorbit', 'zoom'],
       ['.journey,.tsub', ''],
       ['.arte', 'from-l'], ['.quem .caixa', 'from-r'],
       ['.orbit .ohub', 'zoom'],
@@ -1065,6 +1104,34 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
   }
   scrollLinked(document.querySelector('.tvideos'));
   scrollLinked(document.querySelector('.tprints'));
+
+  /* o que voce recebe: circulo dinamico (troca sozinho, clique escolhe, mouse pausa) */
+  (function () {
+    var box = document.getElementById('rorbit'); if (!box) return;
+    var nodes = Array.prototype.slice.call(box.querySelectorAll('.rnode')), center = box.querySelector('.rcenter');
+    var img = document.getElementById('rimg'), tit = document.getElementById('rtit'), des = document.getElementById('rdes');
+    nodes.forEach(function (n) { var im = new Image(); im.src = n.getAttribute('data-img'); });
+    var cur = -1, hover = false, visible = false, timer = null;
+    function show(i, instant) {
+      if (i === cur) return; cur = i;
+      nodes.forEach(function (n, k) { n.classList.toggle('on', k === i); });
+      var n = nodes[i];
+      function apply() { img.src = n.getAttribute('data-img'); tit.textContent = n.getAttribute('data-t'); des.textContent = n.getAttribute('data-d'); img.classList.remove('sw'); center.classList.remove('sw'); }
+      if (instant) { apply(); return; }
+      img.classList.add('sw'); center.classList.add('sw'); setTimeout(apply, 280);
+    }
+    nodes.forEach(function (n, k) {
+      n.addEventListener('click', function () { show(k); restart(); });
+      n.addEventListener('mouseenter', function () { hover = true; show(k); });
+      n.addEventListener('mouseleave', function () { hover = false; });
+      n.addEventListener('focus', function () { show(k); });
+    });
+    box.addEventListener('mouseleave', function () { hover = false; });
+    new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: .25 }).observe(box);
+    function restart() { clearInterval(timer); if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(next, 3200); }
+    function next() { if (hover || !visible) return; show((cur + 1) % nodes.length); }
+    show(0, true); restart();
+  })();
   /* parallax da faixa */
   (function () {
     var st = document.getElementById('quem'); if (!st || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
