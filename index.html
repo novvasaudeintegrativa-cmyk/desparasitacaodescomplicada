@@ -521,6 +521,10 @@ html,body{overflow-x:clip}
 @keyframes hcBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 @keyframes hcNudge{0%,100%{transform:translate(0,0)}50%{transform:translate(5px,-7px)}}
 @media(prefers-reduced-motion:reduce){.hero-art,.hc-label,.hc-arrow{animation:none!important}}
+/* hero: titulo e texto mais largos */
+.hero h1{max-width:1120px;text-wrap:balance}
+.hero .lead{max-width:940px}
+.hero>.wrap{max-width:1240px}
 /* ===== refinamento mobile ===== */
 html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 img,video,svg{max-width:100%}
