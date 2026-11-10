@@ -507,8 +507,8 @@ html,body{overflow-x:clip}
 @media(max-width:700px){.tprints>.tprint{flex:0 0 72%!important}}
 /* hero: imagem do intestino flutuando na base, em largura total; video sempre centralizado */
 .hero-art{display:none}
-@media(min-width:1100px){
-  .hero-art{display:block;position:absolute;left:-11vw;bottom:14px;width:min(40vw,680px);z-index:1;pointer-events:none;animation:heroFloat 6s ease-in-out infinite}
+@media(min-width:1250px){
+  .hero-art{display:block;position:absolute;left:auto;right:calc(50% + 440px);bottom:14px;width:min(36vw,660px,calc((50vw - 440px) * 2.15));z-index:1;pointer-events:none;animation:heroFloat 6s ease-in-out infinite}
   .hero-art img{display:block;width:100%;height:auto;
     -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14%,#000 97%,transparent 100%),linear-gradient(180deg,transparent 0,#000 16%,#000 84%,transparent 100%);
     -webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 14%,#000 97%,transparent 100%),linear-gradient(180deg,transparent 0,#000 16%,#000 84%,transparent 100%);mask-composite:intersect;
