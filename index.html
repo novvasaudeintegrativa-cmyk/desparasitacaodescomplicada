@@ -616,6 +616,8 @@ html,body{overflow-x:clip}
 .glens::before{content:"";position:absolute;inset:-11px;border-radius:50%;background:conic-gradient(from 210deg,#ffd9c4,#f08a62,#b84a0c,#e0603a,#ffd9c4,#f08a62,#a8430d,#ffd9c4);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 11px),#000 calc(100% - 10px));mask:radial-gradient(farthest-side,transparent calc(100% - 11px),#000 calc(100% - 10px));filter:drop-shadow(0 8px 14px rgba(120,40,10,.35))}
 .glens-in::after{background:radial-gradient(ellipse 46% 30% at 30% 20%,rgba(255,255,255,.7),rgba(255,255,255,0) 70%),linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,0) 40%)!important}
 .glens-h{position:absolute;left:calc(85.4% - 7%);top:calc(85.4% + 5px);width:14%;height:auto;transform-origin:50% 0;transform:rotate(-45deg);filter:drop-shadow(0 8px 12px rgba(120,40,10,.4));z-index:-1}
+.gc.inlens{border-radius:50%;box-shadow:0 0 0 4px #fff,0 14px 30px rgba(120,40,10,.4)}
+.gc.inlens .mlab{left:50%;bottom:8%;transform:translateX(-50%);white-space:nowrap}
 /* circulo: ilustracoes nos nos, nome do metodo no centro */
 .rthumb{position:relative;display:block;width:108px;height:108px;flex:none;transition:transform .3s}
 .rthumb img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;box-shadow:0 0 0 4px #fff,0 10px 24px rgba(0,0,0,.14);background:#fff7ef;transition:box-shadow .3s}
@@ -1294,9 +1296,9 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
       cards.forEach(function (c) {
         var r = c.getAttribute('data-region'), k = +c.getAttribute('data-k'), on = false, x = 50, y = 50, w = 16;
         if (key === 'all') { if (k === 0) { on = true; var m = INFO[r].main; x = m[0]; y = m[1]; w = m[2]; } }
-        else if (r === key) { on = true; w = 24; x = lx < 50 ? 85 : 15; y = 36; }
+        else if (r === key) { on = true; w = 27; x = lx; y = +geo.getAttribute('data-ly') || 50; }
         c.style.setProperty('--cx', x + '%'); c.style.setProperty('--cy', y + '%'); c.style.setProperty('--cw', w + '%');
-        c.classList.toggle('on', on);
+        c.classList.toggle('on', on); c.classList.toggle('inlens', on && key !== 'all');
       });
     }
     function camera(key) {
@@ -1304,8 +1306,8 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
       if (key === 'all') { geo.classList.remove('has-lens'); geo.setAttribute('data-lx', 50); return; }
       var b = BB[key], w = b[2] - b[0], h = b[3] - b[1], cx = (b[0] + b[2]) / 2, cy = (b[1] + b[3]) / 2, L = 44;
       var z = Math.max(1.35, Math.min(2.7, 0.9 * L / Math.max(w, h)));
-      var lx = Math.max(L / 2 + 2, Math.min(100 - L / 2 - 2, cx)), ly = Math.max(L / 2 + 2, Math.min(100 - L / 2 - 2, cy));
-      geo.setAttribute('data-lx', lx);
+      var lx = Math.max(L / 2 + 2, Math.min(100 - L / 2 - 2, cx)), ly = Math.max(L / 2 + 2, Math.min(66, cy));
+      geo.setAttribute('data-lx', lx); geo.setAttribute('data-ly', ly);
       lens.style.left = (lx - L / 2) + '%'; lens.style.top = (ly - L / 2) + '%';
       lm.style.width = (10000 / L) + '%'; lm.style.left = (50 - cx * 100 / L) + '%'; lm.style.top = (50 - cy * 100 / L) + '%';
       lm.style.transformOrigin = cx + '% ' + cy + '%'; lm.style.transform = 'scale(' + z.toFixed(3) + ')';
