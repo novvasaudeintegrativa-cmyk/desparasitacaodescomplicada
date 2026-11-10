@@ -608,7 +608,14 @@ html,body{overflow-x:clip}
 .glens-in::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 30% 24%,rgba(255,255,255,.55),rgba(255,255,255,0) 38%);pointer-events:none}
 .glens-map{position:absolute;transition:left 1.2s cubic-bezier(.65,0,.25,1),top 1.2s cubic-bezier(.65,0,.25,1),transform 1.2s cubic-bezier(.65,0,.25,1)}
 .glens-map img{display:block;width:100%;height:auto}
-.glens-h{position:absolute;right:-6%;bottom:-6%;width:20%;height:6%;background:linear-gradient(90deg,#e0603a,#b84a0c);border-radius:8px;transform-origin:0 50%;transform:rotate(45deg) translate(-4%,-50%);box-shadow:0 6px 14px rgba(120,40,10,.4)}
+.glens-map svg{display:block;width:100%;height:auto}
+.glens-map .rg{fill:#ffcdb3;pointer-events:none;transition:fill .5s}
+.glens-map .rg path{vector-effect:non-scaling-stroke;stroke:#fff;stroke-width:1.2}
+.glens-map .rg.on{fill:#d9532c}
+.glens-in{box-shadow:0 0 0 3px #fff,0 24px 54px rgba(120,40,10,.42),inset 0 0 46px rgba(224,96,10,.2)!important}
+.glens::before{content:"";position:absolute;inset:-11px;border-radius:50%;background:conic-gradient(from 210deg,#ffd9c4,#f08a62,#b84a0c,#e0603a,#ffd9c4,#f08a62,#a8430d,#ffd9c4);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 11px),#000 calc(100% - 10px));mask:radial-gradient(farthest-side,transparent calc(100% - 11px),#000 calc(100% - 10px));filter:drop-shadow(0 8px 14px rgba(120,40,10,.35))}
+.glens-in::after{background:radial-gradient(ellipse 46% 30% at 30% 20%,rgba(255,255,255,.7),rgba(255,255,255,0) 70%),linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,0) 40%)!important}
+.glens-h{position:absolute;left:calc(85.4% - 7%);top:calc(85.4% + 5px);width:14%;height:auto;transform-origin:50% 0;transform:rotate(-45deg);filter:drop-shadow(0 8px 12px rgba(120,40,10,.4));z-index:-1}
 /* circulo: ilustracoes nos nos, nome do metodo no centro */
 .rthumb{position:relative;display:block;width:108px;height:108px;flex:none;transition:transform .3s}
 .rthumb img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;box-shadow:0 0 0 4px #fff,0 10px 24px rgba(0,0,0,.14);background:#fff7ef;transition:box-shadow .3s}
@@ -925,17 +932,12 @@ img,video,svg{max-width:100%}
       <div class="gpin" style="left:45.64%;top:53.50%" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
       <div class="gballoon"><small>Cuiabá · Mato Grosso</small><b>Desparasitação<br>Descomplicada</b><span>daqui para todo o Brasil</span></div>
     </div>
-    <div class="glens" id="glens" aria-hidden="true"><div class="glens-in"><div class="glens-map" id="glensmap"><img src="imgs/mosaico/brasil-claro.svg" alt=""></div></div><i class="glens-h"></i></div>
+    <div class="glens" id="glens" aria-hidden="true"><div class="glens-in"><div class="glens-map" id="glensmap"><img src="imgs/mosaico/brasil-claro.svg" alt=""></div></div><svg class="glens-h" viewBox="0 0 44 118" aria-hidden="true"><defs><linearGradient id="lhg" x1="0" x2="1"><stop offset="0" stop-color="#8f3a0a"/><stop offset=".45" stop-color="#e0603a"/><stop offset="1" stop-color="#a8430d"/></linearGradient><linearGradient id="lfg" x1="0" x2="1"><stop offset="0" stop-color="#ffe9dc"/><stop offset=".5" stop-color="#f4a77f"/><stop offset="1" stop-color="#c4602c"/></linearGradient></defs><rect x="9" y="0" width="26" height="14" rx="4" fill="url(#lfg)"/><rect x="5" y="12" width="34" height="9" rx="4.5" fill="url(#lfg)"/><path d="M11 21H33L36 106Q36 117 22 117Q8 117 8 106Z" fill="url(#lhg)"/><path d="M15 26V104" stroke="rgba(255,255,255,.35)" stroke-width="3" stroke-linecap="round"/></svg></div>
     <figure class="gc" data-region="norte" data-k="0"><img src="imgs/regioes/ilus-norte.jpg" alt="Ilustração de pessoa típica da região Norte do Brasil" width="700" height="700" loading="lazy"><figcaption class="mlab">Norte</figcaption></figure>
-    <figure class="gc" data-region="norte" data-k="1"><img src="imgs/regioes/ilus2-norte.jpg" alt="Ilustração de pessoa típica da região Norte do Brasil" width="700" height="700" loading="lazy"><figcaption class="mlab">Norte</figcaption></figure>
     <figure class="gc" data-region="nordeste" data-k="0"><img src="imgs/regioes/ilus-nordeste.jpg" alt="Ilustração de pessoa típica da região Nordeste do Brasil" width="700" height="700" loading="lazy"><figcaption class="mlab">Nordeste</figcaption></figure>
-    <figure class="gc" data-region="nordeste" data-k="1"><img src="imgs/regioes/ilus2-nordeste.jpg" alt="Ilustração de pessoa típica da região Nordeste do Brasil" width="700" height="700" loading="lazy"><figcaption class="mlab">Nordeste</figcaption></figure>
     <figure class="gc" data-region="centro-oeste" data-k="0"><img src="imgs/regioes/ilus-centro-oeste.jpg" alt="Ilustração de pessoa típica da região Centro-Oeste do Brasil" width="700" height="700" loading="lazy"><figcaption class="mlab">Centro-Oeste</figcaption></figure>
-    <figure class="gc" data-region="centro-oeste" data-k="1"><img src="imgs/regioes/ilus2-centro-oeste.jpg" alt="Ilustração de pessoa típica da região Centro-Oeste do Brasil" width="700" height="700" loading="lazy"><figcaption class="mlab">Centro-Oeste</figcaption></figure>
     <figure class="gc" data-region="sudeste" data-k="0"><img src="imgs/regioes/ilus-sudeste.jpg" alt="Ilustração de pessoa típica da região Sudeste do Brasil" width="700" height="700" loading="lazy"><figcaption class="mlab">Sudeste</figcaption></figure>
-    <figure class="gc" data-region="sudeste" data-k="1"><img src="imgs/regioes/ilus2-sudeste.jpg" alt="Ilustração de pessoa típica da região Sudeste do Brasil" width="700" height="700" loading="lazy"><figcaption class="mlab">Sudeste</figcaption></figure>
     <figure class="gc" data-region="sul" data-k="0"><img src="imgs/regioes/ilus-sul.jpg" alt="Ilustração de pessoa típica da região Sul do Brasil" width="700" height="700" loading="lazy"><figcaption class="mlab">Sul</figcaption></figure>
-    <figure class="gc" data-region="sul" data-k="1"><img src="imgs/regioes/ilus2-sul.jpg" alt="Ilustração de pessoa típica da região Sul do Brasil" width="700" height="700" loading="lazy"><figcaption class="mlab">Sul</figcaption></figure>
     <div class="gcap" aria-live="polite"><b class="gname" id="gname">Brasil</b><p id="gcopy">Saindo de Cuiabá, o Desparasitação Descomplicada vai alcançar todo o Brasil.</p></div>
   </div>
   <p class="mnote">100% online, de qualquer lugar do país. Imagens ilustrativas.</p>
@@ -1277,7 +1279,7 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
     // regioes clicaveis (svg externo)
     var xhr = new XMLHttpRequest(); xhr.open('GET', 'imgs/mosaico/brasil-regioes.svg');
     xhr.onload = function () {
-      if (xhr.status && xhr.status >= 400) return; regs.innerHTML = xhr.responseText;
+      if (xhr.status && xhr.status >= 400) return; regs.innerHTML = xhr.responseText; document.getElementById('glensmap').innerHTML = xhr.responseText;
       Array.prototype.forEach.call(regs.querySelectorAll('.rg'), function (g) {
         var key = g.getAttribute('data-region');
         g.addEventListener('mouseenter', function () { hold(); show(key); });
@@ -1286,13 +1288,13 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
       if (cur) mark();
     };
     xhr.send();
-    function mark() { Array.prototype.forEach.call(regs.querySelectorAll('.rg'), function (g) { g.classList.toggle('on', g.getAttribute('data-region') === cur); }); }
+    function mark() { Array.prototype.forEach.call(geo.querySelectorAll('.rg'), function (g) { g.classList.toggle('on', g.getAttribute('data-region') === cur); }); }
     function layout(key) {
       var lx = +geo.getAttribute('data-lx') || 50;
       cards.forEach(function (c) {
         var r = c.getAttribute('data-region'), k = +c.getAttribute('data-k'), on = false, x = 50, y = 50, w = 16;
         if (key === 'all') { if (k === 0) { on = true; var m = INFO[r].main; x = m[0]; y = m[1]; w = m[2]; } }
-        else if (r === key) { on = true; w = 22; x = lx < 50 ? 86 : 14; y = k === 0 ? 24 : 58; }
+        else if (r === key) { on = true; w = 24; x = lx < 50 ? 85 : 15; y = 36; }
         c.style.setProperty('--cx', x + '%'); c.style.setProperty('--cy', y + '%'); c.style.setProperty('--cw', w + '%');
         c.classList.toggle('on', on);
       });
