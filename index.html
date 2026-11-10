@@ -572,7 +572,7 @@ html,body{overflow-x:clip}
 .gregions .rg path{vector-effect:non-scaling-stroke;stroke:rgba(255,255,255,.9);stroke-width:1.2}
 .gregions .rg:hover,.gregions .rg.on{fill:rgba(224,96,10,.5)}
 .glines{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;overflow:visible;transition:opacity .6s}
-.geo:not([data-s="all"]):not([data-s="centro-oeste"]) .glines{opacity:0}
+.geo:not([data-s="all"]) .glines{opacity:0}
 .ln{fill:none;stroke:#d9532c;stroke-width:.55;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;opacity:.85;transition:stroke-dashoffset 1.2s ease-in-out;transition-delay:calc(.6s + var(--i)*.3s)}
 .garrow{fill:none;stroke:#d9532c;stroke-width:.7;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s ease-out .3s}
 .dot{fill:#fff;stroke:#d9532c;stroke-width:.35;opacity:0;transition:opacity .6s;transition-delay:calc(2s + var(--i)*.4s)}
@@ -585,7 +585,7 @@ html,body{overflow-x:clip}
 @keyframes gring{0%{transform:scale(1);opacity:.9}100%{transform:scale(7);opacity:0}}
 .geo.in .gpin i{animation-play-state:running}
 .gballoon{position:absolute;left:0;top:56%;width:31%;z-index:5;background:linear-gradient(135deg,#f08a62,#e0603a 55%,#d9532c);color:#fff;border-radius:20px;padding:clamp(8px,1.6vw,16px) clamp(10px,1.8vw,18px);text-align:left;box-shadow:0 16px 34px rgba(217,83,44,.45);transform:translateY(14px) scale(.85);opacity:0;transform-origin:100% 40%;transition:opacity .6s .2s,transform .7s cubic-bezier(.3,1.5,.5,1) .2s}
-.geo.in[data-s="all"] .gballoon,.geo.in[data-s="centro-oeste"] .gballoon{opacity:1;transform:none}
+.geo.in[data-s="all"] .gballoon{opacity:1;transform:none}
 .gballoon small{display:block;font-size:clamp(7px,1.15vw,12px);font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.95}
 .gballoon b{display:block;font-size:clamp(11px,2.3vw,22px);line-height:1.05;letter-spacing:-.02em;margin:3px 0}
 .gballoon span{display:block;font-size:clamp(8px,1.35vw,13px);font-weight:600;color:#fff4ec}
