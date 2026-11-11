@@ -95,7 +95,7 @@ h2 b,h1 b{font-weight:700;color:var(--brand)}
 
 /* faixa */
 .strip{background:linear-gradient(90deg,#e8673f,#de5a33 50%,#d9532c);color:#fff;padding:44px 0}
-.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
 .strip b{display:block;font-size:64px;font-weight:700;color:#fff;line-height:1;font-variant-numeric:tabular-nums}
 .strip span{display:block;margin-top:8px;font-size:17px;font-weight:500;line-height:1.35;color:#fff}
 
@@ -466,7 +466,7 @@ html,body{overflow-x:clip}
 @media(max-width:900px){
   section{padding:52px 0}
   .g2,.g3,.cmp,.fit,.depo,.obj,.steps,.items{grid-template-columns:1fr}
-  .strip .wrap{grid-template-columns:1fr 1fr}.strip b{font-size:52px}
+  .strip .wrap{grid-template-columns:1fr 1fr}.strip .wrap>div:last-child{grid-column:1/-1}.strip b{font-size:52px}
   .autor{grid-template-columns:1fr}.arte{max-width:340px;margin:0 auto 24px}.g1{right:-2%}.g2{left:-2%}.g3{right:-2%}
   .guarantee{grid-template-columns:1fr;text-align:center}.seal{margin:0 auto}
   .nav .btn{display:none}
@@ -825,7 +825,6 @@ img,video,svg{max-width:100%}
   <div><b data-count="30">30</b><span>dias de jornada organizada</span></div>
   <div><b data-count="12">12</b><span>materiais incluídos, com 3 e-books de bônus</span></div>
   <div><b data-count="20">20</b><span>anos de experiência clínica de quem ensina</span></div>
-  <div><b data-count="0">0</b><span>promessa de cura: é conteúdo educativo</span></div>
 </div></div>
 
 <!-- 2. IDENTIFICAÇÃO -->
