@@ -102,17 +102,16 @@ Sem exigir conhecimento prévio. Um dia de cada vez, no seu ritmo.
 
 ---
 
-## 6. MATERIAIS EXTRAS (Desejo) **[CONFIRMAR: os dois guias existem e estão incluídos nos R$ 97?]**
+## 6. BÔNUS — COLEÇÃO DESPARASITAÇÃO (Desejo)
 
-**Eyebrow:** Para você entender melhor a sua alimentação
+**Eyebrow:** Bônus incluídos
 
-### Extra 1 — Alimentos que estufam
-Um guia educativo sobre FODMAPs e fermentação intestinal: o que são, quais leguminosas, frutas, vegetais, cereais e laticínios merecem atenção.
+### Coleção Desparasitação (3 e-books)
+- E-book: Alimentação do Método Desparasitação Descomplicada
+- E-book: Alimentos que estufam você
+- E-book: Desparasitação Descomplicada em 30 dias
 
-### Extra 2 — Alimentação do método
-Guia de consulta rápida da primeira fase: o que priorizar, o que reduzir, o que saber sobre proteínas, gorduras e fermentados, cuidados de higiene e como organizar as compras.
-
-> Observação: ainda não estão no site. Se confirmados, entram na seção "O que você recebe" (círculo) e na contagem da faixa de números (de 9 para 11 materiais).
+*(No site: bloco "Bônus incluídos" logo abaixo do círculo "O que você recebe".)*
 
 ---
 
@@ -193,8 +192,8 @@ Ninguém nasce sabendo. O treinamento foi organizado para quem está começando,
 **Isso tem de graça na internet.**
 Tem muita coisa, mas espalhada, sem contexto e sem os cuidados. O que você leva aqui é ordem: tudo reunido em sequência, para não passar horas pesquisando.
 
-**Preciso comprar o kit?**
-Não. O curso entrega a lista completa e explica como comprar em farmácia de manipulação. O kit físico é uma **opção de conveniência**, oferecida à parte.
+**Recebo só as aulas?**
+Não. Além do treinamento, você leva o protocolo de 30 dias, os guias, a lista de compras e a **Coleção Desparasitação**, com 3 e-books de bônus.
 
 **Já tomei um remédio e não bastou.**
 Muita gente pensa assim. O ciclo de vida do parasita é complexo e uma ação isolada costuma não considerar o processo inteiro. O curso explica isso com calma.
@@ -222,15 +221,17 @@ Tudo para organizar o cuidado com o seu intestino, em uma única compra.
 - Guia de utilização e dúvidas frequentes
 - Orientações de cuidados posteriores
 - Grupo de acompanhamento para dúvidas do treinamento
-- *(se confirmados)* 2 materiais extras sobre alimentação e FODMAPs
+- **Bônus:** Coleção Desparasitação, com 3 e-books
 
-~~R$ 497~~ **por apenas R$ 97** · Economia de R$ 400 (80% de desconto)
+**Selo: Black Friday**
+
+~~R$ 497~~ **por apenas R$ 97** · Black Friday: economia de R$ 400 (80% de desconto)
 
 **Botão:** QUERO COMEÇAR AGORA
 
 Compra 100% segura · Acesso imediato · Garantia de 7 dias
 
-*Produtos físicos, como o Kit DI Raízes, são opcionais e vendidos à parte.*
+*Condição especial de Black Friday. Conteúdo 100% digital, com acesso imediato.*
 
 ---
 
@@ -258,7 +259,7 @@ Sua saúde merece atenção hoje. Dê o primeiro passo com informação organiza
 
 **Botão:** QUERO COMEÇAR O MÉTODO
 
-Acesso imediato · Pagamento seguro pela Kiwify · Garantia de 7 dias
+Black Friday · Acesso imediato · Pagamento seguro pela Kiwify · Garantia de 7 dias
 
 ---
 
