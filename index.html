@@ -1277,14 +1277,15 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
     var ALL = { name: 'Brasil', copy: 'Saindo de Cuiabá, o Desparasitação Descomplicada vai alcançar todo o Brasil.' };
     var ORDER = ['all', 'centro-oeste', 'norte', 'nordeste', 'sudeste', 'sul'];
     var cards = Array.prototype.slice.call(geo.querySelectorAll('.gc'));
-    var cur = null, idx = 0, timer = null, paused = false, resume = null, vis = false, started = false;
+    var back = null, cur = null, idx = 0, timer = null, paused = false, resume = null, vis = false, started = false;
     // regioes clicaveis (svg externo)
     var xhr = new XMLHttpRequest(); xhr.open('GET', 'imgs/mosaico/brasil-regioes.svg');
     xhr.onload = function () {
       if (xhr.status && xhr.status >= 400) return; regs.innerHTML = xhr.responseText; document.getElementById('glensmap').innerHTML = xhr.responseText;
       Array.prototype.forEach.call(regs.querySelectorAll('.rg'), function (g) {
         var key = g.getAttribute('data-region');
-        g.addEventListener('mouseenter', function () { hold(); show(key); });
+        g.addEventListener('mouseenter', function () { clearTimeout(back); hold(); show(key); });
+        g.addEventListener('mouseleave', function () { clearTimeout(back); back = setTimeout(function () { idx = 0; show('all'); hold(3000); }, 450); });
         g.addEventListener('click', function () { hold(8000); show(key); });
       });
       if (cur) mark();
@@ -1321,7 +1322,7 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
       camera(key); layout(key); mark();
     }
     function hold(ms) { paused = true; clearTimeout(resume); resume = setTimeout(function () { paused = false; }, ms || 3500); }
-    geo.addEventListener('mouseleave', function () { hold(2500); });
+    geo.addEventListener('mouseleave', function () { clearTimeout(back); back = setTimeout(function () { idx = 0; show('all'); hold(3000); }, 450); });
     function tick() { if (paused || !vis || reduce) return; idx = (idx + 1) % ORDER.length; show(ORDER[idx]); }
     new IntersectionObserver(function (es) {
       vis = es[0].isIntersecting;
