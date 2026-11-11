@@ -618,6 +618,21 @@ html,body{overflow-x:clip}
 .bf-bonus *{color:inherit}.bf-bonus small{color:#ffb48f!important}
 /* secoes claras: linhas laranja bem suaves no fundo */
 main>section:not(.hero):not(.dark):not(.quem){background-image:linear-gradient(rgba(224,96,10,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(224,96,10,.075) 1px,transparent 1px);background-size:36px 36px}
+/* prints de WhatsApp simulados */
+.tprint.wa{container-type:inline-size;display:flex;flex-direction:column;background:#e5ddd5;color:#303030;cursor:default}
+.wa-top{background:#128c7e;color:#fff;display:flex;align-items:center;gap:3cqw;padding:3.6cqw 4cqw;flex:none}
+.wa-av{width:11.5cqw;height:11.5cqw;border-radius:50%;background:#25d366;display:grid;place-items:center;font-weight:700;font-size:4.6cqw;color:#fff;flex:none;overflow:hidden;box-shadow:0 0 0 .5cqw rgba(255,255,255,.85)}
+.wa-av img{width:100%;height:100%;object-fit:cover;display:block}
+.wa-nm{min-width:0}.wa-nm b{display:block;font-size:5.2cqw;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.wa-nm small{display:block;font-size:3.8cqw;opacity:.88}
+.wa-chat{flex:1;padding:4cqw 3.4cqw;display:flex;flex-direction:column;gap:2.6cqw;background-image:radial-gradient(rgba(0,0,0,.05) 1.2px,transparent 1.4px);background-size:22px 22px;overflow:hidden}
+.wa-day{align-self:center;background:#f3ede6;color:#6b6b6b;font-size:3.6cqw;padding:.9cqw 3.6cqw;border-radius:6px}
+.wa-m{max-width:90%;padding:2.4cqw 3cqw 1.8cqw;border-radius:2.4cqw;font-size:4.7cqw;line-height:1.36;box-shadow:0 1px 1px rgba(0,0,0,.13)}
+.wa-m i{display:block;text-align:right;font-style:normal;font-size:3.2cqw;color:#8a8a8a;margin-top:.8cqw}
+.wa-in{background:#fff;align-self:flex-start;border-top-left-radius:.6cqw}
+.wa-out{background:#dcf8c6;align-self:flex-end;border-top-right-radius:.6cqw}.wa-out i{color:#4a9d72}
+.wa-bar{flex:none;background:#f0f0f0;display:flex;align-items:center;gap:2.4cqw;padding:3cqw 3.4cqw}
+.wa-bar span{flex:1;background:#fff;border-radius:99px;padding:2.6cqw 4cqw;font-size:4.2cqw;color:#9a9a9a}
+.wa-bar em{width:10cqw;height:10cqw;border-radius:50%;background:#25d366;flex:none}
 /* ===== bonus: colecao de e-books ===== */
 .bonus{max-width:640px;margin:34px auto 0;text-align:left}
 .bonus h3{font-size:clamp(22px,3vw,28px);font-weight:700;letter-spacing:-.01em;margin:0 0 8px;padding-bottom:12px;border-bottom:1px dashed #cfcfcf}
@@ -1029,9 +1044,10 @@ img,video,svg{max-width:100%}
   <h3 class="tsub">Conversas reais no WhatsApp</h3>
   <!-- prints: salve as imagens em imgs/depoimentos/print-1.jpg, print-2.jpg ... e oculte telefone e sobrenome antes -->
   <div class="tprints hs" data-hs>
-    <div class="tprint"><img src="imgs/depoimentos/print-1.jpg" alt="Print de conversa de WhatsApp com depoimento" loading="lazy" onerror="this.parentNode.classList.add('vazio');this.remove()"><span class="tvazio">Print de conversa 1<small>imgs/depoimentos/print-1.jpg</small></span></div>
-    <div class="tprint"><img src="imgs/depoimentos/print-2.jpg" alt="Print de conversa de WhatsApp com depoimento" loading="lazy" onerror="this.parentNode.classList.add('vazio');this.remove()"><span class="tvazio">Print de conversa 2<small>imgs/depoimentos/print-2.jpg</small></span></div>
-    <div class="tprint"><img src="imgs/depoimentos/print-3.jpg" alt="Print de conversa de WhatsApp com depoimento" loading="lazy" onerror="this.parentNode.classList.add('vazio');this.remove()"><span class="tvazio">Print de conversa 3<small>imgs/depoimentos/print-3.jpg</small></span></div>
+    <div class="tprint wa" role="img" aria-label="Exemplo de conversa de WhatsApp com depoimento de Julia Silva"><div class="wa-top"><span class="wa-av">JS</span><div class="wa-nm"><b>Julia Silva</b><small>online</small></div></div><div class="wa-chat"><span class="wa-day">Hoje</span><div class="wa-m wa-out">Julia, como está sendo a jornada até agora? 😊<i>14:28 ✓✓</i></div><div class="wa-m wa-in">Eu vivia seguindo receita de grupo de WhatsApp e tinha medo de errar. Agora eu entendo a ordem de cada etapa. 😮<i>14:32</i></div><div class="wa-m wa-in">As aulas são curtas, consegui acompanhar no meu ritmo. Gostei muito! 🙏<i>14:33</i></div></div><div class="wa-bar"><span>Mensagem</span><em></em></div></div>
+    <div class="tprint wa" role="img" aria-label="Exemplo de conversa de WhatsApp com depoimento de Valentina Albuquerque"><div class="wa-top"><span class="wa-av">VA</span><div class="wa-nm"><b>Valentina Albuquerque</b><small>online</small></div></div><div class="wa-chat"><span class="wa-day">Hoje</span><div class="wa-m wa-out">Valentina, conseguiu acompanhar o material? 📚<i>09:10 ✓✓</i></div><div class="wa-m wa-in">Gostei demais dos guias! A lista de compras me poupou um tempão no mercado. 👏<i>09:14</i></div><div class="wa-m wa-in">E ele deixa claro quando procurar um profissional. Me senti segura do começo ao fim.<i>09:17</i></div></div><div class="wa-bar"><span>Mensagem</span><em></em></div></div>
+    <div class="tprint wa" role="img" aria-label="Exemplo de conversa de WhatsApp com depoimento de Sandra Moraes"><div class="wa-top"><span class="wa-av">SM</span><div class="wa-nm"><b>Sandra Moraes</b><small>online</small></div></div><div class="wa-chat"><span class="wa-day">Hoje</span><div class="wa-m wa-out">Sandra, o que achou do grupo de acompanhamento? 💬<i>18:38 ✓✓</i></div><div class="wa-m wa-in">Eu tinha vergonha de perguntar sobre esse assunto, mas tiraram minhas dúvidas com muita calma. 😌<i>18:41</i></div><div class="wa-m wa-in">Recomendo. Tudo muito bem organizado! ✌️<i>18:45</i></div></div><div class="wa-bar"><span>Mensagem</span><em></em></div></div>
+    <div class="tprint wa" role="img" aria-label="Exemplo de conversa de WhatsApp com depoimento de Nome a definir"><div class="wa-top"><span class="wa-av">P4</span><div class="wa-nm"><b>Nome a definir</b><small>online</small></div></div><div class="wa-chat"><span class="wa-day">Hoje</span><div class="wa-m wa-out">Como foi a sua experiência com o método? 😊<i>11:02 ✓✓</i></div><div class="wa-m wa-in">Achei que não ia entender nada, mas ele explica tudo em linguagem simples, passo a passo.<i>11:06</i></div><div class="wa-m wa-in">Já indiquei para minha irmã. 🙌<i>11:08</i></div></div><div class="wa-bar"><span>Mensagem</span><em></em></div></div>
   </div>
   <p class="note">Relatos compartilhados com autorização. Dados pessoais foram ocultados. Resultados variam de pessoa para pessoa e não substituem avaliação profissional.</p>
 </div></section>
