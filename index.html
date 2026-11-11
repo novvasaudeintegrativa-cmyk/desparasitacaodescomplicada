@@ -577,6 +577,26 @@ html,body{overflow-x:clip}
 .offer .bf-urg{margin:12px 0 0;font-size:14px;font-weight:600;opacity:.95}
 @media(max-width:600px){.offer .bf-tag{width:54px;right:14px}.offer .bf-bonus{gap:12px;padding:14px}.offer .bf-bonus img{width:70px}.offer .bf-bonus b{font-size:18px}.offer .bf-strip em{display:none}}
 @media(prefers-reduced-motion:reduce){.offer .bf-strip::after,.offer .bf-tag{animation:none}}
+/* ===== card da oferta no periodo de Black Friday: preto com detalhes laranja ===== */
+.offer{background:radial-gradient(120% 70% at 50% 0%,#2b1a12,#141010 60%,#0c0a0a)!important;box-shadow:0 30px 70px rgba(0,0,0,.45),0 0 0 1.5px rgba(240,138,98,.55),0 0 60px rgba(224,96,10,.25)!important}
+.offer .bf-strip{background:linear-gradient(90deg,#d9532c,#f08a62 50%,#d9532c)}
+.offer .bf-strip span{color:#fff}.offer .bf-strip em{color:#fff4ec}
+.offer .bf-strip::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent)}
+.offer h3{color:#fff}
+.offer .sub,.price small{color:#d8c9c1!important}
+.price .de s{text-decoration-color:#f08a62}
+.price b{background:linear-gradient(180deg,#ffb48f,#f08a62 45%,#e0603a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent!important;filter:drop-shadow(0 6px 18px rgba(224,96,10,.45))}
+.price .eco{background:linear-gradient(135deg,#f08a62,#d9532c)!important;color:#fff!important;box-shadow:0 10px 24px rgba(217,83,44,.45)!important}
+.price .eco b{background:none;-webkit-text-fill-color:#fff;color:#fff!important;filter:none}
+.offer .sec,.offer .micro,.offer .bf-urg{color:#d8c9c1!important}
+.offer li{border-top:1px solid rgba(240,138,98,.28)}
+.offer li::before{color:#f08a62}
+.offer .bf-bonus{background:rgba(224,96,10,.12);box-shadow:inset 0 0 0 1.5px rgba(240,138,98,.6),0 14px 30px rgba(0,0,0,.35)}
+.offer .bf-bonus span{color:#e3d6ce}
+.offer .btn.full{background:linear-gradient(135deg,#f08a62,#e0603a 55%,#d9532c)!important;color:#fff!important;box-shadow:0 14px 32px rgba(217,83,44,.5)!important}
+.offer .btn.full:hover{background:linear-gradient(135deg,#ff9a72,#ea6a42 55%,#e0603a)!important}
+@media(prefers-reduced-motion:no-preference){.offer .btn.full{animation:pulsebf 1.9s ease-in-out infinite}.offer .btn.full:hover{animation-play-state:paused}}
+@keyframes pulsebf{0%{transform:scale(1);box-shadow:0 14px 32px rgba(217,83,44,.5),0 0 0 0 rgba(240,138,98,.7)}55%{transform:scale(1.06);box-shadow:0 18px 38px rgba(217,83,44,.6),0 0 0 16px rgba(240,138,98,0)}100%{transform:scale(1);box-shadow:0 14px 32px rgba(217,83,44,.5),0 0 0 0 rgba(240,138,98,0)}}
 /* ===== bonus: colecao de e-books ===== */
 .bonus{max-width:640px;margin:34px auto 0;text-align:left}
 .bonus h3{font-size:clamp(22px,3vw,28px);font-weight:700;letter-spacing:-.01em;margin:0 0 8px;padding-bottom:12px;border-bottom:1px dashed #cfcfcf}
@@ -1001,16 +1021,16 @@ img,video,svg{max-width:100%}
   <span class="eyebrow">Suas dúvidas, com sinceridade</span>
   <h2>Antes de decidir, <b>veja se alguma destas dúvidas é a sua</b></h2>
   <div class="obj hs" data-hs>
-    <div class="card"><h3>Não sei se vai funcionar comigo</h3><p>É normal desconfiar de tanta promessa. Por isso o método <b>não promete cura nem resultado clínico</b>: ele ensina cuidado, organização e quando procurar um profissional. E você tem garantia.</p></div>
+    <div class="card"><h3>Não sei se vai funcionar comigo</h3><p>É normal desconfiar de tanta promessa. Por isso o método <b>não promete cura nem resultado clínico</b>: ele ensina cuidado, organização e quando procurar um profissional.</p></div>
     <div class="card"><h3>Será que é seguro para mim?</h3><p>Segurança vem primeiro. O treinamento explica quem precisa de avaliação antes (gestantes, lactantes, crianças, quem usa medicamento contínuo) e como agir.</p></div>
     <div class="card"><h3>Não tenho tempo</h3><p>Rotina corrida mesmo. As aulas são curtas e você acessa no seu ritmo, sem horário fixo nem programação complicada.</p></div>
     <div class="card"><h3>Não entendo nada do assunto</h3><p>Ninguém nasce sabendo. O treinamento foi organizado para quem está começando, sem termos técnicos complicados.</p></div>
     <div class="card"><h3>Isso tem de graça na internet</h3><p>Tem muita coisa, mas espalhada, sem contexto e sem os cuidados. O que você leva aqui é ordem: tudo reunido em sequência, para não passar horas pesquisando.</p></div>
     <div class="card"><h3>Recebo só as aulas?</h3><p>Não. Além do treinamento, você leva o protocolo de 30 dias, os guias, a lista de compras e a <b>Coleção Desparasitação</b>, com 3 e-books de bônus.</p></div>
     <div class="card"><h3>Já tomei um remédio e não bastou</h3><p>Muita gente pensa assim. O ciclo de vida do parasita é complexo e uma ação isolada costuma não considerar o processo inteiro. O curso explica isso com calma.</p></div>
-    <div class="card"><h3>Será que não é golpe?</h3><p>Desconfiar faz sentido, tem muita promessa por aí. Aqui o pagamento é pela Kiwify, quem ensina tem 20 anos de prática clínica e o método <b>não promete cura</b>. E você tem 7 dias de garantia.</p></div>
+    <div class="card"><h3>Será que não é golpe?</h3><p>Desconfiar faz sentido, tem muita promessa por aí. Aqui o pagamento é pela Kiwify, quem ensina tem 20 anos de prática clínica e o método <b>não promete cura</b>.</p></div>
     <div class="card"><h3>Tenho vergonha de perguntar</h3><p>Aqui ninguém julga. Intestino é assunto de muita gente, e o grupo de acompanhamento existe para tirar as dúvidas do treinamento com calma.</p></div>
-    <div class="card"><h3>Não tenho dinheiro agora</h3><p>Cada gasto pesa, eu sei. O investimento é um valor acessível, com pagamento seguro e garantia, comparado a juntar guias e produtos avulsos por conta própria.</p></div>
+    <div class="card"><h3>Não tenho dinheiro agora</h3><p>Cada gasto pesa, eu sei. O investimento é um valor acessível, com pagamento seguro, comparado a juntar guias e produtos avulsos por conta própria.</p></div>
   </div>
   <div class="center" style="margin-top:34px"><a class="btn" data-cta href="#oferta">Quero acessar o método</a></div>
 </div></section>
@@ -1041,7 +1061,7 @@ img,video,svg{max-width:100%}
     <div class="bf-bonus"><img src="imgs/black-friday/presente.webp" alt="" width="380" height="352" loading="lazy"><div><small>Bônus de Black Friday</small><b>Coleção Desparasitação</b><span>3 e-books para consultar a qualquer hora. Veja os títulos logo abaixo.</span></div></div>
     <a class="btn full bf-btn" data-cta href="#oferta">Quero aproveitar a Black Friday</a>
     <p class="bf-urg">Condição especial de Black Friday, por tempo limitado.</p>
-    <div class="sec"><span>Compra 100% segura</span><span>Acesso imediato</span><span class="g-t">Garantia de 7 dias</span></div>
+    <div class="sec"><span>Compra 100% segura</span><span>Acesso imediato</span></div>
     <p class="micro">Conteúdo 100% digital, com acesso imediato.</p>
   </div>
   <div class="bonus">
@@ -1067,7 +1087,6 @@ img,video,svg{max-width:100%}
     <details><summary>Gestantes, lactantes e crianças podem começar?</summary><p>Não sem avaliação profissional. O treinamento explica quem precisa de avaliação antes de qualquer protocolo.</p></details>
     <details><summary>Uso medicamento contínuo. Posso fazer?</summary><p>Você pode estudar o conteúdo, mas precisa avaliar contraindicações e interações com um profissional antes de usar fórmulas, plantas ou suplementos.</p></details>
     <details><summary>Preciso ter conhecimento prévio?</summary><p>Não. O treinamento foi organizado para quem está começando, com linguagem simples.</p></details>
-    <details><summary>Como funciona a garantia?</summary><p>Você tem 7 dias para conhecer o conteúdo. Se não for para você, solicite o reembolso pela própria Kiwify, sem burocracia.</p></details>
     <details><summary>O pagamento é seguro?</summary><p>Sim. A compra é processada pela Kiwify, plataforma de pagamentos que cuida da segurança dos seus dados.</p></details>
     <details><summary>Em quanto tempo vou ver resultado?</summary><p>Resultados variam de pessoa para pessoa e este conteúdo não promete cura nem resultado clínico. O objetivo é ajudar você a organizar o cuidado com segurança.</p></details>
   </div>
@@ -1078,7 +1097,7 @@ img,video,svg{max-width:100%}
   <h2>Você pode se acostumar com o desconforto. Mas <b>acostumar não significa que ele seja normal</b></h2>
   <p class="lead">Você já cuidou de todo mundo. Agora dê o primeiro passo por você, com informação organizada e responsável, sem promessa de milagre.</p>
   <div style="margin-top:28px"><a class="btn" data-cta href="#oferta">Quero começar o método</a></div>
-  <p class="micro">Black Friday · acesso imediato · pagamento seguro pela Kiwify · garantia de 7 dias</p>
+  <p class="micro">Black Friday · acesso imediato · pagamento seguro pela Kiwify</p>
 </div></section>
 </main>
 
