@@ -557,6 +557,26 @@ html,body{overflow-x:clip}
   .rnode span{display:none}
   .rnode.on i{transform:scale(1.1)}
 }
+/* ===== card da oferta: Black Friday ===== */
+.offer{position:relative;padding-top:64px!important}
+.offer .bf-strip{position:absolute;left:0;right:0;top:0;height:40px;border-radius:26px 26px 0 0;background:linear-gradient(90deg,#111,#2a1a14 50%,#111);display:flex;align-items:center;justify-content:center;gap:12px;overflow:hidden}
+.offer .bf-strip::after{content:"";position:absolute;top:0;bottom:0;width:70px;left:-90px;background:linear-gradient(100deg,transparent,rgba(255,170,120,.5),transparent);animation:bfshine 3.4s ease-in-out infinite}
+@keyframes bfshine{0%,35%{left:-90px}100%{left:110%}}
+.offer .bf-strip span{font:800 13px/1 var(--font);letter-spacing:.2em;text-transform:uppercase;color:#fff}
+.offer .bf-strip em{font:600 12px/1 var(--font);letter-spacing:.08em;text-transform:uppercase;font-style:normal;color:#ffb48f}
+.offer .bf-tag{position:absolute;right:20px;top:34px;width:70px;height:auto;rotate:8deg;transform-origin:50% 0;animation:bfswing 4s ease-in-out infinite;filter:drop-shadow(0 10px 14px rgba(0,0,0,.4));z-index:2}
+@keyframes bfswing{0%,100%{rotate:4deg}50%{rotate:12deg}}
+.price .eco{background:#111!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;display:block;width:max-content;max-width:100%;margin:14px auto 8px}
+.price .eco b{display:inline!important;color:#ffb48f!important;font-weight:800;margin-right:8px;font-size:18px!important;letter-spacing:.04em!important;line-height:1!important}
+.price .eco b span{display:none}
+.offer .bf-bonus{display:flex;align-items:center;gap:16px;text-align:left;margin:0 0 24px;padding:16px 18px;border-radius:20px;background:#111;box-shadow:0 14px 30px rgba(0,0,0,.28)}
+.offer .bf-bonus img{flex:none;width:92px;height:auto;filter:drop-shadow(0 8px 12px rgba(0,0,0,.5))}
+.offer .bf-bonus small{display:block;font:700 11px/1 var(--font);letter-spacing:.14em;text-transform:uppercase;color:#ffb48f;margin-bottom:6px}
+.offer .bf-bonus b{display:block;font-size:20px;line-height:1.15;margin-bottom:5px}
+.offer .bf-bonus span{display:block;font-size:14.5px;line-height:1.4;color:#e9dcd5}
+.offer .bf-urg{margin:12px 0 0;font-size:14px;font-weight:600;opacity:.95}
+@media(max-width:600px){.offer .bf-tag{width:54px;right:14px}.offer .bf-bonus{gap:12px;padding:14px}.offer .bf-bonus img{width:70px}.offer .bf-bonus b{font-size:18px}.offer .bf-strip em{display:none}}
+@media(prefers-reduced-motion:reduce){.offer .bf-strip::after,.offer .bf-tag{animation:none}}
 /* ===== bonus: colecao de e-books ===== */
 .bonus{max-width:760px;margin:44px auto 0;text-align:left}
 .bonus h3{font-size:clamp(22px,3vw,28px);font-weight:700;letter-spacing:-.01em;margin:0 0 8px;padding-bottom:12px;border-bottom:1px dashed #cfcfcf}
@@ -1011,9 +1031,11 @@ img,video,svg{max-width:100%}
     <p class="lead">Tudo o que você precisa para organizar o cuidado com o seu intestino, em uma única compra.</p>
   </div>
   <div class="offer">
+    <div class="bf-strip"><span>Black Friday</span><em>Oferta especial</em></div>
+    <img class="bf-tag" src="imgs/black-friday/etiqueta.webp" alt="" width="169" height="360" loading="lazy">
     <h3>Método Desparasitação Descomplicada</h3>
     <div class="sub">Acesso imediato · conteúdo educativo digital</div>
-    <div class="price"><small>Investimento</small><div class="de">de <s>R$ 497</s></div><small class="por">por apenas</small><b><span>R$</span>97</b><div class="eco">Black Friday: economia de R$ 400 (80% de desconto)</div><small class="pay">Pagamento seguro pela Kiwify</small></div>
+    <div class="price"><small>Investimento</small><div class="de">de <s>R$ 497</s></div><small class="por">por apenas</small><b><span>R$</span>97</b><div class="eco"><b>80% OFF</b> Você economiza R$ 400</div><small class="pay">Pagamento seguro pela Kiwify</small></div>
     <ul>
       <li>Treinamento online com aulas explicativas</li>
       <li>Protocolo educativo de 30 dias</li>
@@ -1022,11 +1044,12 @@ img,video,svg{max-width:100%}
       <li>Guia de utilização e dúvidas frequentes</li>
       <li>Orientações de cuidados posteriores</li>
       <li>Grupo de acompanhamento para dúvidas do treinamento</li>
-      <li><b>Bônus:</b> Coleção Desparasitação, com 3 e-books</li>
     </ul>
-    <a class="btn full" data-cta href="#oferta">Quero começar agora</a>
+    <div class="bf-bonus"><img src="imgs/black-friday/presente.webp" alt="" width="380" height="352" loading="lazy"><div><small>Bônus de Black Friday</small><b>Coleção Desparasitação</b><span>3 e-books para consultar a qualquer hora: Alimentação do Método, Alimentos que estufam você e Desparasitação Descomplicada em 30 dias.</span></div></div>
+    <a class="btn full bf-btn" data-cta href="#oferta">Quero aproveitar a Black Friday</a>
+    <p class="bf-urg">Condição especial de Black Friday, por tempo limitado.</p>
     <div class="sec"><span>Compra 100% segura</span><span>Acesso imediato</span><span class="g-t">Garantia de 7 dias</span></div>
-    <p class="micro">Condição especial de Black Friday. Conteúdo 100% digital, com acesso imediato.</p>
+    <p class="micro">Conteúdo 100% digital, com acesso imediato.</p>
   </div>
   <div class="paywith"><span>Pagamento seguro processado pela</span><img src="imgs/pagamento/kiwify.png" alt="Kiwify" width="400" height="110"></div>
 </div></section>
