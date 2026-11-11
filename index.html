@@ -569,13 +569,13 @@ html,body{overflow-x:clip}
 .price .eco{background:#111!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;display:block;width:max-content;max-width:100%;margin:14px auto 8px}
 .price .eco b{display:inline!important;color:#ffb48f!important;font-weight:800;margin-right:8px;font-size:18px!important;letter-spacing:.04em!important;line-height:1!important}
 .price .eco b span{display:none}
-.offer .bf-bonus{display:flex;align-items:center;gap:16px;text-align:left;margin:0 0 24px;padding:16px 18px;border-radius:20px;background:#111;box-shadow:0 14px 30px rgba(0,0,0,.28)}
-.offer .bf-bonus img{flex:none;width:92px;height:auto;filter:drop-shadow(0 8px 12px rgba(0,0,0,.5))}
-.offer .bf-bonus small{display:block;font:700 11px/1 var(--font);letter-spacing:.14em;text-transform:uppercase;color:#ffb48f;margin-bottom:6px}
-.offer .bf-bonus b{display:block;font-size:20px;line-height:1.15;margin-bottom:5px}
-.offer .bf-bonus span{display:block;font-size:14.5px;line-height:1.4;color:#e9dcd5}
+.bf-bonus{display:flex;align-items:center;gap:16px;text-align:left;margin:0 0 24px;padding:16px 18px;border-radius:20px;background:#111;box-shadow:0 14px 30px rgba(0,0,0,.28)}
+.bf-bonus img{flex:none;width:92px;height:auto;filter:drop-shadow(0 8px 12px rgba(0,0,0,.5))}
+.bf-bonus small{display:block;font:700 11px/1 var(--font);letter-spacing:.14em;text-transform:uppercase;color:#ffb48f;margin-bottom:6px}
+.bf-bonus b{display:block;font-size:20px;line-height:1.15;margin-bottom:5px}
+.bf-bonus span{display:block;font-size:14.5px;line-height:1.4;color:#e9dcd5}
 .offer .bf-urg{margin:12px 0 0;font-size:14px;font-weight:600;opacity:.95}
-@media(max-width:600px){.offer .bf-tag{width:54px;right:14px}.offer .bf-bonus{gap:12px;padding:14px}.offer .bf-bonus img{width:70px}.offer .bf-bonus b{font-size:18px}.offer .bf-strip em{display:none}}
+@media(max-width:600px){.offer .bf-tag{width:54px;right:14px}.bf-bonus{gap:12px;padding:14px}.bf-bonus img{width:70px}.bf-bonus b{font-size:18px}.offer .bf-strip em{display:none}}
 @media(prefers-reduced-motion:reduce){.offer .bf-strip::after,.offer .bf-tag{animation:none}}
 /* ===== card da oferta no periodo de Black Friday: preto com detalhes laranja ===== */
 .offer{background:radial-gradient(120% 70% at 50% 0%,#2b1a12,#141010 60%,#0c0a0a)!important;box-shadow:0 30px 70px rgba(0,0,0,.45),0 0 0 1.5px rgba(240,138,98,.55),0 0 60px rgba(224,96,10,.25)!important}
@@ -591,20 +591,31 @@ html,body{overflow-x:clip}
 .offer .sec,.offer .micro,.offer .bf-urg{color:#d8c9c1!important}
 .offer li{border-top:1px solid rgba(240,138,98,.28)}
 .offer li::before{color:#f08a62}
-.offer .bf-bonus{background:rgba(224,96,10,.12);box-shadow:inset 0 0 0 1.5px rgba(240,138,98,.6),0 14px 30px rgba(0,0,0,.35)}
-.offer .bf-bonus span{color:#e3d6ce}
+.bf-bonus{background:rgba(224,96,10,.12);box-shadow:inset 0 0 0 1.5px rgba(240,138,98,.6),0 14px 30px rgba(0,0,0,.35)}
+.bf-bonus span{color:#e3d6ce}
 .offer .btn.full{background:linear-gradient(135deg,#f08a62,#e0603a 55%,#d9532c)!important;color:#fff!important;box-shadow:0 14px 32px rgba(217,83,44,.5)!important}
 .offer .btn.full:hover{background:linear-gradient(135deg,#ff9a72,#ea6a42 55%,#e0603a)!important}
 @media(prefers-reduced-motion:no-preference){.offer .btn.full{animation:pulsebf 1.9s ease-in-out infinite}.offer .btn.full:hover{animation-play-state:paused}}
 @keyframes pulsebf{0%{transform:scale(1);box-shadow:0 14px 32px rgba(217,83,44,.5),0 0 0 0 rgba(240,138,98,.7)}55%{transform:scale(1.06);box-shadow:0 18px 38px rgba(217,83,44,.6),0 0 0 16px rgba(240,138,98,0)}100%{transform:scale(1);box-shadow:0 14px 32px rgba(217,83,44,.5),0 0 0 0 rgba(240,138,98,0)}}
-.offer .bf-bonus .bf-ebooks{list-style:none;margin:8px 0 0;padding:0}
-.offer .bf-bonus .bf-ebooks li{border:0;padding:4px 0 4px 22px;font-size:14.5px;line-height:1.35;color:#f1e6df;position:relative}
-.offer .bf-bonus .bf-ebooks li::before{content:"";position:absolute;left:2px;top:9px;width:10px;height:12px;border-radius:2px 3px 3px 2px;background:linear-gradient(135deg,#f08a62,#d9532c);box-shadow:inset 3px 0 0 rgba(0,0,0,.25)}
+.bf-bonus .bf-ebooks{list-style:none;margin:8px 0 0;padding:0}
+.bf-bonus .bf-ebooks li{border:0;padding:4px 0 4px 22px;font-size:14.5px;line-height:1.35;color:#f1e6df;position:relative}
+.bf-bonus .bf-ebooks li::before{content:"";position:absolute;left:2px;top:9px;width:10px;height:12px;border-radius:2px 3px 3px 2px;background:linear-gradient(135deg,#f08a62,#d9532c);box-shadow:inset 3px 0 0 rgba(0,0,0,.25)}
 /* hero: selo do metodo em destaque */
 .hero .eyebrow.center{display:table;margin:0 auto 22px;padding:12px 28px;border-radius:999px;background:linear-gradient(135deg,#f08a62,#e0603a 55%,#d9532c);color:#fff!important;font-size:clamp(14px,2.2vw,20px);font-weight:800;letter-spacing:.14em;box-shadow:0 12px 28px rgba(217,83,44,.38),inset 0 1px 0 rgba(255,255,255,.35)}
 @media(max-width:600px){.hero .eyebrow.center{padding:10px 16px;letter-spacing:.08em;font-size:13px;max-width:100%;text-align:center;line-height:1.25}}
 .wide h2{max-width:none;text-wrap:pretty}
 .wide .lead{max-width:none}
+/* botao da Black Friday: mais destaque */
+.offer .btn.full.bf-btn{position:relative;overflow:hidden;gap:12px;padding:22px 52px!important;font-size:clamp(17px,4.6vw,21px)!important;font-weight:800;letter-spacing:.01em;background:linear-gradient(135deg,#ffab82,#f4692d 50%,#e0501a)!important;color:#fff!important;box-shadow:0 16px 38px rgba(240,100,40,.6),0 0 0 2px rgba(255,200,170,.55) inset!important}
+.offer .btn.full.bf-btn::after{content:"";position:absolute;top:0;bottom:0;width:60px;left:-90px;transform:skewX(-20deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent);animation:bfsweep 2.6s ease-in-out infinite}
+@keyframes bfsweep{0%,40%{left:-90px}100%{left:115%}}
+.offer .bf-arr{flex:none;animation:bfarr 1.1s ease-in-out infinite}
+@keyframes bfarr{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+@media(prefers-reduced-motion:no-preference){.offer .btn.full.bf-btn{animation:pulsebf2 1.5s ease-out infinite}.offer .btn.full.bf-btn:hover{animation-play-state:paused}}
+@keyframes pulsebf2{0%{transform:scale(1);box-shadow:0 16px 38px rgba(240,100,40,.6),0 0 0 2px rgba(255,200,170,.55) inset,0 0 0 0 rgba(255,130,70,.8)}60%{transform:scale(1.07);box-shadow:0 20px 48px rgba(240,100,40,.8),0 0 0 2px rgba(255,200,170,.55) inset,0 0 0 24px rgba(255,130,70,0)}100%{transform:scale(1);box-shadow:0 16px 38px rgba(240,100,40,.6),0 0 0 2px rgba(255,200,170,.55) inset,0 0 0 0 rgba(255,130,70,0)}}
+@media(prefers-reduced-motion:reduce){.offer .btn.full.bf-btn::after,.offer .bf-arr{animation:none}}
+.bf-bonus{max-width:640px;margin:30px auto 0;color:#fff;background:radial-gradient(120% 90% at 0 0,#2b1a12,#141010 70%)!important;box-shadow:inset 0 0 0 1.5px rgba(240,138,98,.6),0 18px 40px rgba(0,0,0,.3)!important}
+.bf-bonus *{color:inherit}.bf-bonus small{color:#ffb48f!important}
 /* ===== bonus: colecao de e-books ===== */
 .bonus{max-width:640px;margin:34px auto 0;text-align:left}
 .bonus h3{font-size:clamp(22px,3vw,28px);font-weight:700;letter-spacing:-.01em;margin:0 0 8px;padding-bottom:12px;border-bottom:1px dashed #cfcfcf}
@@ -1065,11 +1076,11 @@ img,video,svg{max-width:100%}
       <li>Orientações de cuidados posteriores</li>
       <li>Grupo de acompanhamento para dúvidas do treinamento</li>
     </ul>
-    <div class="bf-bonus"><img src="imgs/black-friday/presente.webp" alt="" width="380" height="352" loading="lazy"><div><small>Bônus de Black Friday · 3 e-books</small><b>Coleção Desparasitação</b><ul class="bf-ebooks"><li>Alimentação do Método Desparasitação Descomplicada</li><li>Alimentos que estufam você</li><li>Desparasitação Descomplicada em 30 dias</li></ul></div></div>
-    <a class="btn full bf-btn" data-cta href="#oferta">Quero aproveitar a Black Friday</a>
+    <a class="btn full bf-btn" data-cta href="#oferta">Quero aproveitar a Black Friday<svg class="bf-arr" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     <p class="bf-urg">Condição especial de Black Friday, por tempo limitado.</p>
     <div class="sec"><span>Compra 100% segura</span><span>Acesso imediato</span></div>
   </div>
+  <div class="bf-bonus"><img src="imgs/black-friday/presente.webp" alt="" width="380" height="352" loading="lazy"><div><small>Bônus de Black Friday · 3 e-books</small><b>Coleção Desparasitação</b><ul class="bf-ebooks"><li>Alimentação do Método Desparasitação Descomplicada</li><li>Alimentos que estufam você</li><li>Desparasitação Descomplicada em 30 dias</li></ul></div></div>
 </div></section>
 
 <!-- 11. FAQ -->
