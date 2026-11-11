@@ -597,6 +597,9 @@ html,body{overflow-x:clip}
 .offer .btn.full:hover{background:linear-gradient(135deg,#ff9a72,#ea6a42 55%,#e0603a)!important}
 @media(prefers-reduced-motion:no-preference){.offer .btn.full{animation:pulsebf 1.9s ease-in-out infinite}.offer .btn.full:hover{animation-play-state:paused}}
 @keyframes pulsebf{0%{transform:scale(1);box-shadow:0 14px 32px rgba(217,83,44,.5),0 0 0 0 rgba(240,138,98,.7)}55%{transform:scale(1.06);box-shadow:0 18px 38px rgba(217,83,44,.6),0 0 0 16px rgba(240,138,98,0)}100%{transform:scale(1);box-shadow:0 14px 32px rgba(217,83,44,.5),0 0 0 0 rgba(240,138,98,0)}}
+.offer .bf-bonus .bf-ebooks{list-style:none;margin:8px 0 0;padding:0}
+.offer .bf-bonus .bf-ebooks li{border:0;padding:4px 0 4px 22px;font-size:14.5px;line-height:1.35;color:#f1e6df;position:relative}
+.offer .bf-bonus .bf-ebooks li::before{content:"";position:absolute;left:2px;top:9px;width:10px;height:12px;border-radius:2px 3px 3px 2px;background:linear-gradient(135deg,#f08a62,#d9532c);box-shadow:inset 3px 0 0 rgba(0,0,0,.25)}
 /* ===== bonus: colecao de e-books ===== */
 .bonus{max-width:640px;margin:34px auto 0;text-align:left}
 .bonus h3{font-size:clamp(22px,3vw,28px);font-weight:700;letter-spacing:-.01em;margin:0 0 8px;padding-bottom:12px;border-bottom:1px dashed #cfcfcf}
@@ -1058,20 +1061,10 @@ img,video,svg{max-width:100%}
       <li>Orientações de cuidados posteriores</li>
       <li>Grupo de acompanhamento para dúvidas do treinamento</li>
     </ul>
-    <div class="bf-bonus"><img src="imgs/black-friday/presente.webp" alt="" width="380" height="352" loading="lazy"><div><small>Bônus de Black Friday</small><b>Coleção Desparasitação</b><span>3 e-books para consultar a qualquer hora. Veja os títulos logo abaixo.</span></div></div>
+    <div class="bf-bonus"><img src="imgs/black-friday/presente.webp" alt="" width="380" height="352" loading="lazy"><div><small>Bônus de Black Friday · 3 e-books</small><b>Coleção Desparasitação</b><ul class="bf-ebooks"><li>Alimentação do Método Desparasitação Descomplicada</li><li>Alimentos que estufam você</li><li>Desparasitação Descomplicada em 30 dias</li></ul></div></div>
     <a class="btn full bf-btn" data-cta href="#oferta">Quero aproveitar a Black Friday</a>
     <p class="bf-urg">Condição especial de Black Friday, por tempo limitado.</p>
     <div class="sec"><span>Compra 100% segura</span><span>Acesso imediato</span></div>
-    <p class="micro">Conteúdo 100% digital, com acesso imediato.</p>
-  </div>
-  <div class="bonus">
-    <span class="eyebrow">Bônus incluídos na sua compra</span>
-    <h3>Coleção Desparasitação</h3>
-    <ul>
-      <li><i aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg></i><span><small>E-book</small>Alimentação do Método Desparasitação Descomplicada</span></li>
-      <li><i aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg></i><span><small>E-book</small>Alimentos que estufam você</span></li>
-      <li><i aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg></i><span><small>E-book</small>Desparasitação Descomplicada em 30 dias</span></li>
-    </ul>
   </div>
   <div class="paywith"><span>Pagamento seguro processado pela</span><img src="imgs/pagamento/kiwify.png" alt="Kiwify" width="400" height="110"></div>
 </div></section>
