@@ -780,6 +780,19 @@ details.forms .fbody{padding:16px 18px 18px}
 .dcard .dimg img{width:100%;height:100%;object-fit:contain;display:block}
 .dcard h3{margin:4px 4px 0;font-size:20px;line-height:1.2}
 .dcard p{margin:0 4px;font-size:16px;line-height:1.5;color:var(--muted)}
+.dcard.fod{background:radial-gradient(120% 70% at 10% 100%,#e0600a 0,rgba(224,96,10,0) 55%),linear-gradient(170deg,#7d0a0a,#9b1010 55%,#7a0909);border-color:#5a0606;color:#fff;gap:12px;padding:22px 22px 26px}
+.dcard.fod .fhead{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+.dcard.fod .fhead i{flex:1;height:1px;background:rgba(255,255,255,.4)}
+.dcard.fod .fhead small{font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+.dcard.fod h3{margin:0;font-size:38px;line-height:1.05;color:#ffe01a;font-weight:800}
+.dcard.fod .fpill{margin:0;align-self:flex-start;background:#ffe01a;color:#1c1c1c;font-weight:700;font-size:14px;line-height:1.2;padding:6px 12px;border-radius:8px}
+.dcard.fod p{color:#fff;margin:0}
+.dcard.fod .ft1{font-size:18px;line-height:1.35}
+.dcard.fod .ft2{font-size:18px;line-height:1.35}
+.dcard.fod .ft3{font-size:14.5px;line-height:1.4;color:rgba(255,255,255,.92)}
+.dcard.fod b{font-weight:800}
+.dcard.fod img{width:100%;height:auto;display:block;margin:2px 0}
+.dcard.fod:hover{border-color:#e0600a}
 .dcard.vazio{border:1.5px dashed rgba(224,96,10,.5);background:repeating-linear-gradient(45deg,#fdf1e9,#fdf1e9 12px,#fbe5d7 12px,#fbe5d7 24px);box-shadow:none;min-height:300px;align-items:center;justify-content:center;text-align:center;font-weight:600;color:var(--ink)}
 .dcard.vazio small{display:block;font-weight:400;font-size:13px;color:var(--muted)}
 @media(max-width:1000px){.dores .dgrid{grid-template-columns:repeat(2,1fr)}}
@@ -941,7 +954,15 @@ img,video,svg{max-width:100%}
   <h2>Muita gente se acostuma com o desconforto e <b>não sabe por onde começar</b></h2>
   <p class="lead">Barriga que incha, gases, intestino irregular, sensação de peso, cansaço, vontade de doce. Você pesquisou, salvou vídeos, anotou receitas, e cada pessoa recomendou uma coisa diferente. A pergunta continua: <b>por onde eu começo e o que preciso saber antes?</b> Não precisa ter vergonha: é um assunto de muita gente.</p>
   <div class="dgrid">
-    <article class="dcard"><div class="dimg"><img src="imgs/Dores/fodmaps.webp" alt="Ilustração das vilosidades do intestino com gases hidrogênio e dióxido de carbono" loading="lazy" width="720" height="514"></div><h3>Inchaço</h3><p>Texto do card a definir (aguardando print).</p></article>
+    <article class="dcard fod">
+      <div class="fhead"><span>Alimentos</span><i></i><small>por Luís Manoel</small></div>
+      <h3>Fodmap’s</h3>
+      <p class="fpill">2. O que acontece no seu organismo?</p>
+      <p class="ft1">Os FODMAPs são carboidratos <b>fermentáveis</b> que <b>não</b> são completamente absorvidos no intestino delgado.</p>
+      <img src="imgs/Dores/fodmaps.webp" alt="Ilustração das vilosidades do intestino com gases hidrogênio e dióxido de carbono" loading="lazy" width="720" height="514">
+      <p class="ft2">Quando chegam ao cólon, as bactérias intestinais começam a fermentá-los, produzindo gases como <b>hidrogênio, metano e dióxido de carbono.</b></p>
+      <p class="ft3">Esse ambiente fermentativo pode promover o crescimento <b>excessivo</b> de certas cepas bacterianas no intestino.</p>
+    </article>
     <div class="dcard vazio"><span>Gases<small>imagem e texto em breve</small></span></div>
     <div class="dcard vazio"><span>Intestino irregular<small>imagem e texto em breve</small></span></div>
     <div class="dcard vazio"><span>Sensação de peso<small>imagem e texto em breve</small></span></div>
