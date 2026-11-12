@@ -761,6 +761,17 @@ details.forms .fbody{padding:16px 18px 18px}
   .rnode .rthumb i svg{width:15px;height:15px}
   .rname{font-size:24px}.rname br{display:none}
 }
+.rstrip{display:contents}
+@media(max-width:1000px){
+.rstrip{grid-column:1/-1;display:flex;align-items:center;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;position:relative;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:26px calc(50% - 40px) 30px}
+.rstrip::-webkit-scrollbar{display:none}
+.rstrip .rnode{flex:0 0 auto;scroll-snap-align:center;scroll-snap-stop:always}
+.rstrip .rthumb{width:80px;height:80px}
+.rstrip .rnode .rthumb i{width:32px;height:32px}
+.rstrip .rnode:not(.on) .rthumb{transform:scale(.8);opacity:.75}
+.rstrip .rnode.on .rthumb{transform:scale(1.22);opacity:1}
+.rstrip .rnode .rthumb{transition:transform .3s,opacity .3s}
+}
 /* hero: ilustracao dos parasitas, flutuando no topo a direita */
 .par-art{display:none}
 @media(min-width:1600px){
@@ -983,6 +994,7 @@ img,video,svg{max-width:100%}
       <b id="rtit" class="rtit">Treinamento online</b>
       <p id="rdes">Aulas curtas que explicam cada etapa, em linguagem simples.</p>
     </div>
+    <div class="rstrip" id="rstrip">
     <button type="button" class="rnode top" style="--a:0deg" data-i="0" data-img="imgs/cards/vetor-1.webp" data-t="Treinamento online" data-d="Aulas curtas que explicam cada etapa, em linguagem simples." aria-label="Treinamento online"><b class="rthumb"><img src="imgs/cards/vetor-1.webp" alt="" width="160" height="90" loading="lazy"><i><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></i></b><span>Treinamento online</span></button>
     <button type="button" class="rnode r" style="--a:40deg" data-i="1" data-img="imgs/cards/vetor-2.webp" data-t="Protocolo educativo de 30 dias" data-d="Passo a passo organizado, da preparação aos cuidados posteriores." aria-label="Protocolo educativo de 30 dias"><b class="rthumb"><img src="imgs/cards/vetor-2.webp" alt="" width="160" height="90" loading="lazy"><i><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></i></b><span>Protocolo educativo de 30 dias</span></button>
     <button type="button" class="rnode r" style="--a:80deg" data-i="2" data-img="imgs/cards/vetor-3.webp" data-t="Guia alimentar" data-d="Orientações sobre os alimentos e hábitos abordados." aria-label="Guia alimentar"><b class="rthumb"><img src="imgs/cards/vetor-3.webp" alt="" width="160" height="90" loading="lazy"><i><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></i></b><span>Guia alimentar</span></button>
@@ -992,6 +1004,7 @@ img,video,svg{max-width:100%}
     <button type="button" class="rnode l" style="--a:240deg" data-i="6" data-img="imgs/cards/vetor-7.webp" data-t="Dúvidas frequentes" data-d="Respostas às perguntas mais comuns." aria-label="Dúvidas frequentes"><b class="rthumb"><img src="imgs/cards/vetor-7.webp" alt="" width="160" height="90" loading="lazy"><i><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></i></b><span>Dúvidas frequentes</span></button>
     <button type="button" class="rnode l" style="--a:280deg" data-i="7" data-img="imgs/cards/vetor-8.webp" data-t="Cuidados posteriores" data-d="Como manter os hábitos depois da jornada." aria-label="Cuidados posteriores"><b class="rthumb"><img src="imgs/cards/vetor-8.webp" alt="" width="160" height="90" loading="lazy"><i><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></i></b><span>Cuidados posteriores</span></button>
     <button type="button" class="rnode l" style="--a:320deg" data-i="8" data-img="imgs/cards/vetor-9.webp" data-t="Grupo de acompanhamento" data-d="Para tirar dúvidas relacionadas ao treinamento." aria-label="Grupo de acompanhamento"><b class="rthumb"><img src="imgs/cards/vetor-9.webp" alt="" width="160" height="90" loading="lazy"><i><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></i></b><span>Grupo de acompanhamento</span></button>
+    </div>
   </div>
 </div>
 </div></section>
@@ -1384,8 +1397,11 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
     var tit = document.getElementById('rtit'), des = document.getElementById('rdes');
     nodes.forEach(function (n) { var im = new Image(); im.src = n.getAttribute('data-img'); });
     var cur = -1, hover = false, visible = false, timer = null;
+    var strip = document.getElementById('rstrip'), mq = window.matchMedia('(max-width:1000px)'), fromScroll = false;
+    function centerNode(i) { var n = nodes[i]; strip.scrollTo({ left: n.offsetLeft - (strip.clientWidth - n.offsetWidth) / 2, behavior: 'smooth' }); }
     function show(i, instant) {
       if (i === cur) return; cur = i;
+      if (mq.matches && strip && !fromScroll) centerNode(i);
       nodes.forEach(function (n, k) { n.classList.toggle('on', k === i); });
       var n = nodes[i];
       function apply() { tit.textContent = n.getAttribute('data-t'); des.textContent = n.getAttribute('data-d'); center.classList.remove('sw'); }
@@ -1402,6 +1418,19 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
     new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: .25 }).observe(box);
     function restart() { clearInterval(timer); if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(next, 3200); }
     function next() { if (hover || !visible) return; show((cur + 1) % nodes.length); }
+    if (strip) {
+      var raf = 0, hold = null;
+      strip.addEventListener('scroll', function () {
+        if (!mq.matches || raf) return;
+        raf = requestAnimationFrame(function () {
+          raf = 0; var mid = strip.scrollLeft + strip.clientWidth / 2, best = 0, bd = 1e9;
+          nodes.forEach(function (n, k) { var d = Math.abs(n.offsetLeft + n.offsetWidth / 2 - mid); if (d < bd) { bd = d; best = k; } });
+          fromScroll = true; show(best); fromScroll = false;
+        });
+      }, { passive: true });
+      strip.addEventListener('touchstart', function () { hover = true; clearTimeout(hold); }, { passive: true });
+      strip.addEventListener('touchend', function () { clearTimeout(hold); hold = setTimeout(function () { hover = false; }, 3000); }, { passive: true });
+    }
     show(0, true); restart();
   })();
 
