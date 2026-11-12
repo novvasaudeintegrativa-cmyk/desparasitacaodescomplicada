@@ -451,6 +451,7 @@ html,body{overflow-x:clip}
   .hs-m{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:6px 2px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .hs-m>*{flex:0 0 84%;scroll-snap-align:start}
 }
+@media(max-width:900px){.steps.hs-m{display:grid;grid-template-columns:1fr;overflow:visible;gap:18px}.steps.hs-m>*{flex:none}}
 @media(min-width:901px){.hs-ctrl.m-only{display:none}}
 /* aparecer em sequência */
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
