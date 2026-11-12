@@ -857,6 +857,21 @@ img,video,svg{max-width:100%}
   .sticky span{font-size:13.5px}
   .sticky .btn{padding:12px 16px;font-size:15px}
 }
+@media(max-width:700px){
+.journey{display:grid;grid-template-columns:repeat(10,1fr);gap:0 4px;justify-items:center}
+.journey .jhead{grid-column:1/-1;grid-row:1;justify-self:stretch}
+.journey .jtrack{display:contents!important}
+.journey .jmarks{display:contents}
+.journey .jmarks span{grid-column:1/-1;justify-self:stretch;text-align:left;margin:0 0 10px}
+.journey .jmarks span:nth-child(1){grid-row:2}
+.journey .jmarks span:nth-child(2){grid-row:4}
+.journey .jmarks span:nth-child(3){grid-row:6}
+.journey .jtrack i{margin-bottom:12px;justify-self:center}
+.journey .jtrack i:nth-child(-n+10){grid-row:3}
+.journey .jtrack i:nth-child(n+11):nth-child(-n+20){grid-row:5}
+.journey .jtrack i:nth-child(n+21){grid-row:7}
+.journey .jmarks span:nth-child(2),.journey .jmarks span:nth-child(3){margin-top:6px}
+}
 </style>
 </head>
 <body>
