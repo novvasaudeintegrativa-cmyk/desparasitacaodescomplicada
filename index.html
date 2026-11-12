@@ -202,8 +202,8 @@ h2 b,h1 b{font-weight:700;color:var(--brand)}
 /* seção do problema: foto sutil com degradê */
 .prob{position:relative;overflow:hidden}
 .prob>.wrap{position:relative;z-index:1}
-.problema-img{position:absolute;top:20px;right:3%;width:min(40%,560px);height:340px;z-index:0;pointer-events:none}
-.problema-img img{width:100%;height:100%;object-fit:cover;object-position:60% 40%;opacity:.95}
+.problema-img{position:absolute;top:0;right:0;width:min(62%,880px);height:540px;z-index:0;pointer-events:none}
+.problema-img img{width:100%;height:100%;object-fit:cover;object-position:60% 40%;opacity:.95;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 34%,#000 72%,transparent 100%),linear-gradient(180deg,transparent 0,#000 18%,#000 72%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0,#000 34%,#000 72%,transparent 100%),linear-gradient(180deg,transparent 0,#000 18%,#000 72%,transparent 100%);mask-composite:intersect}
 .problema-img::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,#f1f8f7 0%,rgba(241,248,247,.9) 20%,rgba(241,248,247,.35) 48%,rgba(241,248,247,0) 75%)}
 .problema-img::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(0deg,#f1f8f7 0%,rgba(241,248,247,.85) 16%,rgba(241,248,247,0) 45%),linear-gradient(180deg,#f1f8f7 0%,rgba(241,248,247,0) 18%)}
 @media(max-width:900px){.problema-img{width:100%;height:340px;opacity:.28}}
@@ -666,6 +666,8 @@ main>section:not(.hero):not(.dark){background-image:linear-gradient(rgba(224,96,
 details.forms{padding:0;background:rgba(255,255,255,.86);border:1px solid rgba(224,96,10,.35);border-radius:16px;overflow:hidden}
 details.forms summary{font-size:17px;padding:16px 58px 16px 20px}
 details.forms .fbody{padding:16px 18px 18px}
+.problema-img::before,.problema-img::after{display:none}
+@media(max-width:900px){.problema-img::before,.problema-img::after{display:none}}
 /* ===== bonus: colecao de e-books ===== */
 .bonus{max-width:640px;margin:34px auto 0;text-align:left}
 .bonus h3{font-size:clamp(22px,3vw,28px);font-weight:700;letter-spacing:-.01em;margin:0 0 8px;padding-bottom:12px;border-bottom:1px dashed #cfcfcf}
