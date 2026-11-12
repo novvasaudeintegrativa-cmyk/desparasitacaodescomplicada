@@ -857,9 +857,10 @@ details.forms .fbody{padding:16px 18px 18px}
 .dwheel .dpanel .fpill{font-size:15px}
 .dwheel .dnode{all:unset;box-sizing:border-box;cursor:pointer;position:absolute;left:calc(50% + var(--R)*sin(var(--a)));top:calc(50% - var(--R)*cos(var(--a)));transform:translate(-50%,-50%);z-index:3;display:block}
 .dwheel .dnode img{display:block;width:92px;height:92px;border-radius:50%;object-fit:cover;background:#fff7ef;box-shadow:0 0 0 5px #fff,0 10px 24px rgba(0,0,0,.16);transition:transform .3s,box-shadow .3s}
-.dwheel .dnode b{position:absolute;right:-6px;top:-4px;width:30px;height:30px;border-radius:50%;background:#fff;color:var(--brand);border:2px solid var(--brand);display:grid;place-items:center;font-size:14px;font-weight:800;transition:background .3s,color .3s}
+.dwheel .dnode b{position:absolute;left:50%;top:-16px;transform:translateX(-50%);width:30px;height:30px;border-radius:50%;background:#fff;color:var(--brand);border:2px solid var(--brand);display:grid;place-items:center;font-size:14px;font-weight:800;transition:background .3s,color .3s}
 .dwheel .dnode span{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);white-space:nowrap;font-size:14px;font-weight:700;color:var(--ink);transition:color .3s}
-.dwheel .dnode[data-i="1"] img{object-fit:contain;padding:10px}
+.dwheel .dnode[data-i="1"]>img{object-fit:contain;padding:6px}
+.dwheel .dnode .dbadge{position:absolute;right:-18px;top:-8px;width:46px;height:46px;border-radius:50%;background-size:cover;background-position:center;box-shadow:0 0 0 3px #fff,0 6px 14px rgba(0,0,0,.2);z-index:1}
 .dwheel .dnode:hover img,.dwheel .dnode:focus-visible img{transform:scale(1.08)}
 .dwheel .dnode.on img{transform:scale(1.2);box-shadow:0 0 0 4px #fff,0 0 0 8px #e0603a,0 16px 34px rgba(217,83,44,.5)}
 .dwheel .dnode.on b{background:var(--brand);color:#fff}
@@ -1040,7 +1041,7 @@ img,video,svg{max-width:100%}
         </div>
       </div>
     </article>
-    <article class="dcard fod" data-thumb="imgs/Dores/fodmaps.webp" data-label="No organismo">
+    <article class="dcard fod" data-thumb="imgs/Dores/fodmaps-vilos.webp" data-badge="imgs/Dores/fodmaps-h2c.webp" data-label="No organismo">
       <p class="fpill">2. O que acontece no seu organismo?</p>
       <div class="fsteps">
         <div class="fstep">
@@ -1637,7 +1638,7 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
     var wheel = document.createElement('div'); wheel.className = 'dwheel';
     var html = '<div class="dring" aria-hidden="true"></div><div class="dpanel" aria-live="polite"></div>';
     cards.forEach(function (c, k) {
-      html += '<button type="button" class="dnode" style="--a:' + (30 + k * 360 / cards.length) + 'deg" data-i="' + k + '" aria-label="' + c.getAttribute('data-label') + '"><img src="' + c.getAttribute('data-thumb') + '" alt="" width="92" height="92" loading="lazy"><b>' + (k + 1) + '</b><span>' + c.getAttribute('data-label') + '</span></button>';
+      html += '<button type="button" class="dnode" style="--a:' + (30 + k * 360 / cards.length) + 'deg" data-i="' + k + '" aria-label="' + c.getAttribute('data-label') + '"><img src="' + c.getAttribute('data-thumb') + '" alt="" width="92" height="92" loading="lazy">' + (c.getAttribute('data-badge') ? '<i class="dbadge" style="background-image:url(' + c.getAttribute('data-badge') + ')"></i>' : '') + '<b>' + (k + 1) + '</b><span>' + c.getAttribute('data-label') + '</span></button>';
     });
     wheel.innerHTML = html; grid.insertAdjacentElement('beforebegin', wheel); sec.classList.add('wheel-on');
     var panel = wheel.querySelector('.dpanel'), nodes = Array.prototype.slice.call(wheel.querySelectorAll('.dnode'));
