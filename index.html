@@ -803,6 +803,13 @@ details.forms .fbody{padding:16px 18px 18px}
 .dores .dhead .fhead small{font-size:12px;letter-spacing:.14em;color:var(--muted);font-weight:600}
 .dores .dhead h3{margin:8px 0 0;font-size:clamp(36px,5vw,56px);line-height:1.05;color:var(--ink);font-weight:800;letter-spacing:-.02em}
 .dores .dhead+.dgrid{margin-top:22px}
+.dcard.fod .fstep h4{margin:4px 0 6px;font-size:19px;line-height:1.2;color:var(--brand);font-weight:800}
+.dcard.fod .ficons{display:block;width:100%;height:auto;margin-top:2px}
+.dcard.fod .flabels{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;text-align:center}
+.dcard.fod .flabels li{font-size:12.5px;font-weight:700;line-height:1.2;color:var(--ink)}
+.dcard.fod mark{background:linear-gradient(transparent 55%,rgba(224,96,10,.28) 55%);color:inherit;font-weight:700;padding:0 2px}
+.dcard.fod .fnote+.fimg{margin-top:12px}
+.dcard.fod .fimg.photo{padding:0;overflow:hidden}
 .dcard.vazio{border:1.5px dashed rgba(224,96,10,.5);background:repeating-linear-gradient(45deg,#fdf1e9,#fdf1e9 12px,#fbe5d7 12px,#fbe5d7 24px);box-shadow:none;min-height:300px;align-items:center;justify-content:center;text-align:center;font-weight:600;color:var(--ink)}
 .dcard.vazio small{display:block;font-weight:400;font-size:13px;color:var(--muted)}
 @media(max-width:1000px){.dores .dgrid{grid-template-columns:repeat(2,1fr)}}
@@ -981,7 +988,24 @@ img,video,svg{max-width:100%}
         </div>
       </div>
     </article>
-    <div class="dcard vazio"><span>Card 3<small>imagem e texto em breve</small></span></div>
+    <article class="dcard fod">
+      <p class="fpill">3. Consequências de não tratar</p>
+      <div class="fsteps">
+        <div class="fstep">
+          <h4>Sintomas gastrointestinais persistentes</h4>
+          <p>Se não forem tratados, os sintomas gastrointestinais associados ao alto consumo de FODMAPs, como <b>inchaço, gases, dor abdominal e alterações no hábito intestinal</b>, podem persistir e piorar ao longo do tempo.</p>
+          <div class="fimg"><img src="imgs/Dores/estomago-borbulhando.webp" alt="Ilustração de estômago e intestino com gases sobre o abdômen" loading="lazy" width="711" height="645"></div>
+        </div>
+        <div class="fstep">
+          <img class="ficons" src="imgs/Dores/icons-card3.webp" alt="" loading="lazy" width="451" height="79">
+          <ul class="flabels"><li>Inchaço abdominal</li><li>Gases em excesso</li><li>Dor abdominal</li><li>Alterações intestinais</li></ul>
+        </div>
+        <div class="fstep">
+          <p class="fnote">Isso pode resultar em <b>desconforto crônico</b> e afetar significativamente <mark>a qualidade de vida.</mark></p>
+          <div class="fimg"><img src="imgs/Dores/barriga-inchada.webp" alt="Pessoa com as mãos sobre o abdômen inchado" loading="lazy" width="720" height="482"></div>
+        </div>
+      </div>
+    </article>
     <div class="dcard vazio"><span>Card 4<small>imagem e texto em breve</small></span></div>
     <div class="dcard vazio"><span>Card 5<small>imagem e texto em breve</small></span></div>
     <div class="dcard vazio"><span>Card 6<small>imagem e texto em breve</small></span></div>
