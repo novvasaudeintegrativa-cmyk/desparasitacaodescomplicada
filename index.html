@@ -636,6 +636,14 @@ main>section:not(.hero):not(.dark):not(.quem){background-image:linear-gradient(r
 .wa-tag{align-self:center;background:#fff4e8;color:#c4520a;border:1px dashed #e9a779;font-weight:700;font-size:3.4cqw;letter-spacing:.06em;text-transform:uppercase;padding:.9cqw 3.2cqw;border-radius:99px}
 /* hero: titulo e subtexto na largura da VSL */
 @media(min-width:901px){.hero h1{max-width:860px;font-size:clamp(34px,3.7vw,48px)}.hero .lead{max-width:860px}}
+/* secao do Luis: formacoes */
+.forms{margin:18px 0 6px;padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.62);border:1px solid rgba(224,96,10,.18)}
+.forms h3{font-size:17px;font-weight:700;margin:0 0 10px;color:var(--ink)}
+.fgroup+.fgroup{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(224,96,10,.3)}
+.fgroup small{display:block;font:700 11.5px/1 var(--font);letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin-bottom:7px}
+.fgroup ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.fgroup li{font-size:14.5px;line-height:1.3;padding:6px 12px;border-radius:999px;background:#fff;border:1px solid rgba(224,96,10,.22);color:var(--ink)}
+.fgroup li em{font-style:normal;color:var(--muted);font-size:13px}
 /* ===== bonus: colecao de e-books ===== */
 .bonus{max-width:640px;margin:34px auto 0;text-align:left}
 .bonus h3{font-size:clamp(22px,3vw,28px);font-weight:700;letter-spacing:-.01em;margin:0 0 8px;padding-bottom:12px;border-bottom:1px dashed #cfcfcf}
@@ -953,18 +961,36 @@ img,video,svg{max-width:100%}
     <svg class="arte-logo" viewBox="40 20 600 565" aria-hidden="true"><defs><linearGradient id="lg" gradientUnits="userSpaceOnUse" x1="60" y1="30" x2="620" y2="580"><stop offset="0" stop-color="#f7a283"/><stop offset="1" stop-color="#e0603a"/></linearGradient></defs><path d="M525 488C585 420 612 330 592 245C570 150 480 60 370 55C310 53 262 85 245 135M245 135C200 170 150 185 118 225C78 275 78 370 120 440C165 515 250 552 335 545C430 535 485 470 478 400C472 345 430 310 385 290C330 265 300 225 270 175C262 160 255 148 245 135M345 275C340 335 315 385 262 412C240 422 218 428 200 430" fill="none" stroke="url(#lg)" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <img class="arte-img" src="imgs/luis-manoel/luis-ipad.png" alt="Luís Manoel, terapeuta integrativo, segurando um tablet" width="1452" height="1664" loading="lazy">
     <div class="gcard g1"><i>20</i><div><b>20 anos</b><small>de experiência clínica</small></div></div>
-    <div class="gcard g2"><i>H</i><div><b>Homeopata</b><small>formação pela UFV</small></div></div>
-    <div class="gcard g3"><i>D</i><div><b>Doutorando</b><small>em Fitoterapia Clínica</small></div></div>
+    <div class="gcard g2"><i>H</i><div><b>Terapeuta homeopata</b><small>extensão pela UFV</small></div></div>
+    <div class="gcard g3"><i>N</i><div><b>Cursando Nutrição</b><small>8º semestre, FACEI</small></div></div>
   </div>
   <div class="caixa">
     <span class="eyebrow">Quem conduz</span>
-    <h2>Luís Manoel, <b>terapeuta integrativo</b></h2>
+    <h2>Luís Manoel, <b>terapeuta naturopata integrativo</b></h2>
     <p class="lead">Ao longo de 20 anos de experiência clínica, vi muita gente que cuida de todo mundo e deixa a própria saúde por último, sem encontrar uma orientação organizada, simples e responsável. Foi por isso que organizei este conteúdo: para você ser ouvida e entendida, sem pressa e sem julgamento.</p>
     <div class="authgrid">
       <div class="abadge"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg></i><div><b>20 anos de prática</b><small>experiência clínica</small></div></div>
-      <div class="abadge"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2.5 9 2.5 12 0v-5"/></svg></i><div><b>Homeopata</b><small>formação pela UFV</small></div></div>
-      <div class="abadge"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6l1 7a4 4 0 1 1-8 0z"/><path d="M12 14v7M8 21h8"/></svg></i><div><b>Doutorando</b><small>em Fitoterapia Clínica</small></div></div>
-      <div class="abadge"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></i><div><b>Terapeuta integrativo</b><small>iridologista e naturopata</small></div></div>
+      <div class="abadge"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2.5 9 2.5 12 0v-5"/></svg></i><div><b>Terapeuta homeopata</b><small>curso de extensão pela UFV</small></div></div>
+      <div class="abadge"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6l1 7a4 4 0 1 1-8 0z"/><path d="M12 14v7M8 21h8"/></svg></i><div><b>Cursando Nutrição</b><small>8º semestre, FACEI</small></div></div>
+      <div class="abadge"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></i><div><b>Naturopata clínico</b><small>integrativo e funcional</small></div></div>
+      <div class="abadge"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6M12 9v3M10.5 10.5h3"/></svg></i><div><b>Atuação atual</b><small>Clínica Vitalle</small></div></div>
+      <div class="abadge"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></i><div><b>Iridologia</b><small>3 formações na área</small></div></div>
+    </div>
+    <div class="forms">
+      <h3>Formações e especializações</h3>
+      <div class="fgroup"><small>Intestino e nutrição</small><ul>
+        <li>Modulação da Microbiota e Imunidade Digestiva <em>(Dr. Jean Marc)</em></li>
+        <li>Disbiose Intestinal <em>(Dra. Denise de Carvalho)</em></li>
+        <li>Nutrição Fitoterápica</li>
+        <li>Nutrição Ortomolecular</li></ul></div>
+      <div class="fgroup"><small>Terapias integrativas</small><ul>
+        <li>Aromatologia: base científica para uso interno</li>
+        <li>Terapia Aequilibrium (essências vibracionais)</li>
+        <li>Iridologia: Instituto Olhodiagnose Integral, Academia Bernard Jensen e Associação Mundial de Iridologia</li></ul></div>
+      <div class="fgroup"><small>Acompanhamento e comportamento</small><ul>
+        <li>Coaching, Instituto Brasileiro de Coaching</li>
+        <li>Programação Neurolinguística (PNL)</li>
+        <li>Terapias comportamentais</li></ul></div>
     </div>
     <blockquote class="aquote">“Meu compromisso é explicar com clareza, sem prometer cura e sempre indicar quando procurar um profissional.”<cite>Luís Manoel</cite></blockquote>
     <!-- AUTORIDADE: incluir aqui dados reais e comprováveis (nº de atendimentos, registro profissional, publicações, mídia) quando o Luís confirmar -->
