@@ -838,6 +838,29 @@ details.forms .fbody{padding:16px 18px 18px}
 @media(min-width:700.02px) and (max-width:1099px){.dores .dgrid{grid-template-columns:repeat(3,1fr)}}
 .dores .dhead .dlead{margin:14px 0 0;max-width:900px;font-size:17px;line-height:1.55;color:var(--muted)}
 .dores .dhead .dlead b{color:var(--ink)}
+/* ===== dores: circulo dinamico (desktop) ===== */
+.dwheel{display:none}
+@media(min-width:1000px){
+.dores.wheel-on .dgrid{display:none}
+.dores.wheel-on .dwheel{display:block;position:relative;width:min(1100px,100%);height:800px;margin:20px auto 0;--Rx:455px;--Ry:322px}
+.dwheel .dring{position:absolute;left:50%;top:50%;width:calc(var(--Rx)*2);height:calc(var(--Ry)*2);transform:translate(-50%,-50%);border-radius:50%;border:3px dotted rgba(224,96,10,.55)}
+.dwheel .dpanel{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:640px;max-height:580px;overflow:auto;z-index:2;scrollbar-width:thin;transition:opacity .3s}
+.dwheel .dpanel.sw{opacity:0}
+.dwheel .dpanel .dcard{box-shadow:0 22px 54px rgba(224,96,10,.2);transform:none!important;padding:22px 26px 24px}
+.dwheel .dpanel .fsteps{column-count:2;column-gap:30px;display:block}
+.dwheel .dpanel .fstep{break-inside:avoid;padding-bottom:16px}
+.dwheel .dpanel .fpill{font-size:15px}
+.dwheel .dnode{all:unset;box-sizing:border-box;cursor:pointer;position:absolute;left:calc(50% + var(--Rx)*sin(var(--a)));top:calc(50% - var(--Ry)*cos(var(--a)));transform:translate(-50%,-50%);z-index:3;display:block}
+.dwheel .dnode img{display:block;width:92px;height:92px;border-radius:50%;object-fit:cover;background:#fff7ef;box-shadow:0 0 0 5px #fff,0 10px 24px rgba(0,0,0,.16);transition:transform .3s,box-shadow .3s}
+.dwheel .dnode b{position:absolute;right:-6px;top:-4px;width:30px;height:30px;border-radius:50%;background:#fff;color:var(--brand);border:2px solid var(--brand);display:grid;place-items:center;font-size:14px;font-weight:800;transition:background .3s,color .3s}
+.dwheel .dnode span{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);white-space:nowrap;font-size:14px;font-weight:700;color:var(--ink);transition:color .3s}
+.dwheel .dnode[data-i="1"] img{object-fit:contain;padding:10px}
+.dwheel .dnode:hover img,.dwheel .dnode:focus-visible img{transform:scale(1.08)}
+.dwheel .dnode.on img{transform:scale(1.2);box-shadow:0 0 0 4px #fff,0 0 0 8px #e0603a,0 16px 34px rgba(217,83,44,.5)}
+.dwheel .dnode.on b{background:var(--brand);color:#fff}
+.dwheel .dnode.on span{color:var(--brand)}
+}
+@media(min-width:700px) and (max-width:999px){.dores .dgrid{grid-template-columns:repeat(2,1fr)}}
 .dcard.vazio{border:1.5px dashed rgba(224,96,10,.5);background:repeating-linear-gradient(45deg,#fdf1e9,#fdf1e9 12px,#fbe5d7 12px,#fbe5d7 24px);box-shadow:none;min-height:300px;align-items:center;justify-content:center;text-align:center;font-weight:600;color:var(--ink)}
 .dcard.vazio small{display:block;font-weight:400;font-size:13px;color:var(--muted)}
 @media(max-width:1000px){.dores .dgrid{grid-template-columns:repeat(2,1fr)}}
@@ -997,7 +1020,7 @@ img,video,svg{max-width:100%}
 <section class="dores"><div class="wrap ident reveal">
   <div class="dhead"><div class="fhead"><span>Alimentos</span><i></i><small>por Luís Manoel</small></div><h3>Fodmap’s</h3><p class="dlead"><b>FODMAPs</b> são um grupo de carboidratos de cadeia curta (sigla de <b>F</b>ermentáveis, <b>O</b>ligossacarídeos, <b>D</b>issacarídeos, <b>M</b>onossacarídeos e <b>P</b>olióis) presentes em alimentos do dia a dia, como trigo, cebola, alho, leguminosas, leite com lactose e algumas frutas. Como são pouco absorvidos no intestino delgado, eles seguem até o cólon e servem de alimento para as bactérias.</p></div>
   <div class="dgrid">
-    <article class="dcard fod">
+    <article class="dcard fod" data-thumb="imgs/Dores/colon-fermentacao.webp" data-label="Desconfortos">
       <p class="fpill">1. Desconfortos da fermentação</p>
       <div class="fsteps">
         <div class="fstep">
@@ -1012,7 +1035,7 @@ img,video,svg{max-width:100%}
         </div>
       </div>
     </article>
-    <article class="dcard fod">
+    <article class="dcard fod" data-thumb="imgs/Dores/fodmaps.webp" data-label="No organismo">
       <p class="fpill">2. O que acontece no seu organismo?</p>
       <div class="fsteps">
         <div class="fstep">
@@ -1027,7 +1050,7 @@ img,video,svg{max-width:100%}
         </div>
       </div>
     </article>
-    <article class="dcard fod">
+    <article class="dcard fod" data-thumb="imgs/Dores/estomago-borbulhando.webp" data-label="Consequências">
       <p class="fpill">3. Consequências de não tratar</p>
       <div class="fsteps">
         <div class="fstep">
@@ -1045,7 +1068,7 @@ img,video,svg{max-width:100%}
         </div>
       </div>
     </article>
-    <article class="dcard fod">
+    <article class="dcard fod" data-thumb="imgs/Dores/parasitas-intestino.webp" data-label="Microbiota">
       <p class="fpill">4. Consequências de não tratar</p>
       <div class="fsteps">
         <div class="fstep">
@@ -1060,7 +1083,7 @@ img,video,svg{max-width:100%}
         </div>
       </div>
     </article>
-    <article class="dcard fod">
+    <article class="dcard fod" data-thumb="imgs/Dores/parasitas-inflamacao.webp" data-label="Inflamação e fadiga">
       <p class="fpill">5. Impacto dos parasitas no organismo</p>
       <div class="fsteps">
         <div class="fstep">
@@ -1075,7 +1098,7 @@ img,video,svg{max-width:100%}
         </div>
       </div>
     </article>
-    <article class="dcard fod">
+    <article class="dcard fod" data-thumb="imgs/Dores/parasitas-alergia.webp" data-label="Alergias e órgãos">
       <p class="fpill">6. Impacto dos parasitas no organismo</p>
       <div class="fsteps">
         <div class="fstep">
@@ -1598,6 +1621,39 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
       strip.addEventListener('touchstart', function () { hover = true; clearTimeout(hold); }, { passive: true });
       strip.addEventListener('touchend', function () { clearTimeout(hold); hold = setTimeout(function () { hover = false; }, 3000); }, { passive: true });
     }
+    show(0, true); restart();
+  })();
+
+  /* dores: circulo dinamico (monta a partir dos cards) */
+  (function () {
+    var sec = document.querySelector('.dores'); if (!sec) return;
+    var grid = sec.querySelector('.dgrid'); if (!grid) return;
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.dcard[data-thumb]')); if (!cards.length) return;
+    var wheel = document.createElement('div'); wheel.className = 'dwheel';
+    var html = '<div class="dring" aria-hidden="true"></div><div class="dpanel" aria-live="polite"></div>';
+    cards.forEach(function (c, k) {
+      html += '<button type="button" class="dnode" style="--a:' + (k * 360 / cards.length) + 'deg" data-i="' + k + '" aria-label="' + c.getAttribute('data-label') + '"><img src="' + c.getAttribute('data-thumb') + '" alt="" width="92" height="92" loading="lazy"><b>' + (k + 1) + '</b><span>' + c.getAttribute('data-label') + '</span></button>';
+    });
+    wheel.innerHTML = html; grid.insertAdjacentElement('beforebegin', wheel); sec.classList.add('wheel-on');
+    var panel = wheel.querySelector('.dpanel'), nodes = Array.prototype.slice.call(wheel.querySelectorAll('.dnode'));
+    var cur = -1, hover = false, visible = false, timer = null;
+    function show(i, instant) {
+      if (i === cur) return; cur = i;
+      nodes.forEach(function (n, k) { n.classList.toggle('on', k === i); });
+      function apply() { panel.innerHTML = '<article class="dcard fod">' + cards[i].innerHTML + '</article>'; panel.scrollTop = 0; panel.classList.remove('sw'); }
+      if (instant) { apply(); return; }
+      panel.classList.add('sw'); setTimeout(apply, 260);
+    }
+    nodes.forEach(function (n, k) {
+      n.addEventListener('click', function () { show(k); restart(); });
+      n.addEventListener('mouseenter', function () { show(k); });
+      n.addEventListener('focus', function () { show(k); });
+    });
+    wheel.addEventListener('mouseenter', function () { hover = true; });
+    wheel.addEventListener('mouseleave', function () { hover = false; });
+    new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: .3 }).observe(wheel);
+    function next() { if (hover || !visible || getComputedStyle(wheel).display === 'none') return; show((cur + 1) % nodes.length); }
+    function restart() { clearInterval(timer); if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(next, 6500); }
     show(0, true); restart();
   })();
 
