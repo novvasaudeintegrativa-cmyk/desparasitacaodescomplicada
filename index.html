@@ -773,7 +773,7 @@ details.forms .fbody{padding:16px 18px 18px}
 .rstrip .rnode .rthumb{transition:transform .3s,opacity .3s}
 }
 /* ===== dores: 6 cards ===== */
-.dores .dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.dores .dgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:34px 0 8px}
 .dcard{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px 18px 24px;display:flex;flex-direction:column;gap:14px;box-shadow:0 10px 28px rgba(0,0,0,.05);transition:box-shadow .25s,transform .25s,border-color .25s}
 .dcard:hover{box-shadow:0 16px 38px rgba(224,96,10,.28);border-color:rgba(224,96,10,.45);transform:translateY(-4px)}
 .dcard .dimg{aspect-ratio:4/3;border-radius:16px;background:radial-gradient(circle at 50% 40%,#fff,#fdeee3);display:grid;place-items:center;overflow:hidden}
@@ -936,18 +936,11 @@ img,video,svg{max-width:100%}
 </div></div>
 
 <!-- 2. IDENTIFICAÇÃO -->
-<section><div class="wrap ident reveal">
+<section class="dores"><div class="wrap ident reveal">
   <span class="eyebrow">Você se reconhece?</span>
   <h2>Muita gente se acostuma com o desconforto e <b>não sabe por onde começar</b></h2>
   <p class="lead">Barriga que incha, gases, intestino irregular, sensação de peso, cansaço, vontade de doce. Você pesquisou, salvou vídeos, anotou receitas, e cada pessoa recomendou uma coisa diferente. A pergunta continua: <b>por onde eu começo e o que preciso saber antes?</b> Não precisa ter vergonha: é um assunto de muita gente.</p>
   <div class="chips"><span>Inchaço</span><span>Gases</span><span>Intestino irregular</span><span>Sensação de peso</span><span>Cansaço</span><span>Vontade de doce</span></div>
-  <p class="note">Esses sinais podem ter diversas causas. Este conteúdo é educativo e não faz diagnóstico.</p>
-</div></section>
-
-<!-- 2B. DORES (6 cards: imagem em imgs/Dores/, textos a preencher) -->
-<section class="dores"><div class="wrap reveal">
-  <span class="eyebrow">O que acontece por dentro</span>
-  <h2>Entenda o que pode estar por trás <b>do desconforto</b></h2>
   <div class="dgrid">
     <article class="dcard"><div class="dimg"><img src="imgs/Dores/fodmaps.webp" alt="Ilustração das vilosidades do intestino com gases hidrogênio e dióxido de carbono" loading="lazy" width="720" height="514"></div><h3>FODMAPs</h3><p>Texto do card a definir (aguardando print).</p></article>
     <div class="dcard vazio"><span>Card 2<small>imagem e texto em breve</small></span></div>
@@ -956,6 +949,7 @@ img,video,svg{max-width:100%}
     <div class="dcard vazio"><span>Card 5<small>imagem e texto em breve</small></span></div>
     <div class="dcard vazio"><span>Card 6<small>imagem e texto em breve</small></span></div>
   </div>
+  <p class="note">Esses sinais podem ter diversas causas. Este conteúdo é educativo e não faz diagnóstico.</p>
 </div></section>
 
 <!-- 3. O PROBLEMA: jeito errado x certo -->
