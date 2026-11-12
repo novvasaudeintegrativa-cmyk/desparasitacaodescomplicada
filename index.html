@@ -842,15 +842,20 @@ details.forms .fbody{padding:16px 18px 18px}
 .dwheel{display:none}
 @media(min-width:1000px){
 .dores.wheel-on .dgrid{display:none}
-.dores.wheel-on .dwheel{display:block;position:relative;width:min(1100px,100%);height:800px;margin:20px auto 0;--Rx:455px;--Ry:322px}
-.dwheel .dring{position:absolute;left:50%;top:50%;width:calc(var(--Rx)*2);height:calc(var(--Ry)*2);transform:translate(-50%,-50%);border-radius:50%;border:3px dotted rgba(224,96,10,.55)}
-.dwheel .dpanel{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:640px;max-height:580px;overflow:auto;z-index:2;scrollbar-width:thin;transition:opacity .3s}
+.dores.wheel-on .dwheel{display:block;position:relative;width:min(1100px,100%);height:830px;margin:20px auto 0;--R:380px}
+.dwheel .dring{position:absolute;left:50%;top:50%;width:calc(var(--R)*2);height:calc(var(--R)*2);transform:translate(-50%,-50%);border-radius:50%;border:3px dotted rgba(224,96,10,.55)}
+.dwheel .dpanel{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;max-height:540px;overflow:auto;z-index:2;scrollbar-width:thin;transition:opacity .3s}
 .dwheel .dpanel.sw{opacity:0}
+.dwheel .dpanel{overflow-x:hidden;scrollbar-width:none}.dwheel .dpanel::-webkit-scrollbar{display:none}
+.dwheel .dpanel .ficonlist{grid-template-columns:1fr}
+.dwheel button.dnode>span{top:46px;transform:translateY(-50%);white-space:normal;width:112px;line-height:1.2;text-align:left}
+.dwheel button.dnode:nth-of-type(-n+3)>span{left:calc(100% + 18px);right:auto;text-align:left}
+.dwheel button.dnode:nth-of-type(n+4)>span{right:calc(100% + 18px);left:auto;text-align:right}
 .dwheel .dpanel .dcard{box-shadow:0 22px 54px rgba(224,96,10,.2);transform:none!important;padding:22px 26px 24px}
 .dwheel .dpanel .fsteps{column-count:2;column-gap:30px;display:block}
 .dwheel .dpanel .fstep{break-inside:avoid;padding-bottom:16px}
 .dwheel .dpanel .fpill{font-size:15px}
-.dwheel .dnode{all:unset;box-sizing:border-box;cursor:pointer;position:absolute;left:calc(50% + var(--Rx)*sin(var(--a)));top:calc(50% - var(--Ry)*cos(var(--a)));transform:translate(-50%,-50%);z-index:3;display:block}
+.dwheel .dnode{all:unset;box-sizing:border-box;cursor:pointer;position:absolute;left:calc(50% + var(--R)*sin(var(--a)));top:calc(50% - var(--R)*cos(var(--a)));transform:translate(-50%,-50%);z-index:3;display:block}
 .dwheel .dnode img{display:block;width:92px;height:92px;border-radius:50%;object-fit:cover;background:#fff7ef;box-shadow:0 0 0 5px #fff,0 10px 24px rgba(0,0,0,.16);transition:transform .3s,box-shadow .3s}
 .dwheel .dnode b{position:absolute;right:-6px;top:-4px;width:30px;height:30px;border-radius:50%;background:#fff;color:var(--brand);border:2px solid var(--brand);display:grid;place-items:center;font-size:14px;font-weight:800;transition:background .3s,color .3s}
 .dwheel .dnode span{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);white-space:nowrap;font-size:14px;font-weight:700;color:var(--ink);transition:color .3s}
@@ -1632,7 +1637,7 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
     var wheel = document.createElement('div'); wheel.className = 'dwheel';
     var html = '<div class="dring" aria-hidden="true"></div><div class="dpanel" aria-live="polite"></div>';
     cards.forEach(function (c, k) {
-      html += '<button type="button" class="dnode" style="--a:' + (k * 360 / cards.length) + 'deg" data-i="' + k + '" aria-label="' + c.getAttribute('data-label') + '"><img src="' + c.getAttribute('data-thumb') + '" alt="" width="92" height="92" loading="lazy"><b>' + (k + 1) + '</b><span>' + c.getAttribute('data-label') + '</span></button>';
+      html += '<button type="button" class="dnode" style="--a:' + (30 + k * 360 / cards.length) + 'deg" data-i="' + k + '" aria-label="' + c.getAttribute('data-label') + '"><img src="' + c.getAttribute('data-thumb') + '" alt="" width="92" height="92" loading="lazy"><b>' + (k + 1) + '</b><span>' + c.getAttribute('data-label') + '</span></button>';
     });
     wheel.innerHTML = html; grid.insertAdjacentElement('beforebegin', wheel); sec.classList.add('wheel-on');
     var panel = wheel.querySelector('.dpanel'), nodes = Array.prototype.slice.call(wheel.querySelectorAll('.dnode'));
@@ -1646,14 +1651,14 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
     }
     nodes.forEach(function (n, k) {
       n.addEventListener('click', function () { show(k); restart(); });
-      n.addEventListener('mouseenter', function () { show(k); });
+      n.addEventListener('mouseenter', function () { show(k); restart(); });
       n.addEventListener('focus', function () { show(k); });
     });
-    wheel.addEventListener('mouseenter', function () { hover = true; });
-    wheel.addEventListener('mouseleave', function () { hover = false; });
+    panel.addEventListener('mouseenter', function () { hover = true; });
+    panel.addEventListener('mouseleave', function () { hover = false; });
     new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: .3 }).observe(wheel);
     function next() { if (hover || !visible || getComputedStyle(wheel).display === 'none') return; show((cur + 1) % nodes.length); }
-    function restart() { clearInterval(timer); if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(next, 6500); }
+    function restart() { clearInterval(timer); if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(next, 4500); }
     show(0, true); restart();
   })();
 
