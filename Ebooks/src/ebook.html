@@ -59,7 +59,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 .card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px 24px;box-shadow:0 8px 22px rgba(224,96,10,.08)}
 .chips{display:flex;flex-wrap:wrap;gap:12px;margin:8px 0 24px}
 .chip{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:12px 20px;font-weight:600;font-size:17px;box-shadow:0 6px 16px rgba(0,0,0,.05)}
-.chip img{width:42px;height:42px;border-radius:50%;object-fit:cover;margin:-6px 2px -6px -12px;box-shadow:0 0 0 2px var(--line)}
+.chip .i{color:var(--brand);font-size:22px}
 .banner{display:flex;gap:18px;align-items:center;background:linear-gradient(135deg,#f08a62,#e0603a 60%,#d9532c);color:#fff;border-radius:24px;padding:26px 30px;box-shadow:0 14px 30px rgba(217,83,44,.35)}
 .banner .big{font-size:56px;font-weight:800;line-height:1}
 .banner p{margin:0;font-size:20px;line-height:1.3}
@@ -103,15 +103,14 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 .col li b{display:block;font-size:16.5px}
 .col li span{color:var(--muted)}
 .tl{position:relative;margin:14px 0 0}
-.tl::before{content:"";position:absolute;left:28px;top:10px;bottom:10px;border-left:3px dotted rgba(224,96,10,.5)}
+.tl::before{content:"";position:absolute;left:21px;top:10px;bottom:10px;border-left:3px dotted rgba(224,96,10,.5)}
 .row{display:flex;gap:16px;align-items:flex-start;margin-bottom:12px;position:relative}
-.row .ic{width:58px;height:58px;border-radius:50%;background:var(--cream);border:3px solid var(--brand);overflow:hidden;flex:none;z-index:1;box-shadow:0 6px 14px rgba(224,96,10,.25)}
-.row .ic img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.08)}
+.row .ic{width:44px;height:44px;border-radius:50%;background:#fff;border:3px solid var(--brand);color:var(--brand);display:grid;place-items:center;font-size:22px;flex:none;z-index:1}
 .row .tx{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px 16px;flex:1;box-shadow:0 6px 14px rgba(0,0,0,.04)}
 .row .tx b{display:block;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);font-weight:700}
 .row .tx span{font-size:15.5px;line-height:1.35}
 .row .tx em{font-style:normal;color:var(--muted);font-size:13px;text-transform:none;letter-spacing:0}
-.row.hl .ic{border-color:#fff;box-shadow:0 0 0 3px var(--brand),0 8px 16px rgba(217,83,44,.4)}
+.row.hl .ic{background:var(--brand);color:#fff}
 .row.hl .tx{background:linear-gradient(135deg,#f08a62,#e0603a 60%,#d9532c);color:#fff;border:none}
 .row.hl .tx b,.row.hl .tx em{color:#fff}
 .recipe{background:linear-gradient(180deg,#fff,#fdeee3);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 14px 30px rgba(224,96,10,.15)}
@@ -134,7 +133,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 .buy{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .bl{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px 20px}
 .bl h3{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-size:20px;color:var(--brand)}
-.bl h3 img{width:46px;height:46px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px var(--line)}
+.bl h3 .i{font-size:26px}
 .bl ul{list-style:none;margin:0;padding:0}
 .bl li{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:1px dashed var(--line);font-size:15px}
 .bl li:last-child{border:none}
@@ -191,10 +190,10 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
     <p class="lead">Um preparo de 3 dias para deixar o intestino mais leve antes da desparasitação.</p>
     <span class="eyebrow">Costuma ser indicada para quem sente</span>
     <div class="chips">
-      <div class="chip"><img src="img/ic/inchaco.jpg" alt="">Inchaço abdominal</div>
-      <div class="chip"><img src="img/ic/gases.jpg" alt="">Gases e estufamento constante</div>
-      <div class="chip"><img src="img/ic/intestino.jpg" alt="">Intestino preso</div>
-      <div class="chip"><img src="img/ic/inchaco.jpg" alt="">Sensação de barriga inchada</div>
+      <div class="chip"><svg class="i"><use href="#gut"/></svg>Inchaço abdominal</div>
+      <div class="chip"><svg class="i"><use href="#cloud"/></svg>Gases e estufamento constante</div>
+      <div class="chip"><svg class="i"><use href="#gut"/></svg>Intestino preso</div>
+      <div class="chip"><svg class="i"><use href="#pulse"/></svg>Sensação de barriga inchada</div>
     </div>
     <div class="note" style="margin-bottom:26px">Os sinais acima são considerados <b>sem doença diagnosticada</b>.</div>
     <div class="banner"><div class="big">?</div><p><b>É opcional.</b> Sem esses sinais e sintomas, você pode seguir direto para o protocolo.</p></div>
@@ -298,13 +297,13 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
     <h2>A rotina <b>completa</b></h2>
     <div class="split">
       <div class="tl">
-        <div class="row"><div class="ic"><img src="img/ic/acordar.jpg" alt=""></div><div class="tx"><b>Ao acordar</b><span>1 limão espremido em 200 ml de água.</span></div></div>
-        <div class="row"><div class="ic"><img src="img/ic/cafe.jpg" alt=""></div><div class="tx"><b>Café da manhã</b><span><strong>SUCO NATURAL</strong>, receita ao lado.</span></div></div>
-        <div class="row"><div class="ic"><img src="img/ic/lanche.jpg" alt=""></div><div class="tx"><b>Lanche da manhã <em>(opcional)</em></b><span>Escolha um: 50 g de abacate, 50 g de coco seco, 5 cenouras baby ou 1 fruta (maçã, kiwi ou pera).</span></div></div>
-        <div class="row"><div class="ic"><img src="img/ic/limao.jpg" alt=""></div><div class="tx"><b>Antes do almoço</b><span>1 limão espremido em 200 ml de água.</span></div></div>
-        <div class="row"><div class="ic"><img src="img/ic/almoco.jpg" alt=""></div><div class="tx"><b>Almoço</b><span>Folhas verdes à vontade e legumes cozidos (escolha no máximo 3 a 4), no vapor ou refogados.</span></div></div>
-        <div class="row"><div class="ic"><img src="img/ic/cafe.jpg" alt=""></div><div class="tx"><b>Lanche da tarde <em>(opcional)</em></b><span>Repita o SUCO NATURAL, mesma receita do café da manhã, ou uma opção do lanche da manhã.</span></div></div>
-        <div class="row"><div class="ic"><img src="img/ic/jantar.jpg" alt=""></div><div class="tx"><b>Jantar</b><span>Igual ao almoço.</span></div></div>
+        <div class="row"><div class="ic"><svg class="i"><use href="#sun"/></svg></div><div class="tx"><b>Ao acordar</b><span>1 limão espremido em 200 ml de água.</span></div></div>
+        <div class="row"><div class="ic"><svg class="i"><use href="#cup"/></svg></div><div class="tx"><b>Café da manhã</b><span><strong>SUCO NATURAL</strong>, receita ao lado.</span></div></div>
+        <div class="row"><div class="ic"><svg class="i"><use href="#apple"/></svg></div><div class="tx"><b>Lanche da manhã <em>(opcional)</em></b><span>Escolha um: 50 g de abacate, 50 g de coco seco, 5 cenouras baby ou 1 fruta (maçã, kiwi ou pera).</span></div></div>
+        <div class="row"><div class="ic"><svg class="i"><use href="#drop"/></svg></div><div class="tx"><b>Antes do almoço</b><span>1 limão espremido em 200 ml de água.</span></div></div>
+        <div class="row"><div class="ic"><svg class="i"><use href="#leaf"/></svg></div><div class="tx"><b>Almoço</b><span>Folhas verdes à vontade e legumes cozidos (escolha no máximo 3 a 4), no vapor ou refogados.</span></div></div>
+        <div class="row"><div class="ic"><svg class="i"><use href="#cup"/></svg></div><div class="tx"><b>Lanche da tarde <em>(opcional)</em></b><span>Repita o SUCO NATURAL, mesma receita do café da manhã, ou uma opção do lanche da manhã.</span></div></div>
+        <div class="row"><div class="ic"><svg class="i"><use href="#fork"/></svg></div><div class="tx"><b>Jantar</b><span>Igual ao almoço.</span></div></div>
       </div>
       <div>
         <div class="recipe">
@@ -331,13 +330,13 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
     <p class="lead">O Dia 2 é igual ao Dia 1. Repita tudo, inclusive o SUCO NATURAL.</p>
     <div class="split">
       <div class="tl">
-        <div class="row"><div class="ic"><img src="img/ic/acordar.jpg" alt=""></div><div class="tx"><b>Ao acordar</b><span>1 limão espremido em 200 ml de água.</span></div></div>
-        <div class="row"><div class="ic"><img src="img/ic/cafe.jpg" alt=""></div><div class="tx"><b>Café da manhã</b><span>SUCO NATURAL, mesma receita do Dia 1.</span></div></div>
-        <div class="row"><div class="ic"><img src="img/ic/lanche.jpg" alt=""></div><div class="tx"><b>Lanche da manhã <em>(opcional)</em></b><span>Escolha um: 50 g de abacate, 50 g de coco seco, 5 cenouras baby ou 1 fruta: maçã, kiwi ou pera.</span></div></div>
-        <div class="row"><div class="ic"><img src="img/ic/limao.jpg" alt=""></div><div class="tx"><b>Antes do almoço</b><span>1 limão espremido em 200 ml de água.</span></div></div>
-        <div class="row"><div class="ic"><img src="img/ic/almoco.jpg" alt=""></div><div class="tx"><b>Almoço</b><span>Folhas verdes à vontade e legumes cozidos no vapor ou refogados.</span></div></div>
-        <div class="row"><div class="ic"><img src="img/ic/cafe.jpg" alt=""></div><div class="tx"><b>Lanche da tarde <em>(opcional)</em></b><span>Repita o SUCO NATURAL ou uma opção do lanche da manhã.</span></div></div>
-        <div class="row"><div class="ic"><img src="img/ic/jantar.jpg" alt=""></div><div class="tx"><b>Jantar</b><span>Igual ao almoço.</span></div></div>
+        <div class="row"><div class="ic"><svg class="i"><use href="#sun"/></svg></div><div class="tx"><b>Ao acordar</b><span>1 limão espremido em 200 ml de água.</span></div></div>
+        <div class="row"><div class="ic"><svg class="i"><use href="#cup"/></svg></div><div class="tx"><b>Café da manhã</b><span>SUCO NATURAL, mesma receita do Dia 1.</span></div></div>
+        <div class="row"><div class="ic"><svg class="i"><use href="#apple"/></svg></div><div class="tx"><b>Lanche da manhã <em>(opcional)</em></b><span>Escolha um: 50 g de abacate, 50 g de coco seco, 5 cenouras baby ou 1 fruta: maçã, kiwi ou pera.</span></div></div>
+        <div class="row"><div class="ic"><svg class="i"><use href="#drop"/></svg></div><div class="tx"><b>Antes do almoço</b><span>1 limão espremido em 200 ml de água.</span></div></div>
+        <div class="row"><div class="ic"><svg class="i"><use href="#leaf"/></svg></div><div class="tx"><b>Almoço</b><span>Folhas verdes à vontade e legumes cozidos no vapor ou refogados.</span></div></div>
+        <div class="row"><div class="ic"><svg class="i"><use href="#cup"/></svg></div><div class="tx"><b>Lanche da tarde <em>(opcional)</em></b><span>Repita o SUCO NATURAL ou uma opção do lanche da manhã.</span></div></div>
+        <div class="row"><div class="ic"><svg class="i"><use href="#fork"/></svg></div><div class="tx"><b>Jantar</b><span>Igual ao almoço.</span></div></div>
       </div>
       <div>
         <div class="recipe">
@@ -363,12 +362,12 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
     <h2>O dia da <b>limpeza</b></h2>
     <div class="alert" style="margin:4px 0 14px;padding:14px 20px;font-size:17px"><svg class="i"><use href="#home"/></svg><div>Faça em um <b>dia livre</b> e fique em casa, perto do banheiro.</div></div>
     <div class="tl">
-      <div class="row"><div class="ic"><img src="img/ic/acordar.jpg" alt=""></div><div class="tx"><b>Ao acordar</b><span>1 limão espremido em 200 ml de água, com canudo.</span></div></div>
-      <div class="row"><div class="ic"><img src="img/ic/cafe.jpg" alt=""></div><div class="tx"><b>Café da manhã</b><span>SUCO NATURAL, mesma receita do Dia 1.</span></div></div>
-      <div class="row"><div class="ic"><img src="img/ic/lanche.jpg" alt=""></div><div class="tx"><b>Lanche da manhã <em>(opcional)</em></b><span>Escolha um: 50 g de abacate, 50 g de coco seco, 5 cenouras baby ou 1 fruta: maçã, kiwi ou pera.</span></div></div>
-      <div class="row"><div class="ic"><img src="img/ic/limao.jpg" alt=""></div><div class="tx"><b>Antes do almoço</b><span>1 limão espremido em 200 ml de água.</span></div></div>
-      <div class="row"><div class="ic"><img src="img/ic/almoco.jpg" alt=""></div><div class="tx"><b>Almoço · até as 12h</b><span>Folhas verdes à vontade e legumes cozidos no vapor ou refogados. O almoço do Dia 3 é, no máximo, até as 12 horas.</span></div></div>
-      <div class="row hl"><div class="ic"><img src="img/ic/sal.jpg" alt=""></div><div class="tx"><b>Tarde · limpeza do intestino · 14h</b><span>Às 14h, tome <strong>30 g de sal amargo</strong> com 1 limão espremido em 150 ml de água. Se após 2 horas não tiver evacuado, tome a <strong>segunda dose</strong> de sal amargo.</span></div></div>
+      <div class="row"><div class="ic"><svg class="i"><use href="#sun"/></svg></div><div class="tx"><b>Ao acordar</b><span>1 limão espremido em 200 ml de água, com canudo.</span></div></div>
+      <div class="row"><div class="ic"><svg class="i"><use href="#cup"/></svg></div><div class="tx"><b>Café da manhã</b><span>SUCO NATURAL, mesma receita do Dia 1.</span></div></div>
+      <div class="row"><div class="ic"><svg class="i"><use href="#apple"/></svg></div><div class="tx"><b>Lanche da manhã <em>(opcional)</em></b><span>Escolha um: 50 g de abacate, 50 g de coco seco, 5 cenouras baby ou 1 fruta: maçã, kiwi ou pera.</span></div></div>
+      <div class="row"><div class="ic"><svg class="i"><use href="#drop"/></svg></div><div class="tx"><b>Antes do almoço</b><span>1 limão espremido em 200 ml de água.</span></div></div>
+      <div class="row"><div class="ic"><svg class="i"><use href="#leaf"/></svg></div><div class="tx"><b>Almoço · até as 12h</b><span>Folhas verdes à vontade e legumes cozidos no vapor ou refogados. O almoço do Dia 3 é, no máximo, até as 12 horas.</span></div></div>
+      <div class="row hl"><div class="ic"><svg class="i"><use href="#flask"/></svg></div><div class="tx"><b>Tarde · limpeza do intestino · 14h</b><span>Às 14h, tome <strong>30 g de sal amargo</strong> com 1 limão espremido em 150 ml de água. Se após 2 horas não tiver evacuado, tome a <strong>segunda dose</strong> de sal amargo.</span></div></div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:6px;align-items:stretch">
       <div class="card" style="background:#eef8f0;border-color:#cde8d3"><span class="eyebrow" style="color:var(--green)">Hidratação</span><p style="margin:8px 0 0;font-size:15.5px">O procedimento servirá para limpar o intestino e poderá causar diarreia. Neste caso, mantenha a hidratação com água e/ou água de coco natural.</p></div>
@@ -412,10 +411,10 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
     <h2>Lista de <b>compras</b></h2>
     <p class="lead">Tudo o que aparece no roteiro, reunido em um só lugar. Marque o que já tem em casa.</p>
     <div class="buy">
-      <div class="bl"><h3><img src="img/ic/almoco.jpg" alt="">Folhas e legumes</h3><ul><li>Folhas verdes</li><li>Brócolis, cenoura, pepino</li><li>Berinjela, tomate, couve-flor</li><li>Abobrinha, vagem, beterraba</li><li>Couve (para o suco)</li></ul></div>
-      <div class="bl"><h3><img src="img/ic/lanche.jpg" alt="">Frutas e lanches</h3><ul><li>Limão (água e suco)</li><li>Abacaxi e mamão (suco)</li><li>Abacate, maçã, pera ou kiwi</li><li>Coco seco</li><li>Cenouras baby</li></ul></div>
-      <div class="bl"><h3><img src="img/ic/acordar.jpg" alt="">Suco e hidratação</h3><ul><li>Gengibre e hortelã</li><li>Chia</li><li>Água de coco natural</li><li>Sal amargo (Dia 3)</li></ul></div>
-      <div class="bl"><h3><img src="img/ic/limao.jpg" alt="">Temperos</h3><ul><li>Açafrão, manjericão, orégano</li><li>Salsinha, coentro, cebolinha</li><li>Alho e colorau (urucum)</li><li>Azeite de oliva extravirgem</li><li>Sal integral</li></ul></div>
+      <div class="bl"><h3><svg class="i"><use href="#leaf"/></svg>Folhas e legumes</h3><ul><li>Folhas verdes</li><li>Brócolis, cenoura, pepino</li><li>Berinjela, tomate, couve-flor</li><li>Abobrinha, vagem, beterraba</li><li>Couve (para o suco)</li></ul></div>
+      <div class="bl"><h3><svg class="i"><use href="#apple"/></svg>Frutas e lanches</h3><ul><li>Limão (água e suco)</li><li>Abacaxi e mamão (suco)</li><li>Abacate, maçã, pera ou kiwi</li><li>Coco seco</li><li>Cenouras baby</li></ul></div>
+      <div class="bl"><h3><svg class="i"><use href="#drop"/></svg>Suco e hidratação</h3><ul><li>Gengibre e hortelã</li><li>Chia</li><li>Água de coco natural</li><li>Sal amargo (Dia 3)</li></ul></div>
+      <div class="bl"><h3><svg class="i"><use href="#fork"/></svg>Temperos</h3><ul><li>Açafrão, manjericão, orégano</li><li>Salsinha, coentro, cebolinha</li><li>Alho e colorau (urucum)</li><li>Azeite de oliva extravirgem</li><li>Sal integral</li></ul></div>
     </div>
     <div class="photo" style="height:250px;margin-top:22px"><img src="img/vegetais.jpg" alt="" style="object-position:center 55%"></div>
   </div>
