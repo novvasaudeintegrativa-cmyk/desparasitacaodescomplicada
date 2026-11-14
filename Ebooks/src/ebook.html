@@ -18,7 +18,10 @@ body{margin:0;background:#cfc6bf;font-family:var(--font);color:var(--ink);line-h
 .grid{background-image:linear-gradient(rgba(224,96,10,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(224,96,10,.10) 1px,transparent 1px);background-size:38px 38px}
 .pad{padding:26px 64px 0}
 .top{display:flex;justify-content:space-between;align-items:center;padding:34px 64px 0;font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
-.top img{height:30px}
+.lg{display:inline-flex;align-items:center;gap:calc(var(--ih)*.28)}
+.lg img{display:block}
+.lg img:first-child{height:var(--ih);width:auto}
+.lg img:last-child{height:var(--th);width:auto}
 .foot{position:absolute;left:64px;right:64px;bottom:30px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
 .foot b{color:var(--brand);font-size:14px}
 .eyebrow{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--brand)}
@@ -30,7 +33,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 .cover{background:linear-gradient(165deg,#f4936b 0,#e0603a 42%,#c4441b 100%);color:#fff}
 .cover::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.10) 1px,transparent 1px);background-size:38px 38px}
 .cover .big3{position:absolute;left:-40px;top:120px;font-size:760px;font-weight:800;line-height:.8;color:rgba(255,255,255,.10);letter-spacing:-.06em}
-.cover .logo{position:absolute;left:64px;top:46px;height:62px}
+.cover .logo{position:absolute;left:64px;top:46px}
 .cover .tag{position:absolute;left:64px;top:134px;display:flex;gap:10px;align-items:center}
 .cover .tag span{background:#fff;color:var(--or2);font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:9px 18px;border-radius:999px}
 .cover .tag em{font-style:normal;font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;opacity:.9}
@@ -47,7 +50,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 .cover .steps div{display:flex;align-items:center;gap:14px;font-size:20px;font-weight:600}
 .cover .steps i{width:46px;height:46px;border-radius:50%;background:#fff;color:var(--or2);display:grid;place-items:center;font-style:normal;font-weight:800;font-size:22px;box-shadow:0 8px 18px rgba(80,20,0,.3)}
 .cover .bar{position:absolute;left:0;right:0;bottom:0;height:150px;background:var(--cream);display:flex;align-items:center;justify-content:space-between;padding:0 64px}
-.cover .bar img{height:56px}
+
 .cover .bar p{margin:0;text-align:right;color:var(--ink);font-size:15px;line-height:1.35}
 .cover .bar b{font-size:19px;display:block}
 .cover .stamp{position:absolute;right:48px;top:530px;width:150px;height:150px;border-radius:50%;background:#ffe14a;color:#3a2a00;display:grid;place-items:center;text-align:center;font-weight:800;font-size:17px;line-height:1.1;transform:rotate(-10deg);box-shadow:0 14px 28px rgba(80,20,0,.35);z-index:3}
@@ -152,7 +155,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 <!-- 1. CAPA -->
 <section class="page cover" id="capa">
   <div class="big3">3</div>
-  <img class="logo" src="img/logo-branca.svg" alt="Desparasitação Descomplicada">
+  <span class="lg logo" style="--ih:58px;--th:50px"><img src="img/icone-branco.svg" alt=""><img src="img/texto-branco.svg" alt="Desparasitação Descomplicada"></span>
   <div class="tag"><span>E-book</span><em>Opcional · Antes da desparasitação</em></div>
   <div class="tt">
     <div class="kicker">Limpeza Intestinal em</div>
@@ -167,12 +170,12 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
     <div><i>2</i>Repetir com constância</div>
     <div><i>3</i>Dia da limpeza</div>
   </div>
-  <div class="bar"><img src="img/logo-laranja.svg" alt="Desparasitação Descomplicada"><p>Por<b>Luís Manoel</b>Terapeuta naturopata integrativo</p></div>
+  <div class="bar"><span class="lg" style="--ih:54px;--th:46px"><img src="img/icone-laranja.svg" alt=""><img src="img/texto-laranja.svg" alt="Desparasitação Descomplicada"></span><p>Por<b>Luís Manoel</b>Terapeuta naturopata integrativo</p></div>
 </section>
 
 <!-- 2. PARA QUEM -->
 <section class="page grid">
-  <div class="top"><img src="img/logo-laranja.svg" alt=""><span>Limpeza Intestinal em 3 dias</span></div>
+  <div class="top"><span class="lg" style="--ih:34px;--th:29px"><img src="img/icone-laranja.svg" alt=""><img src="img/texto-laranja.svg" alt="Desparasitação Descomplicada"></span><span>Limpeza Intestinal em 3 dias</span></div>
   <div class="pad">
     <span class="eyebrow">Comece por aqui</span>
     <h2>Um preparo de <b>3 dias</b> para deixar o intestino mais leve</h2>
@@ -199,7 +202,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 
 <!-- 3. CONTRAINDICACOES -->
 <section class="page grid">
-  <div class="top"><img src="img/logo-laranja.svg" alt=""><span>Limpeza Intestinal em 3 dias</span></div>
+  <div class="top"><span class="lg" style="--ih:34px;--th:29px"><img src="img/icone-laranja.svg" alt=""><img src="img/texto-laranja.svg" alt="Desparasitação Descomplicada"></span><span>Limpeza Intestinal em 3 dias</span></div>
   <div class="pad">
     <span class="eyebrow">Segurança em primeiro lugar</span>
     <h2>Essa limpeza é <b>para você?</b></h2>
@@ -223,7 +226,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 
 <!-- 4. QUANDO COMECAR -->
 <section class="page grid">
-  <div class="top"><img src="img/logo-laranja.svg" alt=""><span>Limpeza Intestinal em 3 dias</span></div>
+  <div class="top"><span class="lg" style="--ih:34px;--th:29px"><img src="img/icone-laranja.svg" alt=""><img src="img/texto-laranja.svg" alt="Desparasitação Descomplicada"></span><span>Limpeza Intestinal em 3 dias</span></div>
   <div class="pad">
     <span class="eyebrow">Calendário</span>
     <h2>Quando <b>começar</b></h2>
@@ -243,7 +246,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 
 <!-- 5. REGRAS -->
 <section class="page grid">
-  <div class="top"><img src="img/logo-laranja.svg" alt=""><span>Limpeza Intestinal em 3 dias</span></div>
+  <div class="top"><span class="lg" style="--ih:34px;--th:29px"><img src="img/icone-laranja.svg" alt=""><img src="img/texto-laranja.svg" alt="Desparasitação Descomplicada"></span><span>Limpeza Intestinal em 3 dias</span></div>
   <div class="pad">
     <span class="eyebrow">Os 3 dias</span>
     <h2>As <b>regras</b> dos 3 dias</h2>
@@ -281,7 +284,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 
 <!-- 6. DIA 1 -->
 <section class="page grid">
-  <div class="top"><img src="img/logo-laranja.svg" alt=""><span>Limpeza Intestinal em 3 dias</span></div>
+  <div class="top"><span class="lg" style="--ih:34px;--th:29px"><img src="img/icone-laranja.svg" alt=""><img src="img/texto-laranja.svg" alt="Desparasitação Descomplicada"></span><span>Limpeza Intestinal em 3 dias</span></div>
   <div class="pad">
     <span class="eyebrow">Dia 1</span>
     <h2>A rotina <b>completa</b></h2>
@@ -313,7 +316,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 
 <!-- 7. DIA 2 -->
 <section class="page grid">
-  <div class="top"><img src="img/logo-laranja.svg" alt=""><span>Limpeza Intestinal em 3 dias</span></div>
+  <div class="top"><span class="lg" style="--ih:34px;--th:29px"><img src="img/icone-laranja.svg" alt=""><img src="img/texto-laranja.svg" alt="Desparasitação Descomplicada"></span><span>Limpeza Intestinal em 3 dias</span></div>
   <div class="pad">
     <span class="eyebrow">Dia 2</span>
     <h2>Repita o <b>Dia 1</b></h2>
@@ -346,7 +349,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 
 <!-- 8. DIA 3 -->
 <section class="page grid">
-  <div class="top"><img src="img/logo-laranja.svg" alt=""><span>Limpeza Intestinal em 3 dias</span></div>
+  <div class="top"><span class="lg" style="--ih:34px;--th:29px"><img src="img/icone-laranja.svg" alt=""><img src="img/texto-laranja.svg" alt="Desparasitação Descomplicada"></span><span>Limpeza Intestinal em 3 dias</span></div>
   <div class="pad">
     <span class="eyebrow">Dia 3</span>
     <h2>O dia da <b>limpeza</b></h2>
@@ -369,7 +372,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 
 <!-- 9. DEPOIS -->
 <section class="page grid">
-  <div class="top"><img src="img/logo-laranja.svg" alt=""><span>Limpeza Intestinal em 3 dias</span></div>
+  <div class="top"><span class="lg" style="--ih:34px;--th:29px"><img src="img/icone-laranja.svg" alt=""><img src="img/texto-laranja.svg" alt="Desparasitação Descomplicada"></span><span>Limpeza Intestinal em 3 dias</span></div>
   <div class="pad">
     <span class="eyebrow">Durante e depois</span>
     <h2>Cuide do seu corpo <b>também depois</b></h2>
@@ -395,7 +398,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 
 <!-- 10. COMPRAS -->
 <section class="page grid">
-  <div class="top"><img src="img/logo-laranja.svg" alt=""><span>Limpeza Intestinal em 3 dias</span></div>
+  <div class="top"><span class="lg" style="--ih:34px;--th:29px"><img src="img/icone-laranja.svg" alt=""><img src="img/texto-laranja.svg" alt="Desparasitação Descomplicada"></span><span>Limpeza Intestinal em 3 dias</span></div>
   <div class="pad">
     <span class="eyebrow">Antes de começar</span>
     <h2>Lista de <b>compras</b></h2>
@@ -413,7 +416,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
 
 <!-- 11. RESUMO -->
 <section class="page grid">
-  <div class="top"><img src="img/logo-laranja.svg" alt=""><span>Limpeza Intestinal em 3 dias</span></div>
+  <div class="top"><span class="lg" style="--ih:34px;--th:29px"><img src="img/icone-laranja.svg" alt=""><img src="img/texto-laranja.svg" alt="Desparasitação Descomplicada"></span><span>Limpeza Intestinal em 3 dias</span></div>
   <div class="pad">
     <span class="eyebrow">Resumo</span>
     <h2>O roteiro <b>em um olhar</b></h2>
@@ -429,7 +432,7 @@ svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-l
       <div><span class="eyebrow" style="color:#fff;opacity:.9">Próximo passo</span><h3>Devolva ao intestino o equilíbrio que faz o resultado durar</h3><p>Depois de eliminar, é hora de seguir o método Desparasitação Descomplicada, com o Luís Manoel.</p></div>
     </div>
     <div style="display:flex;align-items:center;gap:16px;margin-top:26px">
-      <img src="img/logo-laranja.svg" alt="" style="height:50px"><span style="color:var(--muted);font-size:14px">Luís Manoel · Terapeuta naturopata integrativo<br>Conteúdo educativo. Não faz diagnóstico nem substitui avaliação profissional.</span>
+      <span class="lg" style="--ih:46px;--th:39px"><img src="img/icone-laranja.svg" alt=""><img src="img/texto-laranja.svg" alt="Desparasitação Descomplicada"></span><span style="color:var(--muted);font-size:14px">Luís Manoel · Terapeuta naturopata integrativo<br>Conteúdo educativo. Não faz diagnóstico nem substitui avaliação profissional.</span>
     </div>
   </div>
   <div class="foot"><span>© 2026 Desparasitação Descomplicada. Todos os direitos reservados.</span><b>11</b></div>
