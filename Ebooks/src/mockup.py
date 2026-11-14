@@ -125,17 +125,19 @@ def book(canvas, center, r, u, f, yaw):
 
 canvas = Image.new('RGBA', (CW, CH), (0, 0, 0, 0))
 
-# sombra no chao
-sh = Image.new('L', (CW, CH), 0)
-ring = []
-for i in range(48):
-    a = 2 * math.pi * i / 48
-    ring.append(project((math.cos(a) * 470, 0, math.sin(a) * 540))[0])
-ImageDraw.Draw(sh).polygon(ring, fill=150)
-sh = sh.filter(ImageFilter.GaussianBlur(40 * S))
-shadow = Image.new('RGBA', (CW, CH), (60, 25, 5, 255))
-shadow.putalpha(sh)
-canvas.alpha_composite(shadow)
+# sombra no chao: contato curto e suave, rente a base da pilha
+def ground_shadow(grow, off, blur, alpha):
+    sh = Image.new('L', (CW, CH), 0)
+    hw, hd = W / 2 + grow, H / 2 + grow
+    quad = [project((off[0] + sx * hw, 0, off[1] + sz * hd))[0] for sx, sz in ((-1, -1), (1, -1), (1, 1), (-1, 1))]
+    ImageDraw.Draw(sh).polygon(quad, fill=alpha)
+    return sh.filter(ImageFilter.GaussianBlur(blur * S))
+
+
+for grow, off, blur, alpha in ((26, (22, 26), 26, 70), (4, (6, 8), 8, 110)):
+    layer = Image.new('RGBA', (CW, CH), (110, 60, 35, 255))
+    layer.putalpha(ground_shadow(grow, off, blur, alpha))
+    canvas.alpha_composite(layer)
 
 # livros deitados: capa para cima (f=+Y, u=-Z, r=+X)
 book(canvas, (0, D / 2, 0), (1, 0, 0), (0, 0, -1), (0, 1, 0), math.radians(-5))
