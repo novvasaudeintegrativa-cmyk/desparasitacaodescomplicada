@@ -867,6 +867,19 @@ details.forms .fbody{padding:16px 18px 18px}
 .dwheel .dnode.on span{color:var(--brand)}
 }
 @media(min-width:700px) and (max-width:999px){.dores .dgrid{grid-template-columns:repeat(2,1fr)}}
+/* prints reais de WhatsApp */
+.rprints{display:grid;grid-template-columns:minmax(0,460px) minmax(0,1fr);gap:28px;align-items:start;margin-top:14px}
+.rprint{margin:0;background:#fff;border:1px solid var(--line);border-radius:22px;padding:14px;box-shadow:0 10px 28px rgba(0,0,0,.07);transition:box-shadow .25s,transform .25s}
+.rprint:hover{box-shadow:0 16px 38px rgba(224,96,10,.25)}
+.rprint img{display:block;width:100%;height:auto;border-radius:14px}
+.rprint figcaption{margin:12px 4px 2px;font-size:14px;color:var(--muted)}
+.rp-long .rp-img{position:relative;max-height:560px;overflow:hidden;transition:max-height .5s}
+.rp-long .rp-img::after{content:"";position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(transparent,#fff);pointer-events:none;transition:opacity .3s}
+.rp-long.open .rp-img{max-height:1300px}
+.rp-long.open .rp-img::after{opacity:0}
+.rp-more{display:block;margin:12px auto 2px;border:2px solid var(--brand);background:#fff;color:var(--brand);font:700 15px/1 var(--font);padding:12px 22px;border-radius:999px;cursor:pointer;transition:background .15s,color .15s}
+.rp-more:hover{background:var(--brand);color:#fff}
+@media(max-width:900px){.rprints{grid-template-columns:1fr}}
 .dcard.vazio{border:1.5px dashed rgba(224,96,10,.5);background:repeating-linear-gradient(45deg,#fdf1e9,#fdf1e9 12px,#fbe5d7 12px,#fbe5d7 24px);box-shadow:none;min-height:300px;align-items:center;justify-content:center;text-align:center;font-weight:600;color:var(--ink)}
 .dcard.vazio small{display:block;font-weight:400;font-size:13px;color:var(--muted)}
 @media(max-width:1000px){.dores .dgrid{grid-template-columns:repeat(2,1fr)}}
@@ -1324,14 +1337,18 @@ img,video,svg{max-width:100%}
     <figure class="tvideo" data-video="videos-site/depoimentos/depoimento-6.mp4" data-poster="imgs/depoimentos/video-6.jpg"><button type="button" class="tplay" aria-label="Assistir ao depoimento de Jandira"><span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button><figcaption><b>Jandira</b><small>Depoimento em vídeo</small></figcaption></figure>
   </div>
 
-  <h3 class="tsub">Exemplos de conversas no WhatsApp</h3>
-  <!-- prints: salve as imagens em imgs/depoimentos/print-1.jpg, print-2.jpg ... e oculte telefone e sobrenome antes -->
-  <div class="tprints hs" data-hs>
-    <div class="tprint wa" role="img" aria-label="Exemplo ilustrativo de conversa de WhatsApp, pessoa fictícia: Maria A."><div class="wa-top"><span class="wa-av">MA</span><div class="wa-nm"><b>Maria A.</b><small>online</small></div></div><div class="wa-chat"><span class="wa-day">Hoje</span><span class="wa-tag">Exemplo ilustrativo</span><div class="wa-m wa-out">Maria, como está sendo a jornada até agora? 😊<i>14:28 ✓✓</i></div><div class="wa-m wa-in">Eu vivia seguindo receita de grupo de WhatsApp e tinha medo de errar. Agora eu entendo a ordem de cada etapa. 😮<i>14:32</i></div><div class="wa-m wa-in">As aulas são curtas, consegui acompanhar no meu ritmo. Gostei muito! 🙏<i>14:33</i></div></div><div class="wa-bar"><span>Mensagem</span><em></em></div></div>
-    <div class="tprint wa" role="img" aria-label="Exemplo ilustrativo de conversa de WhatsApp, pessoa fictícia: Sônia R."><div class="wa-top"><span class="wa-av">SR</span><div class="wa-nm"><b>Sônia R.</b><small>online</small></div></div><div class="wa-chat"><span class="wa-day">Hoje</span><span class="wa-tag">Exemplo ilustrativo</span><div class="wa-m wa-out">Sônia, conseguiu acompanhar o material? 📚<i>09:10 ✓✓</i></div><div class="wa-m wa-in">Gostei demais dos guias! A lista de compras me poupou um tempão no mercado. 👏<i>09:14</i></div><div class="wa-m wa-in">E ele deixa claro quando procurar um profissional. Me senti segura do começo ao fim.<i>09:17</i></div></div><div class="wa-bar"><span>Mensagem</span><em></em></div></div>
-    <div class="tprint wa" role="img" aria-label="Exemplo ilustrativo de conversa de WhatsApp, pessoa fictícia: Cláudia M."><div class="wa-top"><span class="wa-av">CM</span><div class="wa-nm"><b>Cláudia M.</b><small>online</small></div></div><div class="wa-chat"><span class="wa-day">Hoje</span><span class="wa-tag">Exemplo ilustrativo</span><div class="wa-m wa-out">Cláudia, o que achou do grupo de acompanhamento? 💬<i>18:38 ✓✓</i></div><div class="wa-m wa-in">Eu tinha vergonha de perguntar sobre esse assunto, mas tiraram minhas dúvidas com muita calma. 😌<i>18:41</i></div><div class="wa-m wa-in">Recomendo. Tudo muito bem organizado! ✌️<i>18:45</i></div></div><div class="wa-bar"><span>Mensagem</span><em></em></div></div>
+  <h3 class="tsub">Conversas reais no WhatsApp</h3>
+  <div class="rprints">
+    <figure class="rprint rp-long">
+      <div class="rp-img" id="rpLong"><img src="imgs/depoimentos/dep-mensagem-completa.webp" alt="Mensagem de WhatsApp de uma mãe agradecendo o cuidado do Dr. Luís e da equipe, relatando mais disposição e alegria da filha durante o protocolo" width="448" height="1201" loading="lazy"></div>
+      <button type="button" class="rp-more" aria-expanded="false" aria-controls="rpLong">Ler mensagem completa</button>
+    </figure>
+    <figure class="rprint rp-wide">
+      <div class="rp-img"><img src="imgs/depoimentos/dep-debora.webp" alt="Mensagem de WhatsApp de Débora, relatando mais leveza, energia e clareza mental depois da desparasitação" width="1000" height="458" loading="lazy"></div>
+      <figcaption>Depoimento de Débora, recebido por WhatsApp</figcaption>
+    </figure>
   </div>
-  <p class="note">Exemplos ilustrativos, com nomes e conversas fictícios, para mostrar como esta seção será apresentada. Serão substituídos por conversas reais, com autorização por escrito. Resultados variam de pessoa para pessoa e não substituem avaliação profissional.</p>
+  <p class="note">Depoimentos reais, publicados com autorização. Resultados variam de pessoa para pessoa e não substituem avaliação profissional.</p>
 </div></section>
 
 <!-- 9. OBJEÇÕES -->
@@ -1585,6 +1602,12 @@ var WHATSAPP_MSG = 'Ola! Vim pela pagina do metodo Desparasitacao Descomplicada 
   }
   scrollLinked(document.querySelector('.tvideos'));
   scrollLinked(document.querySelector('.tprints'));
+  (function () {
+    var f = document.querySelector('.rp-long'); if (!f) return;
+    var btn = f.querySelector('.rp-more');
+    btn.addEventListener('click', function () { var o = f.classList.toggle('open'); btn.setAttribute('aria-expanded', o); btn.textContent = o ? 'Recolher mensagem' : 'Ler mensagem completa'; });
+  })();
+
 
   /* o que voce recebe: circulo dinamico (troca sozinho, clique escolhe, mouse pausa) */
   (function () {
