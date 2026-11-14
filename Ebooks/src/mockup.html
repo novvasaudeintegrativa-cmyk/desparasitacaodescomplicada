@@ -3,49 +3,52 @@
 <head>
 <meta charset="utf-8">
 <title>Mockup do e-book</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;700&display=swap" rel="stylesheet">
 <style>
 html,body{margin:0;background:transparent}
-body{width:1500px;height:1000px;position:relative;overflow:hidden;font-family:"Outfit",system-ui,sans-serif}
-.scene{position:absolute;inset:0;perspective:2400px;perspective-origin:50% 40%}
-/* cuboide do livro: --w largura, --h altura, --d espessura */
-.book{position:absolute;width:var(--w);height:var(--h);transform-style:preserve-3d}
+body{width:1400px;height:1500px;position:relative;overflow:hidden;font-family:"Outfit",system-ui,sans-serif}
+.scene{position:absolute;left:0;top:0;width:1400px;height:1500px;perspective:3200px;perspective-origin:50% 35%}
+.world{position:absolute;left:700px;top:1050px;width:0;height:0;transform-style:preserve-3d;transform:rotateX(26deg) rotateY(-32deg)}
+.obj{position:absolute;left:0;top:0;width:0;height:0;transform-style:preserve-3d}
+/* livro: --w largura, --h altura, --d espessura. centro do livro = origem */
+.book{position:absolute;width:var(--w);height:var(--h);left:calc(var(--w)/-2);top:calc(var(--h)/-2);transform-style:preserve-3d}
 .book>div{position:absolute;backface-visibility:hidden}
-.front{width:var(--w);height:var(--h);transform:translateZ(calc(var(--d)/2));background:url(img/capa-render.jpg) center/cover;border-radius:2px 6px 6px 2px}
-.front::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(100deg,rgba(0,0,0,.28) 0,rgba(255,255,255,.18) 2.2%,rgba(0,0,0,.10) 3.6%,transparent 8%,rgba(255,255,255,.10) 55%,transparent 80%)}
+.front{width:var(--w);height:var(--h);transform:translateZ(calc(var(--d)/2));background:url(img/capa-render.jpg) center/cover;border-radius:2px 5px 5px 2px}
+.front::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(100deg,rgba(0,0,0,.30) 0,rgba(255,255,255,.20) 2.2%,rgba(0,0,0,.10) 3.6%,transparent 8%,rgba(255,255,255,.10) 55%,transparent 80%)}
 .back{width:var(--w);height:var(--h);transform:translateZ(calc(var(--d)/-2)) rotateY(180deg);background:#c4441b}
-.spine{width:var(--d);height:var(--h);left:0;transform:rotateY(-90deg);transform-origin:left center;background:linear-gradient(90deg,#b93f18,#e0603a 40%,#f08a62 60%,#d9532c);display:flex;align-items:center;justify-content:center}
-.spine span{writing-mode:vertical-rl;transform:rotate(180deg);color:#fff;font-weight:700;font-size:calc(var(--d)*.44);letter-spacing:.06em;white-space:nowrap;text-transform:uppercase}
-.spine span i{font-style:normal;font-weight:300;opacity:.9;margin:0 .6em}
-.pages{width:var(--d);height:calc(var(--h) - 8px);top:4px;right:0;transform:rotateY(90deg);transform-origin:right center;background:repeating-linear-gradient(90deg,#fff 0 3px,#e9e1da 3px 4px);}
-.ptop{width:var(--w);height:var(--d);top:0;transform:rotateX(90deg);transform-origin:top center;background:repeating-linear-gradient(0deg,#fff 0 3px,#e9e1da 3px 4px)}
-.pbot{width:var(--w);height:var(--d);bottom:0;transform:rotateX(-90deg);transform-origin:bottom center;background:repeating-linear-gradient(0deg,#fff 0 3px,#e9e1da 3px 4px)}
-.shadow{position:absolute;border-radius:50%;background:radial-gradient(closest-side,rgba(60,25,5,.40),rgba(60,25,5,0));filter:blur(6px)}
-/* livro em pe */
-#stand{--w:470px;--h:665px;--d:50px;left:150px;top:150px;transform:rotateY(-24deg) rotateX(2deg)}
-#sh1{left:120px;top:800px;width:620px;height:80px}
-/* livros deitados */
-.lay{position:absolute;transform-style:preserve-3d}
-#layA{left:760px;top:430px;transform:rotateX(62deg) rotateZ(-18deg) translateZ(0)}
-#layB{left:810px;top:360px;transform:rotateX(62deg) rotateZ(-18deg) translateZ(54px)}
-#layA .book,#layB .book{--w:400px;--h:566px;--d:50px;position:relative}
-#sh2{left:690px;top:560px;width:640px;height:230px;transform:rotate(-18deg);opacity:.9}
+.spine{width:var(--d);height:var(--h);left:0;transform:translateZ(calc(var(--d)/-2)) rotateY(-90deg);transform-origin:left center;background:linear-gradient(90deg,#b93f18,#e0603a 40%,#f08a62 60%,#d9532c);display:flex;align-items:center;justify-content:center}
+.spine span{writing-mode:vertical-rl;transform:rotate(180deg);color:#fff;font-weight:700;font-size:calc(var(--d)*.4);letter-spacing:.06em;white-space:nowrap;text-transform:uppercase}
+.spine span i{font-style:normal;font-weight:300;opacity:.9;margin:0 .7em}
+.pages{width:var(--d);height:calc(var(--h) - 8px);top:4px;right:0;transform:translateZ(calc(var(--d)/-2)) rotateY(90deg);transform-origin:right center;background:repeating-linear-gradient(90deg,#fff 0 3px,#e4dbd3 3px 4px)}
+.ptop{width:calc(var(--w) - 8px);left:2px;height:var(--d);top:0;transform:translateZ(calc(var(--d)/-2)) rotateX(90deg);transform-origin:top center;background:repeating-linear-gradient(0deg,#fff 0 3px,#e4dbd3 3px 4px)}
+.pbot{width:calc(var(--w) - 8px);left:2px;height:var(--d);bottom:0;transform:translateZ(calc(var(--d)/-2)) rotateX(-90deg);transform-origin:bottom center;background:repeating-linear-gradient(0deg,#fff 0 3px,#e4dbd3 3px 4px)}
+.b{--w:470px;--h:665px;--d:50px}
+/* livros deitados: capa para cima */
+.lay .book{transform:rotateX(-90deg)}
+#layA{transform:translate3d(0,-25px,0) rotateY(172deg)}
+#layB{transform:translate3d(-8px,-75px,6px) rotateY(187deg)}
+/* livro em pe sobre os deitados */
+#stand{transform:translate3d(10px,-433px,0) rotateY(14deg)}
+#stand .book{transform:none}
+/* sombra no chao */
+.gs{position:absolute;left:-520px;top:0;width:1040px;height:1040px;margin-top:-520px;transform:rotateX(90deg);background:radial-gradient(closest-side,rgba(60,25,5,.38),rgba(60,25,5,.16) 60%,rgba(60,25,5,0));filter:blur(8px)}
 </style>
 </head>
 <body>
-<div class="scene">
-  <div class="shadow" id="sh1"></div>
-  <div class="shadow" id="sh2"></div>
+<div class="scene"><div class="world">
+  <div class="gs"></div>
 
-  <div class="book" id="stand">
-    <div class="back"></div><div class="spine"><span>Limpeza Intestinal em 3 dias<i>|</i>Luís Manoel</span></div><div class="pages"></div><div class="ptop"></div><div class="pbot"></div><div class="front"></div>
-  </div>
-
-  <div class="lay" id="layA"><div class="book">
+  <div class="obj lay" id="layA"><div class="book b">
     <div class="back"></div><div class="spine"><span>Limpeza Intestinal em 3 dias<i>|</i>Luís Manoel</span></div><div class="pages"></div><div class="ptop"></div><div class="pbot"></div><div class="front"></div>
   </div></div>
-  <div class="lay" id="layB"><div class="book">
+
+  <div class="obj lay" id="layB"><div class="book b">
     <div class="back"></div><div class="spine"><span>Limpeza Intestinal em 3 dias<i>|</i>Luís Manoel</span></div><div class="pages"></div><div class="ptop"></div><div class="pbot"></div><div class="front"></div>
   </div></div>
-</div>
+
+  <div class="obj" id="stand"><div class="book b">
+    <div class="back"></div><div class="spine"><span>Limpeza Intestinal em 3 dias<i>|</i>Luís Manoel</span></div><div class="pages"></div><div class="ptop"></div><div class="pbot"></div><div class="front"></div>
+  </div></div>
+</div></div>
 </body>
 </html>
