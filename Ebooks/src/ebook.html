@@ -15,7 +15,7 @@ html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 body{margin:0;background:#cfc6bf;font-family:var(--font);color:var(--ink);line-height:1.45}
 .page{width:794px;height:1123px;margin:24px auto;background:var(--paper);position:relative;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.25);page-break-after:always;break-after:page}
 @media print{body{background:none}.page{margin:0;box-shadow:none}}
-.grid{background-image:linear-gradient(rgba(224,96,10,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(224,96,10,.10) 1px,transparent 1px);background-size:38px 38px}
+.grid{background:var(--paper)}
 .pad{padding:26px 64px 0}
 .top{display:flex;justify-content:space-between;align-items:center;padding:34px 64px 0;font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
 .lg{display:inline-flex;align-items:center;gap:calc(var(--ih)*.28)}
@@ -31,7 +31,6 @@ h2 b{color:var(--brand);font-weight:800}
 svg.i{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
 /* ===== CAPA ===== */
 .cover{background:linear-gradient(165deg,#f4936b 0,#e0603a 42%,#c4441b 100%);color:#fff}
-.cover::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.10) 1px,transparent 1px);background-size:38px 38px}
 .cover .big3{position:absolute;left:-40px;top:120px;font-size:760px;font-weight:800;line-height:.8;color:rgba(255,255,255,.10);letter-spacing:-.06em}
 .cover .logo{position:absolute;left:64px;top:46px}
 .cover .tag{position:absolute;left:64px;top:134px;display:flex;gap:10px;align-items:center}
