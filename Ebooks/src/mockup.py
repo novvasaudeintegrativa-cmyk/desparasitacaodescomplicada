@@ -5,7 +5,9 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, '..', 'mockup-ebook.png')
+import sys
+OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, '..', 'mockup-ebook.png')
+SPINE_TXT = sys.argv[3] if len(sys.argv) > 3 else 'LIMPEZA INTESTINAL EM 3 DIAS   |   LUÍS MANOEL'
 S = 2                      # supersample
 CW, CH = 1500 * S, 1500 * S
 W, H, D = 470.0, 665.0, 50.0
@@ -13,7 +15,7 @@ YAW, PITCH = math.radians(-30), math.radians(24)
 FOCAL, DIST = 3400.0, 3400.0
 CX, CY = CW / 2, CH * 0.60
 
-cover = Image.open(os.path.join(HERE, 'img', 'capa-render.jpg')).convert('RGB')
+cover = Image.open(sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, 'img', 'capa-render.jpg')).convert('RGB')
 
 
 def font(size):
@@ -35,7 +37,7 @@ def spine_tex():
     t = Image.new('RGBA', (h, w), (0, 0, 0, 0))
     d = ImageDraw.Draw(t)
     f = font(int(w * .36))
-    txt = 'LIMPEZA INTESTINAL EM 3 DIAS   |   LUÍS MANOEL'
+    txt = SPINE_TXT
     tw = d.textlength(txt, font=f)
     d.text(((h - tw) / 2, w * .30), txt, font=f, fill=(255, 255, 255, 255))
     t = t.rotate(-90, expand=True)
